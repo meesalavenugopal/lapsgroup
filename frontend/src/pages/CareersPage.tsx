@@ -66,12 +66,42 @@ export function CareersPage() {
   }, [isPlaying, nextSlide]);
 
   const benefits = [
-    { icon: Heart, title: 'Health & Wellness', description: 'Comprehensive health insurance for you and your family.' },
-    { icon: Users, title: 'Collaborative Culture', description: 'Work with talented people across all our divisions.' },
-    { icon: Zap, title: 'Growth Opportunities', description: 'Continuous learning and career development programs.' },
-    { icon: GraduationCap, title: 'Learning Budget', description: 'Annual budget for courses, certifications, and conferences.' },
-    { icon: Coffee, title: 'Work-Life Balance', description: 'Flexible hours and remote work options available.' },
-    { icon: Laptop, title: 'Best Tools', description: 'Top-tier equipment and software to do your best work.' },
+    { 
+      icon: Heart, 
+      title: 'Health & Wellness', 
+      description: 'Comprehensive health insurance covering you and your family, mental health support, gym memberships, and wellness programs.',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80'
+    },
+    { 
+      icon: Users, 
+      title: 'Collaborative Culture', 
+      description: 'Work with talented people across all our divisions on exciting projects.',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80'
+    },
+    { 
+      icon: Zap, 
+      title: 'Growth Opportunities', 
+      description: 'Continuous learning and career development programs.',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80'
+    },
+    { 
+      icon: GraduationCap, 
+      title: 'Learning Budget', 
+      description: 'Annual budget for courses, certifications, and conferences.',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80'
+    },
+    { 
+      icon: Coffee, 
+      title: 'Work-Life Balance', 
+      description: 'Flexible hours and remote work options available.',
+      image: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80'
+    },
+    { 
+      icon: Laptop, 
+      title: 'Best Tools', 
+      description: 'Top-tier equipment and software to do your best work.',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80'
+    },
   ];
 
   const testimonials = [
@@ -236,65 +266,76 @@ export function CareersPage() {
       <section className="py-16 bg-laps-navy">
         <div className="container-wide">
           <div className="grid grid-cols-12 gap-4">
-            {/* Large stat */}
+            {/* Large stat - Team Members */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="col-span-12 md:col-span-6 lg:col-span-4 bg-laps-gold p-8 flex flex-col justify-between min-h-[200px]"
+              className="col-span-12 md:col-span-6 lg:col-span-4 bg-laps-gold p-8 min-h-[200px] flex flex-col justify-between"
             >
-              <Star className="w-10 h-10 text-laps-navy/30" />
+              <Users className="w-10 h-10 text-laps-navy/30" />
               <div>
                 <div className="text-6xl font-bold text-laps-navy mb-2">200+</div>
                 <div className="text-laps-navy/70 text-lg">Team Members</div>
               </div>
             </motion.div>
 
-            {/* Medium stats */}
+            {/* Divisions stat */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="col-span-6 md:col-span-3 lg:col-span-2 bg-white/10 p-6 flex flex-col justify-between min-h-[200px]"
+              className="col-span-6 md:col-span-3 lg:col-span-2 bg-laps-navy border border-white/10 p-6 min-h-[200px] flex flex-col justify-between"
             >
-              <div className="text-5xl font-bold text-white">5</div>
-              <div className="text-white/60">Divisions</div>
+              <Briefcase className="w-8 h-8 text-laps-gold/50" />
+              <div>
+                <div className="text-5xl font-bold text-white">5</div>
+                <div className="text-white/60">Divisions</div>
+              </div>
             </motion.div>
 
+            {/* Retention stat */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="col-span-6 md:col-span-3 lg:col-span-3 bg-white/5 p-6 flex flex-col justify-between min-h-[200px]"
+              className="col-span-6 md:col-span-3 lg:col-span-3 bg-laps-navy border border-white/10 p-6 min-h-[200px] flex flex-col justify-between"
             >
-              <div className="text-5xl font-bold text-laps-gold">95%</div>
-              <div className="text-white/60">Retention Rate</div>
+              <Heart className="w-8 h-8 text-rose-400/50" />
+              <div>
+                <div className="text-5xl font-bold text-laps-gold">95%</div>
+                <div className="text-white/60">Retention Rate</div>
+              </div>
             </motion.div>
 
+            {/* Glassdoor stat */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="col-span-12 md:col-span-12 lg:col-span-3 bg-gradient-to-br from-emerald-500 to-emerald-600 p-6 flex items-center justify-between"
+              className="col-span-12 md:col-span-12 lg:col-span-3 bg-emerald-500 p-6 min-h-[200px] flex items-center justify-between"
             >
               <div>
                 <div className="text-5xl font-bold text-white">4.8</div>
-                <div className="text-white/80">Glassdoor Rating</div>
+                <div className="text-white/90">Glassdoor Rating</div>
               </div>
-              <div className="flex gap-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className={clsx("w-5 h-5", i <= 4 ? "text-white fill-white" : "text-white/50")} />
-                ))}
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-0.5">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className={clsx("w-5 h-5", i <= 4 ? "text-white fill-white" : "text-white/40")} />
+                  ))}
+                </div>
+                <span className="text-xs text-white/70">Based on 150+ reviews</span>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Join Us - Bento Benefits */}
+      {/* Why Join Us - Bento Benefits Grid */}
       <section id="benefits" className="py-24 bg-white">
         <div className="container-wide">
           <div className="mb-10">
@@ -302,21 +343,27 @@ export function CareersPage() {
           </div>
 
           <div className="grid grid-cols-12 gap-4">
-            {/* Featured benefit - large */}
+            {/* Featured benefit - large with image background */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="col-span-12 lg:col-span-6 row-span-2 bg-laps-navy p-10 flex flex-col justify-between min-h-[400px] group hover:bg-laps-blue transition-colors duration-300"
+              className="col-span-12 lg:col-span-6 row-span-2 relative overflow-hidden min-h-[450px] group"
             >
-              <Heart className="w-16 h-16 text-laps-gold" />
-              <div>
-                <h3 className="text-3xl font-bold text-white mb-4">Health & Wellness</h3>
-                <p className="text-white/70 text-lg">Comprehensive health insurance covering you and your family, mental health support, gym memberships, and wellness programs.</p>
+              <img 
+                src={benefits[0].image}
+                alt={benefits[0].title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy via-laps-navy/60 to-transparent" />
+              <div className="relative h-full p-10 flex flex-col justify-end">
+                <Heart className="w-12 h-12 text-laps-gold mb-4" />
+                <h3 className="text-3xl font-bold text-white mb-3">{benefits[0].title}</h3>
+                <p className="text-white/80 text-lg max-w-md">{benefits[0].description}</p>
               </div>
             </motion.div>
 
-            {/* Other benefits - varied sizes */}
+            {/* Other benefits - clean cards with images */}
             {benefits.slice(1).map((benefit, index) => (
               <motion.div
                 key={benefit.title}
@@ -324,18 +371,20 @@ export function CareersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={clsx(
-                  "bg-laps-light p-6 flex flex-col justify-between group hover:bg-laps-navy transition-colors duration-300",
-                  index === 0 ? "col-span-12 sm:col-span-6 lg:col-span-3 min-h-[180px]" :
-                  index === 1 ? "col-span-12 sm:col-span-6 lg:col-span-3 min-h-[180px]" :
-                  index === 2 ? "col-span-12 sm:col-span-6 lg:col-span-3 min-h-[180px]" :
-                  "col-span-12 sm:col-span-6 lg:col-span-3 min-h-[180px]"
-                )}
+                className="col-span-12 sm:col-span-6 lg:col-span-3 bg-laps-navy overflow-hidden group"
               >
-                <benefit.icon className="w-10 h-10 text-laps-blue group-hover:text-laps-gold transition-colors" />
-                <div>
-                  <h3 className="text-xl font-semibold text-laps-navy group-hover:text-white mb-2 transition-colors">{benefit.title}</h3>
-                  <p className="text-laps-slate group-hover:text-white/70 text-sm transition-colors">{benefit.description}</p>
+                <div className="relative h-28 overflow-hidden">
+                  <img 
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-laps-navy to-transparent" />
+                </div>
+                <div className="p-6">
+                  <benefit.icon className="w-8 h-8 text-laps-gold mb-3" />
+                  <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+                  <p className="text-white/60 text-sm">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
