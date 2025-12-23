@@ -3,24 +3,38 @@ import { NewsSection } from '@components/home/NewsSection';
 import { DivisionsSection } from '@components/home/DivisionsSection';
 import { TimelineSection } from '@components/home/TimelineSection';
 import { CareersSection } from '@components/home/CareersSection';
+import { FloatingNav } from '@components/common/FloatingNav';
 
 export function HomePage() {
   return (
     <>
+      {/* Floating Section Navigation */}
+      <FloatingNav />
+
       {/* Hero Carousel - Full Width */}
-      <HeroCarousel />
+      <div id="hero">
+        <HeroCarousel />
+      </div>
 
       {/* In the News Section */}
-      <NewsSection />
+      <div id="news">
+        <NewsSection />
+      </div>
 
       {/* Division Stories */}
-      <DivisionsSection />
+      <div id="divisions">
+        <DivisionsSection />
+      </div>
 
       {/* Timeline / Milestones */}
-      <TimelineSection />
+      <div id="journey">
+        <TimelineSection />
+      </div>
 
       {/* Careers Teaser */}
-      <CareersSection />
+      <div id="contact">
+        <CareersSection />
+      </div>
     </>
   );
 }
