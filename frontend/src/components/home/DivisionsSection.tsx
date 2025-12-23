@@ -72,12 +72,19 @@ export function DivisionsSection() {
             <Link 
               to={`/${divisions[1].slug}`}
               className="block relative h-[320px] overflow-hidden group"
-              style={{ backgroundColor: divisions[1].accentColor }}
             >
+              {/* Full width background image */}
               <img
                 src={divisionImages[divisions[1].key]}
                 alt={divisions[1].name}
-                className="absolute right-0 top-0 w-2/3 h-full object-cover opacity-60"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Color gradient overlay that blends from left to right */}
+              <div 
+                className="absolute inset-0"
+                style={{ 
+                  background: `linear-gradient(to right, ${divisions[1].accentColor} 0%, ${divisions[1].accentColor} 30%, ${divisions[1].accentColor}99 50%, transparent 100%)` 
+                }}
               />
               <div className="absolute inset-0 p-8 flex flex-col justify-center">
                 <span className="text-white/80 text-xs font-semibold tracking-wider uppercase mb-2">

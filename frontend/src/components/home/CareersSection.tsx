@@ -74,12 +74,19 @@ export function CareersSection() {
             <Link 
               to="/careers"
               className="block relative h-[320px] overflow-hidden group"
-              style={{ backgroundColor: '#2D5016' }}
             >
+              {/* Full width background image */}
               <img
                 src={careerImages[1]}
                 alt="Join our team"
-                className="absolute right-0 top-0 w-2/3 h-full object-cover opacity-40"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Color gradient overlay that blends from left to right */}
+              <div 
+                className="absolute inset-0"
+                style={{ 
+                  background: 'linear-gradient(to right, #2D5016 0%, #2D5016 30%, #2D501699 50%, transparent 100%)' 
+                }}
               />
               <div className="absolute inset-0 p-8 flex flex-col justify-center">
                 <span className="text-white/80 text-xs font-semibold tracking-wider uppercase mb-2">
