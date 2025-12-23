@@ -77,43 +77,51 @@ export function MilestonesPage() {
       </section>
 
       {/* Achievement Stats - Bento Style */}
-      <section className="py-16 bg-white border-b border-gray-100">
+      <section className="py-20 bg-white">
         <div className="container-wide">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[140px]">
-            {/* Large Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left - Large Feature Card */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="col-span-2 row-span-2 relative overflow-hidden group"
+              className="relative overflow-hidden group h-[450px]"
             >
               <img 
                 src={milestoneImages[0]} 
                 alt="Business growth" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy/80 to-transparent flex items-end p-6">
-                <p className="text-white font-semibold text-lg">Building Excellence Since 2020</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy via-laps-navy/50 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="text-6xl font-bold text-laps-gold mb-4">2020</div>
+                <h3 className="text-2xl font-bold text-white mb-2">Building Excellence</h3>
+                <p className="text-white/80">
+                  From a vision to a multi-division enterprise, our journey has been defined by 
+                  relentless pursuit of quality and innovation.
+                </p>
               </div>
             </motion.div>
 
-            {/* Achievement Cards */}
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={achievement.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-laps-light flex flex-col items-center justify-center p-4"
-              >
-                <div className="w-12 h-12 bg-laps-gold/10 flex items-center justify-center mb-3">
-                  <achievement.icon className="w-6 h-6 text-laps-gold" />
-                </div>
-                <div className="text-3xl font-bold text-laps-navy mb-1">{achievement.value}</div>
-                <p className="text-xs text-laps-slate text-center">{achievement.label}</p>
-              </motion.div>
-            ))}
+            {/* Right - Stats Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {achievements.map((achievement, index) => (
+                <motion.div
+                  key={achievement.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-laps-light p-8 flex flex-col justify-center hover:shadow-lg transition-shadow"
+                >
+                  <div className="w-14 h-14 bg-laps-gold/10 flex items-center justify-center mb-4">
+                    <achievement.icon className="w-7 h-7 text-laps-gold" />
+                  </div>
+                  <div className="text-4xl font-bold text-laps-navy mb-2">{achievement.value}</div>
+                  <p className="text-laps-slate">{achievement.label}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
