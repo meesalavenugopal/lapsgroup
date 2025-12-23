@@ -140,7 +140,7 @@ export function TimelineSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-2 relative rounded-xl overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #0066CC 0%, #004999 100%)' }}
           >
             <div className="p-8 md:p-10 min-h-[400px] flex flex-col">
               {/* Year Display */}
@@ -216,27 +216,20 @@ export function TimelineSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white border border-gray-200 rounded-xl p-6 flex-1"
+              className="rounded-2xl relative overflow-visible bg-laps-blue"
             >
-              <span className="text-laps-gold text-xs font-semibold tracking-wider uppercase">
-                In Numbers
-              </span>
-              <div className="mt-6 grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-laps-blue">4+</div>
-                  <p className="text-laps-slate text-xs mt-1">Years</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-laps-blue">5</div>
-                  <p className="text-laps-slate text-xs mt-1">Divisions</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-laps-blue">15+</div>
-                  <p className="text-laps-slate text-xs mt-1">Cities</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-laps-blue">100+</div>
-                  <p className="text-laps-slate text-xs mt-1">Team</p>
+              <div className="p-6">
+                <span className="text-white/80 text-xs font-semibold tracking-wider uppercase">
+                  Did you know
+                </span>
+                <h3 className="text-lg font-bold text-white mt-2 mb-3">
+                  LAPS Group Impact
+                </h3>
+                <div className="flex items-start gap-3">
+                  <div className="w-1 min-h-[50px] bg-laps-gold rounded-full flex-shrink-0"></div>
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    With 5 thriving divisions and 100+ team members, LAPS Group has expanded to 15+ cities in just 4 years.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -247,22 +240,28 @@ export function TimelineSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white border border-gray-200 rounded-xl p-6 flex-1 relative group cursor-pointer hover:shadow-lg transition-shadow"
+              className="relative rounded-xl p-6 min-h-[200px] overflow-hidden group cursor-pointer"
             >
-              <Link to="/about" className="block h-full">
-                <span className="text-laps-blue text-xs font-semibold tracking-wider uppercase">
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy via-laps-navy/80 to-laps-navy/40" />
+              <Link to="/about" className="relative block h-full z-10">
+                <span className="text-laps-gold text-xs font-semibold tracking-wider uppercase">
                   About Us
                 </span>
-                <h3 className="text-xl font-bold text-laps-navy mt-4 mb-4">
+                <h3 className="text-xl font-bold text-white mt-4 mb-4">
                   Our Story
                 </h3>
                 <div className="flex items-start gap-2">
                   <div className="w-1 h-full min-h-[50px] bg-laps-gold"></div>
-                  <p className="text-laps-slate text-sm leading-relaxed">
+                  <p className="text-white/80 text-sm leading-relaxed">
                     Founded over 4 years ago, LAPS Group embodies the story of entrepreneurship and innovation.
                   </p>
                 </div>
-                <div className="absolute bottom-6 right-6">
+                <div className="absolute bottom-0 right-0">
                   <ArrowRight className="w-5 h-5 text-laps-gold group-hover:translate-x-2 transition-transform" />
                 </div>
               </Link>
