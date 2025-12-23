@@ -82,13 +82,13 @@ export function InnovationPage() {
       {/* Innovation Philosophy - Bento Grid */}
       <section className="py-20 bg-white">
         <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px]">
-            {/* Philosophy Card - Large */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Philosophy Card - Left */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-2 lg:row-span-2 bg-laps-light p-8 flex flex-col justify-center"
+              className="bg-laps-light p-10 flex flex-col justify-center"
             >
               <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6 w-fit">
                 Innovation is in Our DNA
@@ -109,33 +109,53 @@ export function InnovationPage() {
               </p>
             </motion.div>
 
-            {/* Image Card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative overflow-hidden group"
-            >
-              <img 
-                src={innovationImages[0]} 
-                alt="Innovation" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-laps-navy/40" />
-            </motion.div>
+            {/* Right Column - Image + Number Card */}
+            <div className="flex flex-col gap-4">
+              {/* Image Card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative overflow-hidden group h-[250px]"
+              >
+                <img 
+                  src={innovationImages[0]} 
+                  alt="Innovation" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-laps-navy/30" />
+              </motion.div>
 
-            {/* Number Card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-gradient-to-br from-laps-navy to-laps-blue p-6 text-white flex flex-col justify-center"
-            >
-              <div className="text-5xl font-bold text-laps-gold mb-3">01</div>
-              <h3 className="text-xl font-bold mb-2">Think Different</h3>
-              <p className="text-sm text-white/80">We approach every challenge with fresh eyes</p>
-            </motion.div>
+              {/* Number Card with 01 and 02 - Side by Side */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-gradient-to-br from-laps-navy to-laps-blue text-white flex-1 grid grid-cols-2"
+              >
+                {/* 01 Card */}
+                <div className="p-8 border-r border-white/10 flex flex-col">
+                  <div className="text-7xl font-bold text-laps-gold mb-auto">01</div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Think Different</h3>
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      We approach every challenge with fresh eyes, questioning assumptions.
+                    </p>
+                  </div>
+                </div>
+                {/* 02 Card */}
+                <div className="p-8 flex flex-col">
+                  <div className="text-7xl font-bold text-laps-gold mb-auto">02</div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Act Bold</h3>
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      We're not afraid to take calculated risks and pioneer new approaches.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -303,18 +323,18 @@ export function InnovationPage() {
                 teams explore emerging technologies, test new ideas, and develop prototypes that 
                 could shape our future offerings.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/10 p-6">
-                  <div className="text-3xl font-bold text-laps-gold mb-2">20+</div>
-                  <p className="text-white/70 text-sm">Active Experiments</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-white/10 p-8">
+                  <div className="text-5xl font-bold text-laps-gold mb-3">20+</div>
+                  <p className="text-white/80 text-base">Active Experiments</p>
                 </div>
-                <div className="bg-white/10 p-6">
-                  <div className="text-3xl font-bold text-laps-gold mb-2">5</div>
-                  <p className="text-white/70 text-sm">Patents Filed</p>
+                <div className="bg-white/10 p-8">
+                  <div className="text-5xl font-bold text-laps-gold mb-3">5</div>
+                  <p className="text-white/80 text-base">Patents Filed</p>
                 </div>
-                <div className="bg-white/10 p-6">
-                  <div className="text-3xl font-bold text-laps-gold mb-2">10+</div>
-                  <p className="text-white/70 text-sm">Industry Partners</p>
+                <div className="bg-white/10 p-8">
+                  <div className="text-5xl font-bold text-laps-gold mb-3">10+</div>
+                  <p className="text-white/80 text-base">Industry Partners</p>
                 </div>
               </div>
             </motion.div>

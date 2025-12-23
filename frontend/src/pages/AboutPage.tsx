@@ -82,21 +82,23 @@ export function AboutPage() {
       {/* Our Story */}
       <section className="py-20 bg-white">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column - Story Content */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="bg-laps-light p-10 flex flex-col justify-center"
             >
-              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6 w-fit">
                 Our Story
               </h2>
-              <p className="text-laps-slate mb-6">
+              <p className="text-laps-slate mb-4">
                 LAPS Group was founded with a vision to create excellence across multiple domains. 
                 What started as a single venture has grown into a diversified group of companies, 
                 each contributing uniquely to their respective industries.
               </p>
-              <p className="text-laps-slate mb-6">
+              <p className="text-laps-slate mb-4">
                 The name LAPS represents our commitment to leading in every lap of the journey. 
                 Each division operates independently while sharing common values of innovation, 
                 quality, and customer-centricity.
@@ -114,36 +116,51 @@ export function AboutPage() {
               </Link>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-laps-light p-8"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                alt="LAPS Team"
-                className="w-full h-64 object-cover mb-6"
-              />
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-white">
-                  <div className="text-3xl font-bold text-laps-navy">5</div>
-                  <div className="text-sm text-laps-slate">Divisions</div>
+            {/* Right Column - Image + Stats Card */}
+            <div className="flex flex-col gap-4">
+              {/* Image Card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative overflow-hidden group h-[250px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  alt="LAPS Team"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-laps-navy/30" />
+              </motion.div>
+
+              {/* Stats Card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-gradient-to-br from-laps-navy to-laps-blue p-8 text-white flex-1"
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white/10 p-6 text-center">
+                    <div className="text-4xl font-bold text-laps-gold mb-1">5</div>
+                    <p className="text-sm text-white/70">Divisions</p>
+                  </div>
+                  <div className="bg-white/10 p-6 text-center">
+                    <div className="text-4xl font-bold text-laps-gold mb-1">15+</div>
+                    <p className="text-sm text-white/70">Cities</p>
+                  </div>
+                  <div className="bg-white/10 p-6 text-center">
+                    <div className="text-4xl font-bold text-laps-gold mb-1">100+</div>
+                    <p className="text-sm text-white/70">Team Members</p>
+                  </div>
+                  <div className="bg-white/10 p-6 text-center">
+                    <div className="text-4xl font-bold text-laps-gold mb-1">4+</div>
+                    <p className="text-sm text-white/70">Years of Excellence</p>
+                  </div>
                 </div>
-                <div className="text-center p-4 bg-white">
-                  <div className="text-3xl font-bold text-laps-navy">15+</div>
-                  <div className="text-sm text-laps-slate">Cities</div>
-                </div>
-                <div className="text-center p-4 bg-white">
-                  <div className="text-3xl font-bold text-laps-navy">100+</div>
-                  <div className="text-sm text-laps-slate">Team Members</div>
-                </div>
-                <div className="text-center p-4 bg-white">
-                  <div className="text-3xl font-bold text-laps-navy">4+</div>
-                  <div className="text-sm text-laps-slate">Years</div>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
