@@ -70,7 +70,7 @@ export function NewsSection() {
         {/* Main News Grid - 3 columns */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
           {/* Left - Image Carousel */}
-          <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[400px] rounded-lg overflow-hidden bg-laps-navy">
+          <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[400px] overflow-hidden bg-laps-navy">
             {newsCarouselItems.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -93,7 +93,7 @@ export function NewsSection() {
                 <button
                   key={index}
                   onClick={() => setCurrentNewsSlide(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  className={`w-2.5 h-2.5 transition-all ${
                     index === currentNewsSlide ? 'bg-white' : 'bg-white/40'
                   }`}
                 />
@@ -102,7 +102,7 @@ export function NewsSection() {
           </div>
 
           {/* Middle - Press Release */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col">
+          <div className="bg-white border border-gray-200 p-6 flex flex-col">
             <span className="text-laps-blue text-xs font-semibold tracking-wider uppercase mb-4">
               Press Release
             </span>
@@ -121,7 +121,7 @@ export function NewsSection() {
 
           {/* Right - Did You Know */}
           <div 
-            className="rounded-lg p-6 flex flex-col text-white relative overflow-hidden"
+            className="p-6 flex flex-col text-white relative overflow-hidden"
             style={{
               background: 'linear-gradient(135deg, #0A1628 0%, #0066CC 100%)'
             }}
@@ -135,7 +135,7 @@ export function NewsSection() {
             </p>
             <button 
               onClick={refreshFact}
-              className="self-center mt-6 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+              className="self-center mt-6 p-2 bg-white/20 hover:bg-white/30 transition-colors"
               aria-label="Show another fact"
             >
               <RefreshCw className={`w-5 h-5 ${isFactLoading ? 'animate-spin' : ''}`} />
@@ -146,9 +146,9 @@ export function NewsSection() {
         {/* Social Media Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Social Post Card - Facebook Style */}
-          <div className="bg-white border border-gray-200 rounded-lg p-5 relative hover:shadow-lg transition-shadow cursor-pointer group">
+          <div className="bg-white border border-gray-200 p-5 relative hover:shadow-lg transition-shadow cursor-pointer group">
             <div className="absolute top-5 left-5">
-              <div className="w-8 h-8 bg-[#1877F2] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#1877F2] flex items-center justify-center">
                 <Facebook className="w-4 h-4 text-white" />
               </div>
             </div>
@@ -164,9 +164,9 @@ export function NewsSection() {
           </div>
 
           {/* Social Post Card - Instagram Style */}
-          <div className="bg-white border border-gray-200 rounded-lg p-5 relative hover:shadow-lg transition-shadow cursor-pointer group">
+          <div className="bg-white border border-gray-200 p-5 relative hover:shadow-lg transition-shadow cursor-pointer group">
             <div className="absolute top-5 left-5">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] flex items-center justify-center">
                 <Instagram className="w-4 h-4 text-white" />
               </div>
             </div>
@@ -182,7 +182,7 @@ export function NewsSection() {
           </div>
 
           {/* Featured Image Card */}
-          <div className="relative rounded-lg overflow-hidden aspect-video md:aspect-auto md:h-auto cursor-pointer group">
+          <div className="relative overflow-hidden aspect-video md:aspect-auto md:h-auto cursor-pointer group">
             <img
               src={socialPosts[1].image}
               alt="Featured"
@@ -190,7 +190,7 @@ export function NewsSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-laps-navy via-laps-navy/50 to-transparent" />
             <div className="absolute top-4 right-4">
-              <div className="w-10 h-10 bg-white rounded flex items-center justify-center">
+              <div className="w-10 h-10 bg-white flex items-center justify-center">
                 <span className="text-laps-navy font-bold text-sm">LAPS</span>
               </div>
             </div>

@@ -49,7 +49,7 @@ export function TimelineSection() {
           {/* Column 1 */}
           <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDuration: '60s' }}>
             {[...bgImages.slice(0, 4), ...bgImages.slice(0, 4)].map((img, i) => (
-              <div key={`col1-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+              <div key={`col1-${i}`} className="w-48 h-64 overflow-hidden shadow-lg flex-shrink-0">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -57,7 +57,7 @@ export function TimelineSection() {
           {/* Column 2 */}
           <div className="flex flex-col gap-4 animate-scroll-down" style={{ animationDuration: '70s', marginTop: '-100px' }}>
             {[...bgImages.slice(4, 8), ...bgImages.slice(4, 8)].map((img, i) => (
-              <div key={`col2-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+              <div key={`col2-${i}`} className="w-48 h-64 overflow-hidden shadow-lg flex-shrink-0">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -65,7 +65,7 @@ export function TimelineSection() {
           {/* Column 3 */}
           <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDuration: '55s', marginTop: '-50px' }}>
             {[...bgImages.slice(8, 12), ...bgImages.slice(8, 12)].map((img, i) => (
-              <div key={`col3-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+              <div key={`col3-${i}`} className="w-48 h-64 overflow-hidden shadow-lg flex-shrink-0">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -73,7 +73,7 @@ export function TimelineSection() {
           {/* Column 4 */}
           <div className="flex flex-col gap-4 animate-scroll-down" style={{ animationDuration: '65s', marginTop: '-150px' }}>
             {[...bgImages.slice(0, 4), ...bgImages.slice(0, 4)].map((img, i) => (
-              <div key={`col4-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+              <div key={`col4-${i}`} className="w-48 h-64 overflow-hidden shadow-lg flex-shrink-0">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -81,7 +81,7 @@ export function TimelineSection() {
           {/* Column 5 */}
           <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDuration: '52s', marginTop: '-80px' }}>
             {[...bgImages.slice(4, 8), ...bgImages.slice(4, 8)].map((img, i) => (
-              <div key={`col5-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+              <div key={`col5-${i}`} className="w-48 h-64 overflow-hidden shadow-lg flex-shrink-0">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -89,7 +89,7 @@ export function TimelineSection() {
           {/* Column 6 */}
           <div className="flex flex-col gap-4 animate-scroll-down" style={{ animationDuration: '68s', marginTop: '-120px' }}>
             {[...bgImages.slice(8, 12), ...bgImages.slice(8, 12)].map((img, i) => (
-              <div key={`col6-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+              <div key={`col6-${i}`} className="w-48 h-64 overflow-hidden shadow-lg flex-shrink-0">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -97,7 +97,7 @@ export function TimelineSection() {
           {/* Column 7 */}
           <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDuration: '58s', marginTop: '-40px' }}>
             {[...bgImages.slice(0, 4), ...bgImages.slice(0, 4)].map((img, i) => (
-              <div key={`col7-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+              <div key={`col7-${i}`} className="w-48 h-64 overflow-hidden shadow-lg flex-shrink-0">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -105,7 +105,7 @@ export function TimelineSection() {
           {/* Column 8 */}
           <div className="flex flex-col gap-4 animate-scroll-down" style={{ animationDuration: '62s', marginTop: '-90px' }}>
             {[...bgImages.slice(4, 8), ...bgImages.slice(4, 8)].map((img, i) => (
-              <div key={`col8-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+              <div key={`col8-${i}`} className="w-48 h-64 overflow-hidden shadow-lg flex-shrink-0">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -215,7 +215,7 @@ export function TimelineSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="rounded-2xl relative overflow-visible bg-laps-blue"
+              className="relative overflow-visible bg-laps-blue"
             >
               <div className="p-6">
                 <span className="text-white/80 text-xs font-semibold tracking-wider uppercase">
@@ -225,7 +225,7 @@ export function TimelineSection() {
                   LAPS Group Impact
                 </h3>
                 <div className="flex items-start gap-3">
-                  <div className="w-1 min-h-[50px] bg-laps-gold rounded-full flex-shrink-0"></div>
+                  <div className="w-1 min-h-[50px] bg-laps-gold flex-shrink-0"></div>
                   <p className="text-white/80 text-sm leading-relaxed">
                     With 5 thriving divisions and 100+ team members, LAPS Group has expanded to 15+ cities in just 4 years.
                   </p>
@@ -239,7 +239,7 @@ export function TimelineSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative rounded-xl p-6 min-h-[200px] overflow-hidden group cursor-pointer"
+              className="relative p-6 min-h-[200px] overflow-hidden group cursor-pointer"
             >
               {/* Background Image */}
               <div 
@@ -280,7 +280,7 @@ export function TimelineSection() {
                   className="flex flex-col items-center group"
                 >
                   <div 
-                    className={`w-4 h-4 rounded-full border-2 transition-all ${
+                    className={`w-4 h-4 border-2 transition-all ${
                       idx === activeIndex 
                         ? 'bg-laps-gold border-laps-gold scale-125' 
                         : 'bg-white/20 border-white/50 group-hover:border-laps-gold'
