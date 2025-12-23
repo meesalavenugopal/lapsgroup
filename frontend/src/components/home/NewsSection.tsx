@@ -146,7 +146,7 @@ export function NewsSection() {
         {/* Social Media Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Social Post Card - Facebook Style */}
-          <div className="bg-gray-50 rounded-lg p-5 relative">
+          <div className="bg-white border border-gray-200 rounded-lg p-5 relative hover:shadow-lg transition-shadow cursor-pointer group">
             <div className="absolute top-5 left-5">
               <div className="w-8 h-8 bg-[#1877F2] rounded-lg flex items-center justify-center">
                 <Facebook className="w-4 h-4 text-white" />
@@ -159,12 +159,12 @@ export function NewsSection() {
               <span className="text-laps-slate text-xs">{socialPosts[0].time}</span>
             </div>
             <div className="absolute bottom-5 right-5">
-              <ArrowRight className="w-5 h-5 text-laps-slate" />
+              <ArrowRight className="w-5 h-5 text-laps-slate group-hover:text-laps-blue transition-colors" />
             </div>
           </div>
 
           {/* Social Post Card - Instagram Style */}
-          <div className="bg-gray-50 rounded-lg p-5 relative">
+          <div className="bg-white border border-gray-200 rounded-lg p-5 relative hover:shadow-lg transition-shadow cursor-pointer group">
             <div className="absolute top-5 left-5">
               <div className="w-8 h-8 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-lg flex items-center justify-center">
                 <Instagram className="w-4 h-4 text-white" />
@@ -177,30 +177,30 @@ export function NewsSection() {
               <span className="text-laps-slate text-xs">{socialPosts[1].time}</span>
             </div>
             <div className="absolute bottom-5 right-5">
-              <ArrowRight className="w-5 h-5 text-laps-slate" />
+              <ArrowRight className="w-5 h-5 text-laps-slate group-hover:text-laps-blue transition-colors" />
             </div>
           </div>
 
           {/* Featured Image Card */}
-          <div className="relative rounded-lg overflow-hidden aspect-video md:aspect-auto md:h-auto">
+          <div className="relative rounded-lg overflow-hidden aspect-video md:aspect-auto md:h-auto cursor-pointer group">
             <img
               src={socialPosts[1].image}
               alt="Featured"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-laps-navy via-laps-navy/50 to-transparent" />
             <div className="absolute top-4 right-4">
               <div className="w-10 h-10 bg-white rounded flex items-center justify-center">
                 <span className="text-laps-navy font-bold text-sm">LAPS</span>
               </div>
             </div>
-            <div className="absolute bottom-4 right-4 text-right text-white">
+            <div className="absolute bottom-6 left-6 text-white">
               <p className="text-lg font-serif italic">The Journey of</p>
               <p className="text-xl font-bold">LAPS GROUP</p>
               <p className="text-sm mt-2 text-white/80">Watch the full story</p>
             </div>
-            <div className="absolute bottom-4 right-4">
-              <ArrowRight className="w-5 h-5 text-white" />
+            <div className="absolute bottom-6 right-6">
+              <ArrowRight className="w-5 h-5 text-laps-gold" />
             </div>
           </div>
         </div>
