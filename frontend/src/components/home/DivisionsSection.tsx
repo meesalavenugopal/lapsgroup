@@ -24,7 +24,7 @@ export function DivisionsSection() {
   }, [featuredDivisions.length]);
 
   return (
-    <section className="py-20 bg-laps-light" id="divisions">
+    <section className="py-20 bg-white" id="divisions">
       <div className="container-wide">
         {/* Section Header */}
         <div className="mb-10">

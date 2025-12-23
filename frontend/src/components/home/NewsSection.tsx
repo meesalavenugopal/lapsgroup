@@ -57,7 +57,7 @@ export function NewsSection() {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-laps-light">
       <div className="container-wide">
         {/* Section Header */}
         <div className="mb-10">
