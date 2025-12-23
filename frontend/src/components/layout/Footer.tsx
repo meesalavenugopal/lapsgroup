@@ -5,11 +5,10 @@ import {
   Instagram, 
   Linkedin, 
   Youtube,
-  Mail 
+  ArrowRight
 } from 'lucide-react';
 import { divisions, founderInfo } from '@/data/content';
 import { Logo } from '@components/common/Logo';
-import { BrandCarousel } from '@components/common/BrandCarousel';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -47,9 +46,6 @@ export function Footer() {
 
   return (
     <footer className="bg-laps-navy text-white">
-      {/* Brand Carousel */}
-      <BrandCarousel />
-
       {/* Main Footer Content */}
       <div className="container-wide py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
@@ -68,25 +64,25 @@ export function Footer() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 
+                  className="flex-1 px-4 py-2 bg-white/10 border border-white/20 
                              text-white placeholder:text-laps-slate text-sm
-                             focus:outline-none focus:border-laps-blue"
+                             focus:outline-none focus:border-laps-gold"
                 />
-                <button className="p-2 bg-laps-blue rounded-lg hover:bg-blue-600 transition-colors">
-                  <Mail className="w-5 h-5" />
+                <button className="px-4 py-2 border-2 border-laps-gold text-laps-gold hover:bg-laps-gold hover:text-laps-navy transition-all duration-300 flex items-center gap-2">
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-3 mt-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/10 hover:bg-laps-blue transition-colors"
+                  className="p-2 border border-white/20 hover:border-laps-gold hover:text-laps-gold transition-all duration-300"
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4" />
