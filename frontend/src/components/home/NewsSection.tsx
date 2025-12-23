@@ -123,7 +123,7 @@ export function NewsSection() {
           <div 
             className="rounded-lg p-6 flex flex-col text-white relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)'
+              background: 'linear-gradient(135deg, #0A1628 0%, #0066CC 100%)'
             }}
           >
             <span className="text-white/80 text-xs font-semibold tracking-wider uppercase mb-2">
