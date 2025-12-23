@@ -124,14 +124,18 @@ export function Header() {
                       className={clsx(
                         'text-sm font-medium tracking-wide transition-colors relative group',
                         useDarkHeader
-                          ? 'text-laps-navy hover:text-laps-gold'
-                          : 'text-white hover:text-laps-gold'
+                          ? location.pathname === link.href 
+                            ? 'text-laps-gold' 
+                            : 'text-laps-navy hover:text-laps-gold'
+                          : location.pathname === link.href 
+                            ? 'text-laps-gold' 
+                            : 'text-white hover:text-laps-gold'
                       )}
                     >
                       {link.name}
                       <span className={clsx(
-                        'absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full',
-                        useDarkHeader ? 'bg-laps-gold' : 'bg-laps-gold'
+                        'absolute -bottom-1 left-0 h-0.5 transition-all duration-300 bg-laps-gold',
+                        location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                       )} />
                     </Link>
                   )}
@@ -156,10 +160,10 @@ export function Header() {
               <Link
                 to="/contact"
                 className={clsx(
-                  'hidden md:flex items-center gap-1.5 px-4 py-2 text-xs font-medium rounded transition-all duration-300',
+                  'hidden md:flex items-center gap-1.5 px-4 py-2 text-xs font-medium border-2 transition-all duration-300',
                   useDarkHeader
-                    ? 'bg-laps-navy text-white hover:bg-laps-gold'
-                    : 'bg-white text-laps-navy hover:bg-laps-gold hover:text-white'
+                    ? 'border-laps-navy text-laps-navy hover:bg-laps-navy hover:text-white'
+                    : 'border-white text-white hover:bg-white hover:text-laps-navy'
                 )}
               >
                 Get in Touch
