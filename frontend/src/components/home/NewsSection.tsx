@@ -61,10 +61,7 @@ export function NewsSection() {
       <div className="container-wide">
         {/* Section Header */}
         <div className="mb-10">
-          <div className="flex items-center gap-4">
-            <div className="w-1 h-8 bg-laps-blue"></div>
-            <h2 className="text-2xl font-semibold text-laps-navy">In the News</h2>
-          </div>
+          <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">In the News</h2>
         </div>
 
         {/* Main News Grid - 3 columns */}
