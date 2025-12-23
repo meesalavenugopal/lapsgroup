@@ -1,7 +1,25 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Building2, Code2, Megaphone, PartyPopper, Camera } from 'lucide-react';
 import { divisions } from '@/data/content';
+
+// Background images for the hero tilted grid
+const heroImages = [
+  'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80',
+];
+
+const divisionIcons = {
+  architecture: Building2,
+  apps: Code2,
+  ads: Megaphone,
+  suites: PartyPopper,
+  photo: Camera,
+};
 
 export function AboutPage() {
   const aboutLinks = [
@@ -51,9 +69,51 @@ export function AboutPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-laps-navy text-white">
-        <div className="container-wide">
+      {/* Hero Section with Tilted Image Grid */}
+      <section className="py-20 bg-laps-navy text-white relative overflow-hidden min-h-[400px]">
+        {/* Tilted Image Grid Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute flex gap-3"
+            style={{ 
+              transform: 'rotate(-12deg) scale(1.5)',
+              transformOrigin: 'center center',
+              top: '-30%',
+              right: '-20%',
+              width: '80%',
+              height: '160%'
+            }}
+          >
+            {/* Column 1 */}
+            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '60s' }}>
+              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
+                <div key={`col1-${i}`} className="w-40 h-52 overflow-hidden shadow-lg flex-shrink-0">
+                  <img src={img} alt="" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+            {/* Column 2 */}
+            <div className="flex flex-col gap-3 animate-scroll-down" style={{ animationDuration: '55s', marginTop: '-80px' }}>
+              {[...heroImages.slice(3, 6), ...heroImages.slice(3, 6)].map((img, i) => (
+                <div key={`col2-${i}`} className="w-40 h-52 overflow-hidden shadow-lg flex-shrink-0">
+                  <img src={img} alt="" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+            {/* Column 3 */}
+            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '50s', marginTop: '-40px' }}>
+              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
+                <div key={`col3-${i}`} className="w-40 h-52 overflow-hidden shadow-lg flex-shrink-0">
+                  <img src={img} alt="" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/40" />
+        </div>
+
+        <div className="container-wide relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -312,7 +372,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Our Divisions */}
+      {/* Our Divisions - Bento Grid Layout */}
       <section className="py-20 bg-white">
         <div className="container-wide">
           <div className="mb-10">
@@ -321,34 +381,155 @@ export function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {divisions.map((division, index) => (
-              <motion.div
-                key={division.key}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Link
-                  to={`/${division.slug}`}
-                  className="block bg-laps-light p-6 hover:shadow-lg transition-shadow border-l-4"
-                  style={{ borderColor: division.accentColor }}
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+            {/* Architecture - Large Card */}
+            <Link
+              to={`/${divisions[0].slug}`}
+              className="lg:col-span-5 relative h-[300px] overflow-hidden group"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80"
+                alt={divisions[0].name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy via-laps-navy/40 to-transparent" />
+              <div className="absolute top-4 left-4">
+                <div 
+                  className="w-12 h-12 flex items-center justify-center"
+                  style={{ backgroundColor: divisions[0].accentColor }}
                 >
-                  <h3 className="text-lg font-semibold text-laps-navy mb-2">
-                    {division.name}
-                  </h3>
-                  <p className="text-sm text-laps-slate mb-4">{division.tagline}</p>
-                  <span
-                    className="flex items-center gap-2 text-sm font-medium"
-                    style={{ color: division.accentColor }}
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
+                  <Building2 className="w-6 h-6 text-white" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">{divisions[0].name}</h3>
+                <p className="text-white/80 text-sm mb-3">{divisions[0].tagline}</p>
+                <span 
+                  className="inline-flex items-center gap-2 font-medium group-hover:gap-3 transition-all"
+                  style={{ color: divisions[0].accentColor }}
+                >
+                  Explore Division
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </Link>
+
+            {/* Apps - Medium Card */}
+            <Link
+              to={`/${divisions[1].slug}`}
+              className="lg:col-span-4 p-6 flex flex-col h-[300px] group hover:shadow-lg transition-shadow"
+              style={{ backgroundColor: divisions[1].accentColor }}
+            >
+              <div className="w-12 h-12 bg-white/20 flex items-center justify-center mb-4">
+                <Code2 className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">{divisions[1].name}</h3>
+              <p className="text-white/80 text-sm mb-3">{divisions[1].tagline}</p>
+              <div className="flex items-start gap-3 flex-1">
+                <div className="w-1 bg-white/30 self-stretch"></div>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {divisions[1].description}
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all mt-4">
+                Explore Division
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+
+            {/* Ads - Accent Card */}
+            <Link
+              to={`/${divisions[2].slug}`}
+              className="lg:col-span-3 bg-laps-light p-6 flex flex-col h-[300px] group hover:shadow-lg transition-shadow border-l-4"
+              style={{ borderColor: divisions[2].accentColor }}
+            >
+              <div 
+                className="w-12 h-12 flex items-center justify-center mb-4"
+                style={{ backgroundColor: `${divisions[2].accentColor}20` }}
+              >
+                <Megaphone className="w-6 h-6" style={{ color: divisions[2].accentColor }} />
+              </div>
+              <h3 className="text-xl font-bold text-laps-navy mb-2">{divisions[2].name}</h3>
+              <p className="text-laps-slate text-sm mb-3">{divisions[2].tagline}</p>
+              <p className="text-laps-slate/70 text-sm leading-relaxed flex-1">
+                {divisions[2].description}
+              </p>
+              <span 
+                className="inline-flex items-center gap-2 font-medium group-hover:gap-3 transition-all mt-4"
+                style={{ color: divisions[2].accentColor }}
+              >
+                Explore Division
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </div>
+
+          {/* Second Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+            {/* Suites Card */}
+            <Link
+              to={`/${divisions[3].slug}`}
+              className="relative h-[240px] overflow-hidden group"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+                alt={divisions[3].name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/60 to-transparent" />
+              <div className="absolute top-4 left-4">
+                <div 
+                  className="w-10 h-10 flex items-center justify-center"
+                  style={{ backgroundColor: divisions[3].accentColor }}
+                >
+                  <PartyPopper className="w-5 h-5 text-white" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 p-6 max-w-md">
+                <h3 className="text-xl font-bold text-white mb-2">{divisions[3].name}</h3>
+                <p className="text-white/80 text-sm mb-3">{divisions[3].tagline}</p>
+                <span 
+                  className="inline-flex items-center gap-2 font-medium group-hover:gap-3 transition-all"
+                  style={{ color: divisions[3].accentColor }}
+                >
+                  Explore Division
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </Link>
+
+            {/* Photo Studios Card */}
+            <Link
+              to={`/${divisions[4].slug}`}
+              className="relative h-[240px] overflow-hidden group"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80"
+                alt={divisions[4].name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-laps-navy via-laps-navy/60 to-transparent" />
+              <div className="absolute top-4 right-4">
+                <div 
+                  className="w-10 h-10 flex items-center justify-center"
+                  style={{ backgroundColor: divisions[4].accentColor }}
+                >
+                  <Camera className="w-5 h-5 text-white" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 right-0 p-6 text-right max-w-md">
+                <h3 className="text-xl font-bold text-white mb-2">{divisions[4].name}</h3>
+                <p className="text-white/80 text-sm mb-3">{divisions[4].tagline}</p>
+                <span 
+                  className="inline-flex items-center gap-2 font-medium group-hover:gap-3 transition-all justify-end"
+                  style={{ color: divisions[4].accentColor }}
+                >
+                  Explore Division
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

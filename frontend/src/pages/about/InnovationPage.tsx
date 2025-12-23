@@ -3,6 +3,15 @@ import { Cpu, Sparkles, Rocket, Zap, Brain, Code } from 'lucide-react';
 import { divisions } from '@/data/content';
 import { Link } from 'react-router-dom';
 
+const heroImages = [
+  'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80',
+  'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=400&q=80',
+];
+
 export function InnovationPage() {
   const innovations = [
     {
@@ -51,9 +60,39 @@ export function InnovationPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-laps-navy text-white">
-        <div className="container-wide">
+      {/* Hero Section with Tilted Image Grid */}
+      <section className="py-20 bg-laps-navy text-white relative overflow-hidden min-h-[350px]">
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute flex gap-3"
+            style={{ 
+              transform: 'rotate(-12deg) scale(1.5)',
+              transformOrigin: 'center center',
+              top: '-30%',
+              right: '-20%',
+              width: '70%',
+              height: '160%'
+            }}
+          >
+            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '60s' }}>
+              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
+                <div key={`col1-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
+                  <img src={img} alt="" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-3 animate-scroll-down" style={{ animationDuration: '55s', marginTop: '-60px' }}>
+              {[...heroImages.slice(3, 6), ...heroImages.slice(3, 6)].map((img, i) => (
+                <div key={`col2-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
+                  <img src={img} alt="" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/40" />
+        </div>
+
+        <div className="container-wide relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

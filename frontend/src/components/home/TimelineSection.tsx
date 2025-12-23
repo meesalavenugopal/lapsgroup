@@ -244,7 +244,7 @@ export function TimelineSection() {
               {/* Background Image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80)' }}
+                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80)' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-laps-navy via-laps-navy/80 to-laps-navy/40" />
               <Link to="/about" className="relative block h-full z-10">
