@@ -32,7 +32,7 @@ export function HomePage() {
       </div>
 
       {/* Careers Teaser */}
-      <div id="contact">
+      <div id="careers">
         <CareersSection />
       </div>
     </>

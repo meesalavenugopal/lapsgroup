@@ -12,7 +12,7 @@ const sections: Section[] = [
   { id: 'news', label: 'News' },
   { id: 'divisions', label: 'Divisions' },
   { id: 'journey', label: 'Our Journey' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'careers', label: 'Careers' },
 ];
 
 export function FloatingNav() {
