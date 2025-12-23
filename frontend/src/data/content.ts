@@ -76,7 +76,7 @@ export const divisions: Division[] = [
   },
   {
     key: 'suites',
-    name: 'Party Suites',
+    name: 'LAPS Suites',
     fullName: 'Living and Party Suites',
     tagline: 'Curating Unforgettable Moments',
     description: 'Premium event management and hospitality services that transform occasions into extraordinary experiences.',
@@ -100,7 +100,7 @@ export const divisions: Division[] = [
   },
   {
     key: 'photo',
-    name: 'Photo Studios',
+    name: 'LAPS Studios',
     fullName: 'Lifestyle and Photography Studios',
     tagline: 'Capturing Life\'s Canvas',
     description: 'Professional photography and creative visual storytelling that brings moments and brands to life.',
@@ -159,7 +159,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: '4',
     title: 'Curating Unforgettable Moments',
-    subtitle: 'LAPS Party Suites',
+    subtitle: 'LAPS Suites',
     description: 'Premium event experiences and hospitality services that transform celebrations into cherished memories.',
     image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1920&q=80',
     ctaText: 'Plan Your Event',
@@ -221,11 +221,11 @@ export const timelineEvents: TimelineEvent[] = [
   {
     year: '2023',
     title: 'Multi-Division Growth',
-    description: 'Ads & Services and Photo Studios divisions launched, completing our creative ecosystem.',
+    description: 'Ads & Services and LAPS Studios divisions launched, completing our creative ecosystem.',
   },
   {
     year: '2024',
-    title: 'Party Suites & Expansion',
+    title: 'LAPS Suites & Expansion',
     description: 'Events division launched, marking our entry into premium hospitality.',
   },
 ];

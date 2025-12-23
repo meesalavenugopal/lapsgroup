@@ -91,7 +91,7 @@ DIVISIONS = [
     {
         "id": "4",
         "key": "suites",
-        "name": "Party Suites",
+        "name": "LAPS Suites",
         "full_name": "Living and Party Suites",
         "tagline": "Curating Unforgettable Moments",
         "description": "Premium event management and hospitality services that transform occasions into extraordinary experiences.",
@@ -117,7 +117,7 @@ DIVISIONS = [
     {
         "id": "5",
         "key": "photo",
-        "name": "Photo Studios",
+        "name": "LAPS Studios",
         "full_name": "Lifestyle and Photography Studios",
         "tagline": "Capturing Life's Canvas",
         "description": "Professional photography and creative visual storytelling that brings moments and brands to life.",
