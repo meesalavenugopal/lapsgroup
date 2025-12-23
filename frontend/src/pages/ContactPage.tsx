@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Building2, Code2, Megaphone, PartyPopper, Camera, Clock, ChevronLeft, ChevronRight, Pause, Play, ArrowRight, MessageCircle, HelpCircle, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, ChevronLeft, ChevronRight, Pause, Play, ArrowRight, MessageCircle, HelpCircle, ExternalLink } from 'lucide-react';
 import { divisions } from '@/data/content';
 import { DivisionKey } from '@/types';
 import clsx from 'clsx';
@@ -83,12 +83,13 @@ export function ContactPage() {
     setIsSubmitted(true);
   };
 
-  const iconMap: Record<string, typeof Building2> = {
-    architecture: Building2,
-    apps: Code2,
-    ads: Megaphone,
-    suites: PartyPopper,
-    photo: Camera,
+  // Division images for contact cards
+  const divisionImages: Record<string, string> = {
+    architecture: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=400&q=80',
+    apps: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80',
+    ads: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&q=80',
+    suites: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80',
+    photo: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400&q=80',
   };
 
   const offices = [
@@ -229,52 +230,69 @@ export function ContactPage() {
       <section className="py-12 bg-laps-navy">
         <div className="container-wide">
           <div className="grid grid-cols-12 gap-4">
-            {/* Large email card */}
+            {/* Large email card with background image */}
             <motion.a
               href="mailto:hello@lapsgroup.com"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="col-span-12 md:col-span-6 bg-laps-gold p-8 flex items-center justify-between group"
+              className="col-span-12 md:col-span-6 relative overflow-hidden group min-h-[180px]"
             >
-              <div className="flex items-center gap-6">
-                <div className="p-4 bg-laps-navy/10">
-                  <Mail className="w-8 h-8 text-laps-navy" />
-                </div>
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=800&q=80)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-laps-gold/95 via-laps-gold/90 to-laps-gold/80" />
+              <div className="relative h-full p-8 flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-laps-navy/60">Email Us</p>
+                  <Mail className="w-10 h-10 text-laps-navy/30 mb-3" />
+                  <p className="text-sm text-laps-navy/60 uppercase tracking-wider font-medium">Email Us</p>
                   <p className="text-2xl font-bold text-laps-navy">hello@lapsgroup.com</p>
                 </div>
+                <ArrowRight className="w-6 h-6 text-laps-navy group-hover:translate-x-2 transition-transform" />
               </div>
-              <ArrowRight className="w-6 h-6 text-laps-navy group-hover:translate-x-2 transition-transform" />
             </motion.a>
 
-            {/* Phone card */}
+            {/* Phone card with background image */}
             <motion.a
               href="tel:+919876543210"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="col-span-6 md:col-span-3 bg-white/10 p-6 group hover:bg-white/20 transition-colors"
+              className="col-span-6 md:col-span-3 relative overflow-hidden group min-h-[180px]"
             >
-              <Phone className="w-8 h-8 text-laps-gold mb-4" />
-              <p className="text-sm text-white/50">Call Us</p>
-              <p className="text-lg font-bold text-white">+91 98765 43210</p>
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&q=80)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy/95 via-laps-navy/80 to-laps-navy/60" />
+              <div className="relative h-full p-6 flex flex-col justify-end">
+                <Phone className="w-8 h-8 text-laps-gold mb-3" />
+                <p className="text-sm text-white/50 uppercase tracking-wider">Call Us</p>
+                <p className="text-lg font-bold text-white">+91 98765 43210</p>
+              </div>
             </motion.a>
 
-            {/* Location card */}
+            {/* Location card with background image */}
             <motion.a
               href="#locations"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="col-span-6 md:col-span-3 bg-white/5 p-6 group hover:bg-white/10 transition-colors"
+              className="col-span-6 md:col-span-3 relative overflow-hidden group min-h-[180px]"
             >
-              <MapPin className="w-8 h-8 text-emerald-400 mb-4" />
-              <p className="text-sm text-white/50">Visit Us</p>
-              <p className="text-lg font-bold text-white">Hyderabad, India</p>
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/95 via-emerald-900/80 to-emerald-900/60" />
+              <div className="relative h-full p-6 flex flex-col justify-end">
+                <MapPin className="w-8 h-8 text-emerald-400 mb-3" />
+                <p className="text-sm text-white/50 uppercase tracking-wider">Visit Us</p>
+                <p className="text-lg font-bold text-white">Hyderabad, India</p>
+              </div>
             </motion.a>
           </div>
         </div>
@@ -372,21 +390,25 @@ export function ContactPage() {
                 <h3 className="text-xl font-bold text-white mb-6">Division Contacts</h3>
                 <div className="space-y-3">
                   {divisions.map((div) => {
-                    const Icon = iconMap[div.key];
+                    const divImage = divisionImages[div.key];
                     return (
                       <a
                         key={div.key}
                         href={`mailto:${div.slug}@lapsgroup.com`}
-                        className="flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 transition-colors group"
+                        className="flex items-center gap-4 p-3 bg-white/5 hover:bg-white/10 transition-colors group relative overflow-hidden"
                       >
-                        <div className="p-2" style={{ backgroundColor: `${div.accentColor}20` }}>
-                          <Icon className="w-5 h-5" style={{ color: div.accentColor }} />
+                        <div 
+                          className="w-14 h-14 flex-shrink-0 bg-cover bg-center"
+                          style={{ 
+                            backgroundImage: `url(${divImage})`,
+                            borderLeft: `3px solid ${div.accentColor}`
+                          }}
+                        />
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-white text-sm truncate">{div.name}</p>
+                          <p className="text-xs text-white/50 truncate">{div.slug}@lapsgroup.com</p>
                         </div>
-                        <div className="flex-1">
-                          <p className="font-medium text-white text-sm">{div.name}</p>
-                          <p className="text-xs text-white/50">{div.slug}@lapsgroup.com</p>
-                        </div>
-                        <Mail className="w-4 h-4 text-laps-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <ExternalLink className="w-4 h-4 text-laps-gold opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                       </a>
                     );
                   })}
@@ -417,21 +439,34 @@ export function ContactPage() {
                 </div>
               </motion.div>
 
-              {/* Global reach - Small */}
+              {/* Global reach - With world map background */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-laps-gold p-6"
+                className="relative overflow-hidden"
               >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Globe className="w-8 h-8 text-laps-navy/30 mb-2" />
-                    <p className="text-sm text-laps-navy/70">Global Reach</p>
-                    <p className="text-2xl font-bold text-laps-navy">10+ Countries</p>
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80)' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-laps-gold/95 to-laps-gold/85" />
+                <div className="relative p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-laps-navy/70 uppercase tracking-wider font-medium">Global Reach</p>
+                      <p className="text-3xl font-bold text-laps-navy">10+ Countries</p>
+                      <p className="text-sm text-laps-navy/60 mt-1">Serving clients worldwide</p>
+                    </div>
+                    <div className="w-16 h-16 rounded-full bg-laps-navy/10 flex items-center justify-center">
+                      <img 
+                        src="https://cdn-icons-png.flaticon.com/512/921/921490.png" 
+                        alt="Globe" 
+                        className="w-10 h-10 opacity-80"
+                      />
+                    </div>
                   </div>
-                  <div className="text-5xl font-bold text-laps-navy/10">🌍</div>
                 </div>
               </motion.div>
             </div>
