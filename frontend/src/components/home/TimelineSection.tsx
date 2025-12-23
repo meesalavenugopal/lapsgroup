@@ -4,6 +4,22 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { timelineEvents } from '@/data/content';
 
+// Background images for the tilted grid
+const bgImages = [
+  'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=400&q=80', // Architecture
+  'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=400&q=80', // Apps/Tech
+  'https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=400&q=80', // Marketing/Ads
+  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=400&q=80', // Events/Suites
+  'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=400&q=80', // Photography
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80', // Office
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80', // Team
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80', // Analytics
+  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80', // Workspace
+  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80', // Meeting
+  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80', // Collaboration
+  'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=400&q=80', // Design
+];
+
 export function TimelineSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -16,13 +32,103 @@ export function TimelineSection() {
   };
 
   return (
-    <section className="py-20 bg-laps-light">
-      <div className="container-wide">
+    <section className="py-20 relative overflow-hidden min-h-[700px]">
+      {/* Tilted Image Grid Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div 
+          className="absolute inset-0 flex gap-4"
+          style={{ 
+            transform: 'rotate(-12deg) scale(1.5)',
+            transformOrigin: 'center center',
+            top: '-20%',
+            left: '-10%',
+            width: '120%',
+            height: '140%'
+          }}
+        >
+          {/* Column 1 */}
+          <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDuration: '60s' }}>
+            {[...bgImages.slice(0, 4), ...bgImages.slice(0, 4)].map((img, i) => (
+              <div key={`col1-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Column 2 */}
+          <div className="flex flex-col gap-4 animate-scroll-down" style={{ animationDuration: '70s', marginTop: '-100px' }}>
+            {[...bgImages.slice(4, 8), ...bgImages.slice(4, 8)].map((img, i) => (
+              <div key={`col2-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Column 3 */}
+          <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDuration: '55s', marginTop: '-50px' }}>
+            {[...bgImages.slice(8, 12), ...bgImages.slice(8, 12)].map((img, i) => (
+              <div key={`col3-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Column 4 */}
+          <div className="flex flex-col gap-4 animate-scroll-down" style={{ animationDuration: '65s', marginTop: '-150px' }}>
+            {[...bgImages.slice(0, 4), ...bgImages.slice(0, 4)].map((img, i) => (
+              <div key={`col4-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Column 5 */}
+          <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDuration: '52s', marginTop: '-80px' }}>
+            {[...bgImages.slice(4, 8), ...bgImages.slice(4, 8)].map((img, i) => (
+              <div key={`col5-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Column 6 */}
+          <div className="flex flex-col gap-4 animate-scroll-down" style={{ animationDuration: '68s', marginTop: '-120px' }}>
+            {[...bgImages.slice(8, 12), ...bgImages.slice(8, 12)].map((img, i) => (
+              <div key={`col6-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Column 7 */}
+          <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDuration: '58s', marginTop: '-40px' }}>
+            {[...bgImages.slice(0, 4), ...bgImages.slice(0, 4)].map((img, i) => (
+              <div key={`col7-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Column 8 */}
+          <div className="flex flex-col gap-4 animate-scroll-down" style={{ animationDuration: '62s', marginTop: '-90px' }}>
+            {[...bgImages.slice(4, 8), ...bgImages.slice(4, 8)].map((img, i) => (
+              <div key={`col8-${i}`} className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Colored overlay for content readability */}
+        <div className="absolute inset-0 bg-laps-navy/60" />
+        {/* Dotted Pattern Overlay */}
+        <div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+            backgroundSize: '4px 4px'
+          }}
+        />
+      </div>
+
+      <div className="container-wide relative z-10">
         {/* Section Header */}
         <div className="mb-10">
           <div className="flex items-center gap-4">
-            <div className="w-1 h-8 bg-laps-blue"></div>
-            <h2 className="text-2xl font-semibold text-laps-navy">Our Journey</h2>
+            <div className="w-1 h-8 bg-laps-gold"></div>
+            <h2 className="text-2xl font-semibold text-white">Our Journey</h2>
           </div>
         </div>
 
@@ -166,8 +272,8 @@ export function TimelineSection() {
 
         {/* Bottom Timeline Markers */}
         <div className="mt-10 hidden md:block">
-          <div className="relative">
-            <div className="absolute left-0 right-0 top-1/2 h-px bg-gray-300" />
+          <div className="relative py-6">
+            <div className="absolute left-0 right-0 top-1/2 h-px bg-white/30" />
             <div className="flex justify-between relative">
               {timelineEvents.map((event, idx) => (
                 <button
@@ -179,12 +285,12 @@ export function TimelineSection() {
                     className={`w-4 h-4 rounded-full border-2 transition-all ${
                       idx === activeIndex 
                         ? 'bg-laps-gold border-laps-gold scale-125' 
-                        : 'bg-white border-gray-300 group-hover:border-laps-blue'
+                        : 'bg-white/20 border-white/50 group-hover:border-laps-gold'
                     }`}
                   />
                   <span 
                     className={`mt-3 text-sm font-medium transition-colors ${
-                      idx === activeIndex ? 'text-laps-navy' : 'text-laps-slate group-hover:text-laps-blue'
+                      idx === activeIndex ? 'text-white' : 'text-white/70 group-hover:text-laps-gold'
                     }`}
                   >
                     {event.year}
