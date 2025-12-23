@@ -8,6 +8,7 @@ export function LeadershipPage() {
       name: founderInfo.name,
       title: founderInfo.title,
       initials: 'VM',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
       linkedin: founderInfo.linkedin,
       quote: founderInfo.quote,
       bio: 'Visionary leader with expertise in architecture, technology, and business strategy. Founded LAPS Group to create excellence across multiple domains.',
@@ -16,6 +17,7 @@ export function LeadershipPage() {
       name: 'Rahul Sharma',
       title: 'Chief Technology Officer',
       initials: 'RS',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
       linkedin: '#',
       bio: 'Leading our technology initiatives with 15+ years of experience in software development and digital transformation.',
     },
@@ -23,6 +25,7 @@ export function LeadershipPage() {
       name: 'Priya Patel',
       title: 'Chief Creative Officer',
       initials: 'PP',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
       linkedin: '#',
       bio: 'Award-winning creative director bringing innovative design thinking to all LAPS Group divisions.',
     },
@@ -30,6 +33,7 @@ export function LeadershipPage() {
       name: 'Amit Kumar',
       title: 'Chief Operations Officer',
       initials: 'AK',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80',
       linkedin: '#',
       bio: 'Operations expert ensuring seamless delivery across all business units and client engagements.',
     },
@@ -37,22 +41,52 @@ export function LeadershipPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - Clean and Simple */}
-      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
-        <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-              About LAPS Group
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Leadership</h1>
-            <p className="text-xl text-white/80">
-              Meet the visionary leaders driving innovation and excellence across the LAPS Group.
-            </p>
-          </motion.div>
+      {/* Hero Section - Dynamic with Image */}
+      <section className="relative min-h-[450px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1920&q=80" 
+            alt="Leadership" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/60" />
+        </div>
+
+        <div className="container-wide relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
+                About LAPS Group
+              </p>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Visionary <span className="text-laps-gold">Leadership</span>
+              </h1>
+              <p className="text-xl text-white/80 leading-relaxed">
+                Meet the visionary leaders driving innovation and excellence across the LAPS Group.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:flex items-center justify-end gap-6"
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20 text-center">
+                <div className="text-5xl font-bold text-laps-gold mb-2">4+</div>
+                <p className="text-white/80">Senior Leaders</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20 text-center">
+                <div className="text-5xl font-bold text-laps-gold mb-2">50+</div>
+                <p className="text-white/80">Years Combined</p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -64,24 +98,27 @@ export function LeadershipPage() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-laps-navy text-white p-12"
+              className="relative"
             >
-              <div className="w-32 h-32 bg-white/20 rounded-full mx-auto mb-8 flex items-center justify-center">
-                <span className="text-5xl font-bold">VM</span>
+              <div className="relative overflow-hidden">
+                <img 
+                  src={leaders[0].image}
+                  alt={founderInfo.name}
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-laps-navy to-transparent p-8">
+                  <h2 className="text-3xl font-bold text-white mb-1">{founderInfo.name}</h2>
+                  <p className="text-laps-gold text-lg">{founderInfo.title}</p>
+                </div>
               </div>
-              <div className="text-center">
-                <h2 className="text-3xl font-bold mb-2">{founderInfo.name}</h2>
-                <p className="text-laps-gold text-lg mb-6">{founderInfo.title}</p>
-                <a
-                  href={founderInfo.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-white hover:text-laps-gold transition-colors"
-                >
-                  <Linkedin className="w-5 h-5" />
-                  Connect on LinkedIn
-                </a>
-              </div>
+              <a
+                href={founderInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-4 right-4 bg-white p-3 shadow-lg hover:bg-laps-gold transition-colors group"
+              >
+                <Linkedin className="w-5 h-5 text-laps-navy group-hover:text-white" />
+              </a>
             </motion.div>
 
             <motion.div
@@ -122,12 +159,17 @@ export function LeadershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
               >
-                <div className="w-20 h-20 bg-laps-navy mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">{leader.initials}</span>
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={leader.image} 
+                    alt={leader.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-laps-navy/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <div className="text-center">
+                <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-laps-navy mb-1">{leader.name}</h3>
                   <p className="text-laps-gold text-sm font-medium mb-4">{leader.title}</p>
                   <p className="text-laps-slate text-sm mb-6">{leader.bio}</p>

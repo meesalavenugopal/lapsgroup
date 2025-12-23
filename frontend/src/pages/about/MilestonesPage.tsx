@@ -19,22 +19,60 @@ export function MilestonesPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - Clean and Simple */}
-      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
-        <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-              About LAPS Group
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Milestones</h1>
-            <p className="text-xl text-white/80">
-              A journey of growth, innovation, and achievements that have shaped LAPS Group into what it is today.
-            </p>
-          </motion.div>
+      {/* Hero Section - Dynamic with Image */}
+      <section className="relative min-h-[450px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80" 
+            alt="Milestones" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/60" />
+        </div>
+
+        <div className="container-wide relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
+                About LAPS Group
+              </p>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Our <span className="text-laps-gold">Milestones</span>
+              </h1>
+              <p className="text-xl text-white/80 leading-relaxed">
+                A journey of growth, innovation, and achievements that have shaped LAPS Group into what it is today.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block"
+            >
+              <div className="flex items-center gap-4">
+                <div className="bg-laps-gold text-laps-navy p-6 text-center">
+                  <div className="text-4xl font-bold">2020</div>
+                  <p className="text-sm font-medium">Founded</p>
+                </div>
+                <div className="h-1 w-12 bg-white/30" />
+                <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20 text-center">
+                  <div className="text-4xl font-bold text-laps-gold">5</div>
+                  <p className="text-white/80 text-sm">Divisions</p>
+                </div>
+                <div className="h-1 w-12 bg-white/30" />
+                <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20 text-center">
+                  <div className="text-4xl font-bold text-laps-gold">25+</div>
+                  <p className="text-white/80 text-sm">Awards</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

@@ -59,23 +59,59 @@ export function InnovationPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - Clean and Simple */}
-      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
-        <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-              About LAPS Group
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Innovation</h1>
-            <p className="text-xl text-white/80">
-              Pushing boundaries, embracing change, and pioneering solutions that shape the future 
-              across architecture, technology, marketing, events, and creative services.
-            </p>
-          </motion.div>
+      {/* Hero Section - Dynamic with Image */}
+      <section className="relative min-h-[450px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1920&q=80" 
+            alt="Innovation" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/60" />
+        </div>
+
+        <div className="container-wide relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
+                About LAPS Group
+              </p>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Driving <span className="text-laps-gold">Innovation</span>
+              </h1>
+              <p className="text-xl text-white/80 leading-relaxed">
+                Pushing boundaries, embracing change, and pioneering solutions that shape the future 
+                across architecture, technology, marketing, events, and creative services.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20 text-center">
+                  <div className="text-4xl font-bold text-laps-gold mb-2">20+</div>
+                  <p className="text-white/80 text-sm">Active Experiments</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20 text-center">
+                  <div className="text-4xl font-bold text-laps-gold mb-2">5</div>
+                  <p className="text-white/80 text-sm">Patents Filed</p>
+                </div>
+                <div className="col-span-2 bg-laps-gold text-laps-navy p-6 text-center">
+                  <p className="text-lg font-semibold">Innovation Lab</p>
+                  <p className="text-sm">Shaping Tomorrow's Solutions</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

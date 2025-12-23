@@ -59,23 +59,81 @@ export function AboutPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - Clean and Simple */}
-      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
-        <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-              The LAPS Group
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
-            <p className="text-xl text-white/80">
-              A multi-division company driving innovation across architecture, 
-              technology, marketing, events, and photography.
-            </p>
-          </motion.div>
+      {/* Hero Section - Dynamic with Image and Stats */}
+      <section className="relative min-h-[500px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" 
+            alt="LAPS Group Office" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/95 to-laps-navy/70" />
+        </div>
+
+        <div className="container-wide relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
+                The LAPS Group
+              </p>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Building Tomorrow,<br />
+                <span className="text-laps-gold">Today</span>
+              </h1>
+              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+                A multi-division company driving innovation across architecture, 
+                technology, marketing, events, and photography.
+              </p>
+              <div className="flex gap-4">
+                <Link
+                  to="/about/heritage"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-laps-gold text-laps-navy font-semibold hover:bg-white transition-colors"
+                >
+                  Our Story
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold hover:bg-white hover:text-laps-navy transition-colors"
+                >
+                  Get in Touch
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right - Quick Stats */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+                  <div className="text-5xl font-bold text-laps-gold mb-2">5</div>
+                  <p className="text-white/80">Business Divisions</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+                  <div className="text-5xl font-bold text-laps-gold mb-2">15+</div>
+                  <p className="text-white/80">Cities Served</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+                  <div className="text-5xl font-bold text-laps-gold mb-2">100+</div>
+                  <p className="text-white/80">Team Members</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+                  <div className="text-5xl font-bold text-laps-gold mb-2">4+</div>
+                  <p className="text-white/80">Years Strong</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
