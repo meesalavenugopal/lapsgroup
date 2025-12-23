@@ -111,10 +111,7 @@ export function DivisionPage({ division: divisionKey }: DivisionPageProps) {
                 <div className="p-4 bg-white/20 backdrop-blur-sm">
                   <Icon className="w-10 h-10 text-white" />
                 </div>
-                <div>
-                  <p className="text-white/60 text-sm uppercase tracking-wider">LAPS</p>
-                  <h1 className="text-4xl md:text-6xl font-bold text-white">{division.name}</h1>
-                </div>
+                <h1 className="text-4xl md:text-6xl font-bold text-white">{division.name}</h1>
               </div>
 
               <p className="text-2xl text-white font-medium mb-4">{division.tagline}</p>
