@@ -24,23 +24,23 @@ export function HeroCarousel() {
   useEffect(() => {
     if (!isPlaying) return;
 
-    const interval = setInterval(nextSlide, 6000);
+    const interval = setInterval(nextSlide, 10000);
     return () => clearInterval(interval);
   }, [isPlaying, nextSlide]);
 
   return (
-    <div className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
+    <div className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden bg-laps-navy">
       {/* Slides */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false} mode="popLayout">
         {heroSlides.map(
           (slide, index) =>
             index === currentSlide && (
               <motion.div
                 key={slide.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.7 }}
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '-100%' }}
+                transition={{ duration: 0.7, ease: 'easeInOut' }}
                 className="absolute inset-0"
               >
                 {/* Background Image */}
@@ -48,7 +48,16 @@ export function HeroCarousel() {
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${slide.image})` }}
                 >
+                  {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-laps-navy/90 via-laps-navy/70 to-transparent" />
+                  {/* Dotted Pattern Overlay */}
+                  <div 
+                    className="absolute inset-0 opacity-30"
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+                      backgroundSize: '4px 4px'
+                    }}
+                  />
                 </div>
 
                 {/* Content */}

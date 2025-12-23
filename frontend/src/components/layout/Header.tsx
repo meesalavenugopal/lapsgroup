@@ -53,7 +53,7 @@ export function Header() {
         className={clsx(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           useDarkHeader
-            ? 'bg-white shadow-lg py-3'
+            ? 'bg-white py-3'
             : 'bg-transparent py-5'
         )}
       >
@@ -75,7 +75,7 @@ export function Header() {
                       className={clsx(
                         'flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors',
                         useDarkHeader
-                          ? 'text-laps-navy hover:text-laps-blue'
+                          ? 'text-laps-navy hover:text-laps-gold'
                           : 'text-white hover:text-laps-gold'
                       )}
                     >
@@ -91,14 +91,14 @@ export function Header() {
                       className={clsx(
                         'text-sm font-medium tracking-wide transition-colors relative group',
                         useDarkHeader
-                          ? 'text-laps-navy hover:text-laps-blue'
+                          ? 'text-laps-navy hover:text-laps-gold'
                           : 'text-white hover:text-laps-gold'
                       )}
                     >
                       {link.name}
                       <span className={clsx(
                         'absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full',
-                        useDarkHeader ? 'bg-laps-blue' : 'bg-laps-gold'
+                        useDarkHeader ? 'bg-laps-gold' : 'bg-laps-gold'
                       )} />
                     </Link>
                   )}
@@ -125,7 +125,7 @@ export function Header() {
                 className={clsx(
                   'hidden md:flex items-center gap-1.5 px-4 py-2 text-xs font-medium rounded transition-all duration-300',
                   useDarkHeader
-                    ? 'bg-laps-navy text-white hover:bg-laps-blue'
+                    ? 'bg-laps-navy text-white hover:bg-laps-gold'
                     : 'bg-white text-laps-navy hover:bg-laps-gold hover:text-white'
                 )}
               >
