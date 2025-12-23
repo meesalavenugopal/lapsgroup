@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion';
 import { Building, Clock, Star, Award } from 'lucide-react';
 
-const heroImages = [
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=400&q=80',
+// Bento images for heritage
+const heritageImages = [
+  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=800&q=80',
 ];
 
 export function HeritagePage() {
@@ -36,39 +35,9 @@ export function HeritagePage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section with Tilted Image Grid */}
-      <section className="py-20 bg-laps-navy text-white relative overflow-hidden min-h-[350px]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div 
-            className="absolute flex gap-3"
-            style={{ 
-              transform: 'rotate(-12deg) scale(1.5)',
-              transformOrigin: 'center center',
-              top: '-30%',
-              right: '-20%',
-              width: '70%',
-              height: '160%'
-            }}
-          >
-            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '60s' }}>
-              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
-                <div key={`col1-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3 animate-scroll-down" style={{ animationDuration: '55s', marginTop: '-60px' }}>
-              {[...heroImages.slice(3, 6), ...heroImages.slice(3, 6)].map((img, i) => (
-                <div key={`col2-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/40" />
-        </div>
-
-        <div className="container-wide relative z-10">
+      {/* Hero Section - Clean and Simple */}
+      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
+        <div className="container-wide">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,23 +54,25 @@ export function HeritagePage() {
         </div>
       </section>
 
-      {/* Heritage Story */}
+      {/* Heritage Story - Bento Layout */}
       <section className="py-20 bg-white">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px]">
+            {/* Large Story Card */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="lg:col-span-2 lg:row-span-2 bg-laps-light p-8 flex flex-col justify-center"
             >
-              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6 w-fit">
                 Where It All Began
               </h2>
-              <p className="text-laps-slate mb-6">
+              <p className="text-laps-slate mb-4">
                 LAPS Group was born from a simple yet powerful vision: to create a company that would 
                 excel in multiple domains while maintaining the highest standards of quality and integrity.
               </p>
-              <p className="text-laps-slate mb-6">
+              <p className="text-laps-slate mb-4">
                 What started as a single venture in architecture has blossomed into a diversified group 
                 of five divisions, each making its mark in their respective industries. Our heritage is 
                 built on the principles of hard work, innovation, and a relentless pursuit of excellence.
@@ -112,31 +83,37 @@ export function HeritagePage() {
               </p>
             </motion.div>
 
+            {/* Image Cards */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
+              className="relative overflow-hidden group"
             >
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
-                alt="LAPS Heritage"
-                className="w-full h-96 object-cover"
+              <img 
+                src={heritageImages[0]} 
+                alt="LAPS Architecture" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-laps-navy/40" />
             </motion.div>
-          </div>
-        </div>
-      </section>
 
-      {/* Heritage Highlights */}
-      <section className="py-20 bg-laps-light">
-        <div className="container-wide">
-          <div className="mb-10">
-            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
-              Heritage Highlights
-            </h2>
-          </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative overflow-hidden group"
+            >
+              <img 
+                src={heritageImages[1]} 
+                alt="Office space" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-laps-navy/40" />
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Heritage Highlights - Bento Cards */}
             {heritageHighlights.map((highlight, index) => (
               <motion.div
                 key={highlight.title}
@@ -144,15 +121,13 @@ export function HeritagePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 shadow-lg flex gap-6"
+                className={`p-6 flex flex-col justify-center ${index === 0 ? 'bg-laps-navy text-white' : 'bg-laps-light'}`}
               >
-                <div className="w-14 h-14 bg-laps-gold/10 flex-shrink-0 flex items-center justify-center">
-                  <highlight.icon className="w-7 h-7 text-laps-gold" />
+                <div className={`w-12 h-12 ${index === 0 ? 'bg-white/20' : 'bg-laps-gold/10'} flex items-center justify-center mb-4`}>
+                  <highlight.icon className={`w-6 h-6 ${index === 0 ? 'text-laps-gold' : 'text-laps-gold'}`} />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-laps-navy mb-2">{highlight.title}</h3>
-                  <p className="text-laps-slate">{highlight.description}</p>
-                </div>
+                <h3 className={`text-lg font-bold mb-2 ${index === 0 ? 'text-white' : 'text-laps-navy'}`}>{highlight.title}</h3>
+                <p className={`text-sm ${index === 0 ? 'text-white/80' : 'text-laps-slate'} line-clamp-3`}>{highlight.description}</p>
               </motion.div>
             ))}
           </div>

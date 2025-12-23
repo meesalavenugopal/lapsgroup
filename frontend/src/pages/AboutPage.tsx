@@ -3,16 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Code2, Megaphone, PartyPopper, Camera } from 'lucide-react';
 import { divisions } from '@/data/content';
 
-// Background images for the hero tilted grid
-const heroImages = [
-  'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80',
-];
-
 const divisionIcons = {
   architecture: Building2,
   apps: Code2,
@@ -69,51 +59,9 @@ export function AboutPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section with Tilted Image Grid */}
-      <section className="py-20 bg-laps-navy text-white relative overflow-hidden min-h-[400px]">
-        {/* Tilted Image Grid Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div 
-            className="absolute flex gap-3"
-            style={{ 
-              transform: 'rotate(-12deg) scale(1.5)',
-              transformOrigin: 'center center',
-              top: '-30%',
-              right: '-20%',
-              width: '80%',
-              height: '160%'
-            }}
-          >
-            {/* Column 1 */}
-            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '60s' }}>
-              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
-                <div key={`col1-${i}`} className="w-40 h-52 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-            {/* Column 2 */}
-            <div className="flex flex-col gap-3 animate-scroll-down" style={{ animationDuration: '55s', marginTop: '-80px' }}>
-              {[...heroImages.slice(3, 6), ...heroImages.slice(3, 6)].map((img, i) => (
-                <div key={`col2-${i}`} className="w-40 h-52 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-            {/* Column 3 */}
-            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '50s', marginTop: '-40px' }}>
-              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
-                <div key={`col3-${i}`} className="w-40 h-52 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/40" />
-        </div>
-
-        <div className="container-wide relative z-10">
+      {/* Hero Section - Clean and Simple */}
+      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
+        <div className="container-wide">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

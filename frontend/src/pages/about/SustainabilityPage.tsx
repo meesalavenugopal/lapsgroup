@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion';
 import { Leaf, Recycle, Sun, Droplets, Building2, Users } from 'lucide-react';
 
-const heroImages = [
-  'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1518173946687-a4c036bc3c0b?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1569163139599-0f4517e36f51?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=400&q=80',
+// Bento images for sustainability
+const sustainImages = [
+  'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1518173946687-a4c036bc3c0b?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=800&q=80',
 ];
 
 export function SustainabilityPage() {
@@ -65,39 +64,9 @@ export function SustainabilityPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section with Tilted Image Grid */}
-      <section className="py-20 bg-laps-navy text-white relative overflow-hidden min-h-[350px]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div 
-            className="absolute flex gap-3"
-            style={{ 
-              transform: 'rotate(-12deg) scale(1.5)',
-              transformOrigin: 'center center',
-              top: '-30%',
-              right: '-20%',
-              width: '70%',
-              height: '160%'
-            }}
-          >
-            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '60s' }}>
-              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
-                <div key={`col1-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3 animate-scroll-down" style={{ animationDuration: '55s', marginTop: '-60px' }}>
-              {[...heroImages.slice(3, 6), ...heroImages.slice(3, 6)].map((img, i) => (
-                <div key={`col2-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/40" />
-        </div>
-
-        <div className="container-wide relative z-10">
+      {/* Hero Section - Clean and Simple */}
+      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
+        <div className="container-wide">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,8 +81,6 @@ export function SustainabilityPage() {
               and a commitment to environmental stewardship.
             </p>
           </motion.div>
-        </div>
-      </section>
         </div>
       </section>
 
@@ -162,7 +129,7 @@ export function SustainabilityPage() {
         </div>
       </section>
 
-      {/* Initiatives */}
+      {/* Initiatives - Bento Grid */}
       <section className="py-20 bg-white">
         <div className="container-wide">
           <div className="mb-10">
@@ -171,21 +138,104 @@ export function SustainabilityPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {initiatives.map((initiative, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+            {/* Large Image */}
+            {(() => {
+              const FirstIcon = initiatives[0].icon;
+              return (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="lg:col-span-2 lg:row-span-2 relative overflow-hidden group"
+                >
+                  <img 
+                    src={sustainImages[0]} 
+                    alt="Sustainability" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 via-green-900/40 to-transparent flex items-end p-8">
+                    <div>
+                      <FirstIcon className="w-10 h-10 text-green-400 mb-4" />
+                      <h3 className="text-2xl font-bold text-white mb-2">{initiatives[0].title}</h3>
+                      <p className="text-white/80">{initiatives[0].description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })()}
+
+            {/* Initiative Cards */}
+            {initiatives.slice(1, 3).map((initiative, index) => (
               <motion.div
                 key={initiative.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-laps-light p-8 hover:shadow-lg transition-shadow"
+                transition={{ delay: (index + 1) * 0.1 }}
+                className="bg-laps-light p-6 hover:shadow-lg transition-shadow flex flex-col justify-center"
               >
-                <div className={`w-14 h-14 ${initiative.bgColor} flex items-center justify-center mb-6`}>
-                  <initiative.icon className={`w-7 h-7 ${initiative.color}`} />
+                <div className={`w-12 h-12 ${initiative.bgColor} flex items-center justify-center mb-4`}>
+                  <initiative.icon className={`w-6 h-6 ${initiative.color}`} />
                 </div>
-                <h3 className="text-xl font-bold text-laps-navy mb-3">{initiative.title}</h3>
-                <p className="text-laps-slate">{initiative.description}</p>
+                <h3 className="text-lg font-bold text-laps-navy mb-2">{initiative.title}</h3>
+                <p className="text-sm text-laps-slate line-clamp-3">{initiative.description}</p>
+              </motion.div>
+            ))}
+
+            {/* Small Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="relative overflow-hidden group"
+            >
+              <img 
+                src={sustainImages[1]} 
+                alt="Nature" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-green-900/50" />
+            </motion.div>
+
+            {/* Wide Card */}
+            {(() => {
+              const FourthIcon = initiatives[3].icon;
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="lg:col-span-2 bg-green-600 text-white p-6 flex items-center gap-6"
+                >
+                  <div className="w-14 h-14 bg-white/20 flex-shrink-0 flex items-center justify-center">
+                    <FourthIcon className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-1">{initiatives[3].title}</h3>
+                    <p className="text-sm text-white/80">{initiatives[3].description}</p>
+                  </div>
+                </motion.div>
+              );
+            })()}
+
+            {/* Remaining Initiatives */}
+            {initiatives.slice(4).map((initiative, index) => (
+              <motion.div
+                key={initiative.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index + 5) * 0.1 }}
+                className="bg-laps-light p-6 hover:shadow-lg transition-shadow flex flex-col justify-center"
+              >
+                <div className={`w-12 h-12 ${initiative.bgColor} flex items-center justify-center mb-4`}>
+                  <initiative.icon className={`w-6 h-6 ${initiative.color}`} />
+                </div>
+                <h3 className="text-lg font-bold text-laps-navy mb-2">{initiative.title}</h3>
+                <p className="text-sm text-laps-slate line-clamp-3">{initiative.description}</p>
               </motion.div>
             ))}
           </div>

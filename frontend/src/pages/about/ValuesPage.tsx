@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion';
 import { Target, Lightbulb, Shield, Users, Heart, Globe } from 'lucide-react';
 
-const heroImages = [
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80',
+// Bento images for values section
+const valueImages = [
+  'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80',
 ];
 
 export function ValuesPage() {
@@ -58,39 +57,9 @@ export function ValuesPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section with Tilted Image Grid */}
-      <section className="py-20 bg-laps-navy text-white relative overflow-hidden min-h-[350px]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div 
-            className="absolute flex gap-3"
-            style={{ 
-              transform: 'rotate(-12deg) scale(1.5)',
-              transformOrigin: 'center center',
-              top: '-30%',
-              right: '-20%',
-              width: '70%',
-              height: '160%'
-            }}
-          >
-            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '60s' }}>
-              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
-                <div key={`col1-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3 animate-scroll-down" style={{ animationDuration: '55s', marginTop: '-60px' }}>
-              {[...heroImages.slice(3, 6), ...heroImages.slice(3, 6)].map((img, i) => (
-                <div key={`col2-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/40" />
-        </div>
-
-        <div className="container-wide relative z-10">
+      {/* Hero Section - Clean and Simple */}
+      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
+        <div className="container-wide">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,7 +99,7 @@ export function ValuesPage() {
         </div>
       </section>
 
-      {/* Core Values */}
+      {/* Core Values - Bento Grid */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
           <div className="mb-10">
@@ -139,21 +108,105 @@ export function ValuesPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((value, index) => (
+          {/* Bento Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+            {/* Large Image Card */}
+            {(() => {
+              const FirstIcon = values[0].icon;
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="md:col-span-2 lg:row-span-2 relative overflow-hidden group"
+                >
+                  <img 
+                    src={valueImages[0]} 
+                    alt="Team collaboration" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-laps-navy/90 via-laps-navy/40 to-transparent flex items-end p-8">
+                    <div>
+                      <FirstIcon className="w-10 h-10 text-laps-gold mb-4" />
+                      <h3 className="text-2xl font-bold text-white mb-2">{values[0].title}</h3>
+                      <p className="text-white/80">{values[0].description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })()}
+
+            {/* Value Cards */}
+            {values.slice(1, 3).map((value, index) => (
               <motion.div
                 key={value.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow"
+                transition={{ delay: (index + 1) * 0.1 }}
+                className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-center"
               >
-                <div className={`w-14 h-14 ${value.bgColor} flex items-center justify-center mb-6`}>
-                  <value.icon className={`w-7 h-7 ${value.color}`} />
+                <div className={`w-12 h-12 ${value.bgColor} flex items-center justify-center mb-4`}>
+                  <value.icon className={`w-6 h-6 ${value.color}`} />
                 </div>
-                <h3 className="text-xl font-bold text-laps-navy mb-3">{value.title}</h3>
-                <p className="text-laps-slate">{value.description}</p>
+                <h3 className="text-lg font-bold text-laps-navy mb-2">{value.title}</h3>
+                <p className="text-sm text-laps-slate line-clamp-3">{value.description}</p>
+              </motion.div>
+            ))}
+
+            {/* Medium Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="relative overflow-hidden group"
+            >
+              <img 
+                src={valueImages[1]} 
+                alt="Teamwork" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-laps-navy/60" />
+            </motion.div>
+
+            {/* Wide Card */}
+            {(() => {
+              const FourthIcon = values[3].icon;
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="lg:col-span-2 bg-laps-navy text-white p-6 flex items-center gap-6"
+                >
+                  <div className={`w-14 h-14 ${values[3].bgColor} flex-shrink-0 flex items-center justify-center`}>
+                    <FourthIcon className={`w-7 h-7 ${values[3].color}`} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-1">{values[3].title}</h3>
+                    <p className="text-sm text-white/80">{values[3].description}</p>
+                  </div>
+                </motion.div>
+              );
+            })()}
+
+            {/* Remaining Values */}
+            {values.slice(4).map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index + 5) * 0.1 }}
+                className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-center"
+              >
+                <div className={`w-12 h-12 ${value.bgColor} flex items-center justify-center mb-4`}>
+                  <value.icon className={`w-6 h-6 ${value.color}`} />
+                </div>
+                <h3 className="text-lg font-bold text-laps-navy mb-2">{value.title}</h3>
+                <p className="text-sm text-laps-slate line-clamp-3">{value.description}</p>
               </motion.div>
             ))}
           </div>

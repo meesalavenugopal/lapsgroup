@@ -2,13 +2,11 @@ import { motion } from 'framer-motion';
 import { timelineEvents } from '@/data/content';
 import { Calendar, Award, Users, Building2 } from 'lucide-react';
 
-const heroImages = [
-  'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80',
+// Bento images for milestones
+const milestoneImages = [
+  'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
 ];
 
 export function MilestonesPage() {
@@ -21,39 +19,9 @@ export function MilestonesPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section with Tilted Image Grid */}
-      <section className="py-20 bg-laps-navy text-white relative overflow-hidden min-h-[350px]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div 
-            className="absolute flex gap-3"
-            style={{ 
-              transform: 'rotate(-12deg) scale(1.5)',
-              transformOrigin: 'center center',
-              top: '-30%',
-              right: '-20%',
-              width: '70%',
-              height: '160%'
-            }}
-          >
-            <div className="flex flex-col gap-3 animate-scroll-up" style={{ animationDuration: '60s' }}>
-              {[...heroImages.slice(0, 3), ...heroImages.slice(0, 3)].map((img, i) => (
-                <div key={`col1-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3 animate-scroll-down" style={{ animationDuration: '55s', marginTop: '-60px' }}>
-              {[...heroImages.slice(3, 6), ...heroImages.slice(3, 6)].map((img, i) => (
-                <div key={`col2-${i}`} className="w-36 h-48 overflow-hidden shadow-lg flex-shrink-0">
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/40" />
-        </div>
-
-        <div className="container-wide relative z-10">
+      {/* Hero Section - Clean and Simple */}
+      <section className="py-20 bg-laps-navy text-white min-h-[350px] flex items-center">
+        <div className="container-wide">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,10 +38,28 @@ export function MilestonesPage() {
         </div>
       </section>
 
-      {/* Achievement Stats */}
+      {/* Achievement Stats - Bento Style */}
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container-wide">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[140px]">
+            {/* Large Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="col-span-2 row-span-2 relative overflow-hidden group"
+            >
+              <img 
+                src={milestoneImages[0]} 
+                alt="Business growth" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy/80 to-transparent flex items-end p-6">
+                <p className="text-white font-semibold text-lg">Building Excellence Since 2020</p>
+              </div>
+            </motion.div>
+
+            {/* Achievement Cards */}
             {achievements.map((achievement, index) => (
               <motion.div
                 key={achievement.label}
@@ -81,13 +67,13 @@ export function MilestonesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center"
+                className="bg-laps-light flex flex-col items-center justify-center p-4"
               >
-                <div className="w-14 h-14 bg-laps-gold/10 flex items-center justify-center mx-auto mb-4">
-                  <achievement.icon className="w-7 h-7 text-laps-gold" />
+                <div className="w-12 h-12 bg-laps-gold/10 flex items-center justify-center mb-3">
+                  <achievement.icon className="w-6 h-6 text-laps-gold" />
                 </div>
-                <div className="text-4xl font-bold text-laps-navy mb-2">{achievement.value}</div>
-                <p className="text-sm text-laps-slate">{achievement.label}</p>
+                <div className="text-3xl font-bold text-laps-navy mb-1">{achievement.value}</div>
+                <p className="text-xs text-laps-slate text-center">{achievement.label}</p>
               </motion.div>
             ))}
           </div>
