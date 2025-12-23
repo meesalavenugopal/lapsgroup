@@ -226,7 +226,7 @@ export function AboutPage() {
       {/* Explore LAPS Group - Bento Grid Layout */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
-          {/* Section Header - Underlined like Tata */}
+          {/* Section Header */}
           <div className="mb-10">
             <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
               Explore LAPS Group

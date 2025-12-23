@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-**LAPS** is a multi-division startup brand following a master brand architecture (similar to Tata Group). One unified identity powers multiple verticals, ensuring brand equity accumulation while allowing division-specific positioning.
+**LAPS** is a multi-division startup brand following a master brand architecture. One unified identity powers multiple verticals, ensuring brand equity accumulation while allowing division-specific positioning.
 
 ---
 
@@ -104,7 +104,7 @@ lapsgroup.com/
    - Main links: Divisions, About, Newsroom, Careers, Contact
    - Search icon, Language toggle (future)
 
-2. **Hero Carousel** (Full-width, like Tata.com)
+2. **Hero Carousel** (Full-width)
    - 4-5 slides featuring:
      - Master brand story
      - Featured division spotlight

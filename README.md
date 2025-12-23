@@ -161,7 +161,7 @@ docker-compose down
 
 ## 📱 Key Features
 
-- **Hero Carousel** - Full-width animated carousel (like Tata.com)
+- **Hero Carousel** - Full-width animated carousel
 - **Division Cards** - Interactive cards with hover effects
 - **News Section** - Latest updates with category filters
 - **Timeline** - Company milestones visualization
