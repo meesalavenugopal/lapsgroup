@@ -18,6 +18,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const location = useLocation();
   
   // Check if we're on home page
@@ -34,15 +35,30 @@ export function Header() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsDivisionsOpen(false);
+    setIsAboutOpen(false);
   }, [location]);
 
   const navLinks = [
-    { name: 'Divisions', href: '#', hasDropdown: true },
-    { name: 'About Us', href: '/about' },
+    { name: 'Divisions', href: '#', hasDropdown: 'divisions' },
+    { name: 'About Us', href: '#', hasDropdown: 'about' },
     { name: 'Newsroom', href: '/newsroom' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ];
+
+  const aboutLinks = {
+    company: [
+      { name: 'Our Story', href: '/about' },
+      { name: 'Leadership', href: '/about/leadership' },
+      { name: 'Values & Purpose', href: '/about/values' },
+      { name: 'Milestones', href: '/about/milestones' },
+    ],
+    more: [
+      { name: 'Heritage', href: '/about/heritage' },
+      { name: 'Sustainability', href: '/about/sustainability' },
+      { name: 'Innovation', href: '/about/innovation' },
+    ],
+  };
   
   // Use dark variant (white bg) when scrolled OR when not on home page
   const useDarkHeader = isScrolled || !isHomePage;
@@ -70,8 +86,24 @@ export function Header() {
                 <div key={link.name} className="relative">
                   {link.hasDropdown ? (
                     <button
-                      onMouseEnter={() => setIsDivisionsOpen(true)}
-                      onClick={() => setIsDivisionsOpen(!isDivisionsOpen)}
+                      onMouseEnter={() => {
+                        if (link.hasDropdown === 'divisions') {
+                          setIsDivisionsOpen(true);
+                          setIsAboutOpen(false);
+                        } else if (link.hasDropdown === 'about') {
+                          setIsAboutOpen(true);
+                          setIsDivisionsOpen(false);
+                        }
+                      }}
+                      onClick={() => {
+                        if (link.hasDropdown === 'divisions') {
+                          setIsDivisionsOpen(!isDivisionsOpen);
+                          setIsAboutOpen(false);
+                        } else if (link.hasDropdown === 'about') {
+                          setIsAboutOpen(!isAboutOpen);
+                          setIsDivisionsOpen(false);
+                        }
+                      }}
                       className={clsx(
                         'flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors',
                         useDarkHeader
@@ -82,7 +114,8 @@ export function Header() {
                       {link.name}
                       <ChevronDown className={clsx(
                         'w-4 h-4 transition-transform duration-200',
-                        isDivisionsOpen && 'rotate-180'
+                        (link.hasDropdown === 'divisions' && isDivisionsOpen) || 
+                        (link.hasDropdown === 'about' && isAboutOpen) ? 'rotate-180' : ''
                       )} />
                     </button>
                   ) : (
@@ -259,6 +292,107 @@ export function Header() {
                       Join Our Team
                       <ArrowRight className="w-4 h-4" />
                     </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* About Us Mega Menu */}
+      <AnimatePresence>
+        {isAboutOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsAboutOpen(false)}
+              className="fixed inset-0 bg-black/60 z-40"
+            />
+            
+            {/* About Mega Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              onMouseLeave={() => setIsAboutOpen(false)}
+              className={clsx(
+                'fixed left-0 right-0 z-50 bg-white shadow-2xl',
+                useDarkHeader ? 'top-[60px]' : 'top-[76px]'
+              )}
+            >
+              <div className="container-wide py-12">
+                <div className="grid grid-cols-12 gap-12">
+                  {/* Left: Main Title */}
+                  <div className="col-span-4">
+                    <h3 className="text-3xl font-bold text-laps-navy mb-6">
+                      The LAPS Group
+                    </h3>
+                    
+                    {/* About the Group Section */}
+                    <div className="mb-8">
+                      <h4 className="text-sm font-semibold text-laps-slate mb-4 pb-2 border-b border-gray-200">
+                        About the LAPS Group
+                      </h4>
+                      <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+                        {aboutLinks.company.map((link) => (
+                          <Link
+                            key={link.name}
+                            to={link.href}
+                            onClick={() => setIsAboutOpen(false)}
+                            className="text-laps-slate text-sm hover:text-laps-gold transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* More Links */}
+                    <div>
+                      <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+                        {aboutLinks.more.map((link) => (
+                          <Link
+                            key={link.name}
+                            to={link.href}
+                            onClick={() => setIsAboutOpen(false)}
+                            className="text-laps-slate text-sm hover:text-laps-gold transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right: Divisions Quick Access */}
+                  <div className="col-span-8">
+                    <h4 className="text-sm font-semibold text-laps-slate mb-4 pb-2 border-b border-gray-200">
+                      Our Divisions
+                    </h4>
+                    <div className="grid grid-cols-3 gap-4">
+                      {divisions.map((division) => (
+                        <Link
+                          key={division.key}
+                          to={`/${division.slug}`}
+                          onClick={() => setIsAboutOpen(false)}
+                          className="flex items-center gap-3 p-3 border-l-2 border-laps-gold/50 hover:border-laps-gold hover:bg-laps-light/50 transition-all"
+                        >
+                          <div>
+                            <p className="text-laps-navy text-sm font-medium">
+                              {division.name}
+                            </p>
+                            <p className="text-laps-slate text-xs">
+                              {division.tagline}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
