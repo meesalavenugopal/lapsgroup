@@ -19,6 +19,9 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
   const location = useLocation();
+  
+  // Check if we're on home page
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,13 +43,16 @@ export function Header() {
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ];
+  
+  // Use dark variant (white bg) when scrolled OR when not on home page
+  const useDarkHeader = isScrolled || !isHomePage;
 
   return (
     <>
       <header
         className={clsx(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          isScrolled
+          useDarkHeader
             ? 'bg-white shadow-lg py-3'
             : 'bg-transparent py-5'
         )}
@@ -55,7 +61,7 @@ export function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <Logo variant={isScrolled ? 'dark' : 'light'} />
+              <Logo variant={useDarkHeader ? 'dark' : 'light'} />
             </Link>
 
             {/* Desktop Navigation */}
@@ -68,7 +74,7 @@ export function Header() {
                       onClick={() => setIsDivisionsOpen(!isDivisionsOpen)}
                       className={clsx(
                         'flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors',
-                        isScrolled
+                        useDarkHeader
                           ? 'text-laps-navy hover:text-laps-blue'
                           : 'text-white hover:text-laps-gold'
                       )}
@@ -84,7 +90,7 @@ export function Header() {
                       to={link.href}
                       className={clsx(
                         'text-sm font-medium tracking-wide transition-colors relative group',
-                        isScrolled
+                        useDarkHeader
                           ? 'text-laps-navy hover:text-laps-blue'
                           : 'text-white hover:text-laps-gold'
                       )}
@@ -92,7 +98,7 @@ export function Header() {
                       {link.name}
                       <span className={clsx(
                         'absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full',
-                        isScrolled ? 'bg-laps-blue' : 'bg-laps-gold'
+                        useDarkHeader ? 'bg-laps-blue' : 'bg-laps-gold'
                       )} />
                     </Link>
                   )}
@@ -105,7 +111,7 @@ export function Header() {
               <button
                 className={clsx(
                   'hidden sm:flex p-2.5 rounded-full transition-colors',
-                  isScrolled
+                  useDarkHeader
                     ? 'text-laps-navy hover:bg-laps-light'
                     : 'text-white hover:bg-white/10'
                 )}
@@ -118,7 +124,7 @@ export function Header() {
                 to="/contact"
                 className={clsx(
                   'hidden md:flex items-center gap-1.5 px-4 py-2 text-xs font-medium rounded transition-all duration-300',
-                  isScrolled
+                  useDarkHeader
                     ? 'bg-laps-navy text-white hover:bg-laps-blue'
                     : 'bg-white text-laps-navy hover:bg-laps-gold hover:text-white'
                 )}
@@ -131,7 +137,7 @@ export function Header() {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={clsx(
                   'lg:hidden p-2.5 rounded-full transition-colors',
-                  isScrolled
+                  useDarkHeader
                     ? 'text-laps-navy hover:bg-laps-light'
                     : 'text-white hover:bg-white/10'
                 )}
@@ -169,7 +175,7 @@ export function Header() {
               onMouseLeave={() => setIsDivisionsOpen(false)}
               className={clsx(
                 'fixed left-0 right-0 z-50 bg-white shadow-2xl',
-                isScrolled ? 'top-[68px]' : 'top-[76px]'
+                useDarkHeader ? 'top-[60px]' : 'top-[76px]'
               )}
             >
               <div className="container-wide py-10">
@@ -229,26 +235,26 @@ export function Header() {
                 </div>
 
                 {/* Bottom Stats Bar */}
-                <div className="mt-10 pt-8 border-t border-gray-200">
+                <div className="mt-10 pt-8 border-t border-gray-100">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-16">
-                      <div className="flex items-baseline gap-2">
+                    <div className="flex items-center">
+                      <div className="flex items-center gap-3 pr-12">
                         <span className="text-4xl font-bold text-laps-navy">5</span>
-                        <span className="text-sm text-laps-slate uppercase tracking-wider">Divisions</span>
+                        <span className="text-xs text-laps-slate uppercase tracking-widest">Divisions</span>
                       </div>
-                      <div className="flex items-baseline gap-2">
+                      <div className="flex items-center gap-3 px-12 border-l border-gray-200">
                         <span className="text-4xl font-bold text-laps-navy">15+</span>
-                        <span className="text-sm text-laps-slate uppercase tracking-wider">Services</span>
+                        <span className="text-xs text-laps-slate uppercase tracking-widest">Services</span>
                       </div>
-                      <div className="flex items-baseline gap-2">
+                      <div className="flex items-center gap-3 pl-12 border-l border-gray-200">
                         <span className="text-4xl font-bold text-laps-navy">100+</span>
-                        <span className="text-sm text-laps-slate uppercase tracking-wider">Projects</span>
+                        <span className="text-xs text-laps-slate uppercase tracking-widest">Projects</span>
                       </div>
                     </div>
                     <Link
                       to="/careers"
                       onClick={() => setIsDivisionsOpen(false)}
-                      className="flex items-center gap-3 px-5 py-2.5 border border-laps-navy text-laps-navy text-sm font-medium hover:bg-laps-navy hover:text-white transition-all duration-300"
+                      className="flex items-center gap-2 px-5 py-2.5 border-2 border-laps-gold text-laps-gold text-sm font-medium hover:bg-laps-gold hover:text-white transition-all duration-300"
                     >
                       Join Our Team
                       <ArrowRight className="w-4 h-4" />
