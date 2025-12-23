@@ -44,7 +44,7 @@ export function MilestonesPage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-14 h-14 bg-laps-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 bg-laps-gold/10 flex items-center justify-center mx-auto mb-4">
                   <achievement.icon className="w-7 h-7 text-laps-gold" />
                 </div>
                 <div className="text-4xl font-bold text-laps-navy mb-2">{achievement.value}</div>
@@ -58,11 +58,10 @@ export function MilestonesPage() {
       {/* Timeline */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Our Journey</h2>
-            <p className="section-subtitle mx-auto">
-              Key moments that defined our path to excellence
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Our Journey
+            </h2>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -84,7 +83,7 @@ export function MilestonesPage() {
 
                 {/* Timeline Line */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-4 h-4 bg-laps-gold rounded-full border-4 border-white shadow-md"></div>
+                  <div className="w-4 h-4 bg-laps-gold border-4 border-white shadow-md"></div>
                   {index !== timelineEvents.length - 1 && (
                     <div className="absolute top-4 left-1/2 -translate-x-1/2 w-0.5 h-full bg-laps-gold/30"></div>
                   )}

@@ -43,7 +43,7 @@ export function CareersPage() {
             </p>
             <a
               href="#openings"
-              className="inline-flex items-center gap-2 bg-laps-blue text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition-colors"
+              className="inline-flex items-center gap-2 bg-laps-blue text-white px-8 py-4 font-medium hover:bg-blue-600 transition-colors"
             >
               View Open Positions
               <ArrowRight className="w-5 h-5" />
@@ -55,14 +55,13 @@ export function CareersPage() {
       {/* Why Join Us */}
       <section className="py-20 bg-white">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Why Join LAPS Group?</h2>
-            <p className="section-subtitle mx-auto">
-              We offer more than just jobs—we offer careers that matter.
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Why Join LAPS Group?
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.title}
@@ -70,9 +69,9 @@ export function CareersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center p-8 bg-laps-light rounded-xl"
+                className="text-center p-8 bg-laps-light"
               >
-                <div className="w-16 h-16 bg-laps-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-laps-blue/10 flex items-center justify-center mx-auto mb-6">
                   <benefit.icon className="w-8 h-8 text-laps-blue" />
                 </div>
                 <h3 className="text-xl font-semibold text-laps-navy mb-3">{benefit.title}</h3>
@@ -86,11 +85,10 @@ export function CareersPage() {
       {/* Open Positions */}
       <section id="openings" className="py-20 bg-laps-light">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Open Positions</h2>
-            <p className="section-subtitle mx-auto">
-              Find your next opportunity at LAPS Group
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Open Positions
+            </h2>
           </div>
 
           <div className="space-y-4 max-w-4xl mx-auto">
@@ -103,13 +101,13 @@ export function CareersPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                  className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
                       <div className="flex items-center gap-2 mb-2">
                         <div
-                          className="w-2 h-2 rounded-full"
+                          className="w-2 h-2"
                           style={{ backgroundColor: division?.accentColor }}
                         />
                         <span className="text-sm text-laps-slate">{division?.name}</span>
@@ -167,7 +165,7 @@ export function CareersPage() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-white text-laps-navy px-8 py-4 rounded-lg font-medium hover:bg-laps-light transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-laps-navy px-8 py-4 font-medium hover:bg-laps-light transition-colors"
             >
               Send Your Resume
               <ArrowRight className="w-5 h-5" />

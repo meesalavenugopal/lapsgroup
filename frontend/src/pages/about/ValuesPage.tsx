@@ -77,7 +77,7 @@ export function ValuesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-laps-navy mb-8">
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-8">
                 Our Purpose
               </h2>
               <p className="text-xl text-laps-slate leading-relaxed mb-8">
@@ -94,14 +94,13 @@ export function ValuesPage() {
       {/* Core Values */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Our Core Values</h2>
-            <p className="section-subtitle mx-auto">
-              These values define who we are and guide our decisions
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Our Core Values
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -111,7 +110,7 @@ export function ValuesPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className={`w-14 h-14 ${value.bgColor} rounded-lg flex items-center justify-center mb-6`}>
+                <div className={`w-14 h-14 ${value.bgColor} flex items-center justify-center mb-6`}>
                   <value.icon className={`w-7 h-7 ${value.color}`} />
                 </div>
                 <h3 className="text-xl font-bold text-laps-navy mb-3">{value.title}</h3>
@@ -160,14 +159,13 @@ export function ValuesPage() {
       {/* Value in Action */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Values in Action</h2>
-            <p className="section-subtitle mx-auto">
-              How we bring our values to life every day
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Values in Action
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

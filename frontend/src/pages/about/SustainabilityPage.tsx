@@ -85,7 +85,7 @@ export function SustainabilityPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-laps-navy mb-8">
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-8">
                 Our Commitment
               </h2>
               <p className="text-xl text-laps-slate leading-relaxed mb-8">
@@ -124,14 +124,13 @@ export function SustainabilityPage() {
       {/* Initiatives */}
       <section className="py-20 bg-white">
         <div className="container-wide">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Our Initiatives</h2>
-            <p className="section-subtitle mx-auto">
-              Concrete actions we're taking for a greener tomorrow
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Our Initiatives
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {initiatives.map((initiative, index) => (
               <motion.div
                 key={initiative.title}
@@ -141,7 +140,7 @@ export function SustainabilityPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-laps-light p-8 hover:shadow-lg transition-shadow"
               >
-                <div className={`w-14 h-14 ${initiative.bgColor} rounded-lg flex items-center justify-center mb-6`}>
+                <div className={`w-14 h-14 ${initiative.bgColor} flex items-center justify-center mb-6`}>
                   <initiative.icon className={`w-7 h-7 ${initiative.color}`} />
                 </div>
                 <h3 className="text-xl font-bold text-laps-navy mb-3">{initiative.title}</h3>
@@ -194,7 +193,9 @@ export function SustainabilityPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="section-title">Join Our Green Journey</h2>
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">
+              Join Our Green Journey
+            </h2>
             <p className="text-laps-slate mb-8">
               Sustainability is a shared responsibility. Partner with us on projects that 
               prioritize environmental consciousness without compromising on quality.

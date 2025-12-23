@@ -28,14 +28,13 @@ export function DivisionsSection() {
       <div className="container-wide">
         {/* Section Header */}
         <div className="mb-10">
-          <div className="flex items-center gap-4">
-            <div className="w-1 h-8 bg-laps-blue"></div>
-            <h2 className="text-2xl font-semibold text-laps-navy">Our Divisions</h2>
-          </div>
+          <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+            Our Divisions
+          </h2>
         </div>
 
         {/* Top Row - 2 Image Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
           {/* Left - Large Image Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -44,7 +43,7 @@ export function DivisionsSection() {
           >
             <Link 
               to={`/${divisions[0].slug}`}
-              className="block relative h-[320px] rounded-xl overflow-hidden group"
+              className="block relative h-[320px] overflow-hidden group"
             >
               <img
                 src={divisionImages[divisions[0].key]}
@@ -72,7 +71,7 @@ export function DivisionsSection() {
           >
             <Link 
               to={`/${divisions[1].slug}`}
-              className="block relative h-[320px] rounded-xl overflow-hidden group"
+              className="block relative h-[320px] overflow-hidden group"
               style={{ backgroundColor: divisions[1].accentColor }}
             >
               <img
@@ -102,13 +101,13 @@ export function DivisionsSection() {
         </div>
 
         {/* Bottom Row - 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Card 1 - Division Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col relative group cursor-pointer hover:shadow-lg transition-shadow"
+            className="bg-white border border-gray-200 p-6 flex flex-col relative group cursor-pointer hover:shadow-lg transition-shadow"
           >
             <Link to={`/${divisions[2].slug}`} className="block h-full">
               <span className="text-laps-blue text-xs font-semibold tracking-wider uppercase">
@@ -135,7 +134,7 @@ export function DivisionsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center justify-center text-center relative group cursor-pointer hover:shadow-lg transition-shadow"
+            className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center relative group cursor-pointer hover:shadow-lg transition-shadow"
           >
             <Link to="/about" className="block">
               <span className="text-laps-gold text-xs font-semibold tracking-wider uppercase">
@@ -160,7 +159,7 @@ export function DivisionsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="rounded-xl p-6 flex flex-col relative overflow-hidden"
+            className="p-6 flex flex-col relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #0A1628 0%, #0066CC 100%)' }}
           >
             <span className="text-white/80 text-xs font-semibold tracking-wider uppercase">
@@ -175,7 +174,7 @@ export function DivisionsSection() {
                 <Link
                   key={division.key}
                   to={`/${division.slug}`}
-                  className={`flex items-start gap-2 p-2 rounded transition-all ${
+                  className={`flex items-start gap-2 p-2 transition-all ${
                     idx === featuredIndex ? 'bg-white/10' : 'hover:bg-white/5'
                   }`}
                 >
@@ -194,7 +193,7 @@ export function DivisionsSection() {
                 <button
                   key={idx}
                   onClick={() => setFeaturedIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all ${
+                  className={`w-2 h-2 transition-all ${
                     idx === featuredIndex ? 'bg-white w-4' : 'bg-white/40'
                   }`}
                 />
@@ -208,7 +207,7 @@ export function DivisionsSection() {
         </div>
 
         {/* Remaining Divisions - Small Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5">
           {divisions.slice(3).map((division, index) => (
             <motion.div
               key={division.key}
@@ -219,7 +218,7 @@ export function DivisionsSection() {
             >
               <Link 
                 to={`/${division.slug}`}
-                className="block relative h-[150px] rounded-xl overflow-hidden group"
+                className="block relative h-[150px] overflow-hidden group"
               >
                 <img
                   src={divisionImages[division.key]}

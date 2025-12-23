@@ -89,7 +89,7 @@ export function LeadershipPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-laps-navy mb-6">Founder's Vision</h3>
+              <h3 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">Founder's Vision</h3>
               <blockquote className="text-xl text-laps-slate italic mb-6 border-l-4 border-laps-gold pl-6">
                 "{founderInfo.quote}"
               </blockquote>
@@ -108,14 +108,13 @@ export function LeadershipPage() {
       {/* Leadership Team */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Leadership Team</h2>
-            <p className="section-subtitle mx-auto">
-              Experienced professionals driving our vision forward
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Leadership Team
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {leaders.slice(1).map((leader, index) => (
               <motion.div
                 key={leader.name}
@@ -125,7 +124,7 @@ export function LeadershipPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="w-20 h-20 bg-laps-navy rounded-full mx-auto mb-6 flex items-center justify-center">
+                <div className="w-20 h-20 bg-laps-navy mx-auto mb-6 flex items-center justify-center">
                   <span className="text-2xl font-bold text-white">{leader.initials}</span>
                 </div>
                 <div className="text-center">
@@ -162,7 +161,9 @@ export function LeadershipPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="section-title">Join Our Leadership</h2>
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">
+              Join Our Leadership
+            </h2>
             <p className="text-laps-slate mb-8">
               We're always looking for exceptional leaders to join our growing team. 
               If you're passionate about innovation and excellence, we'd love to hear from you.

@@ -126,20 +126,19 @@ export function TimelineSection() {
       <div className="container-wide relative z-10">
         {/* Section Header */}
         <div className="mb-10">
-          <div className="flex items-center gap-4">
-            <div className="w-1 h-8 bg-laps-gold"></div>
-            <h2 className="text-2xl font-semibold text-white">Our Journey</h2>
-          </div>
+          <h2 className="text-2xl font-semibold text-white inline-block border-b-2 border-laps-gold pb-2">
+            Our Journey
+          </h2>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* Left - Large Timeline Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 relative rounded-xl overflow-hidden"
+            className="lg:col-span-2 relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #0066CC 0%, #004999 100%)' }}
           >
             <div className="p-8 md:p-10 min-h-[400px] flex flex-col">
@@ -178,13 +177,13 @@ export function TimelineSection() {
                 <div className="flex items-center gap-4">
                   <button
                     onClick={prevEvent}
-                    className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                    className="p-2 bg-white/10 text-white hover:bg-white/20 transition-colors"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
                   <button
                     onClick={nextEvent}
-                    className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                    className="p-2 bg-white/10 text-white hover:bg-white/20 transition-colors"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
@@ -196,7 +195,7 @@ export function TimelineSection() {
                     <button
                       key={idx}
                       onClick={() => setActiveIndex(idx)}
-                      className={`h-1.5 rounded-full transition-all ${
+                      className={`h-1.5 transition-all ${
                         idx === activeIndex 
                           ? 'bg-laps-gold w-6' 
                           : 'bg-white/30 w-3 hover:bg-white/50'

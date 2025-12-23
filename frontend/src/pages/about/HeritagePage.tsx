@@ -55,7 +55,9 @@ export function HeritagePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="section-title">Where It All Began</h2>
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">
+                Where It All Began
+              </h2>
               <p className="text-laps-slate mb-6">
                 LAPS Group was born from a simple yet powerful vision: to create a company that would 
                 excel in multiple domains while maintaining the highest standards of quality and integrity.
@@ -89,14 +91,13 @@ export function HeritagePage() {
       {/* Heritage Highlights */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Heritage Highlights</h2>
-            <p className="section-subtitle mx-auto">
-              The pillars that define our legacy
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Heritage Highlights
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {heritageHighlights.map((highlight, index) => (
               <motion.div
                 key={highlight.title}
@@ -106,7 +107,7 @@ export function HeritagePage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-8 shadow-lg flex gap-6"
               >
-                <div className="w-14 h-14 bg-laps-gold/10 rounded-lg flex-shrink-0 flex items-center justify-center">
+                <div className="w-14 h-14 bg-laps-gold/10 flex-shrink-0 flex items-center justify-center">
                   <highlight.icon className="w-7 h-7 text-laps-gold" />
                 </div>
                 <div>
@@ -129,7 +130,9 @@ export function HeritagePage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="section-title">Rooted in Values</h2>
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">
+                Rooted in Values
+              </h2>
               <p className="text-laps-slate text-lg mb-12">
                 Our heritage is more than just history—it's a living testament to the values that 
                 continue to guide us today. From our humble beginnings to our current standing, 

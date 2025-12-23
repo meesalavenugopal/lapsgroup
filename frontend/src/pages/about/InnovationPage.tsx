@@ -80,7 +80,9 @@ export function InnovationPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="section-title">Innovation is in Our DNA</h2>
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">
+                Innovation is in Our DNA
+              </h2>
               <p className="text-laps-slate mb-6">
                 At LAPS Group, innovation isn't just about adopting new technologies—it's about 
                 rethinking how things are done. We challenge conventional approaches and explore 
@@ -123,14 +125,13 @@ export function InnovationPage() {
       {/* Innovation Areas */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Areas of Innovation</h2>
-            <p className="section-subtitle mx-auto">
-              Key focus areas driving our innovation agenda
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Areas of Innovation
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {innovations.map((innovation, index) => (
               <motion.div
                 key={innovation.title}
@@ -140,7 +141,7 @@ export function InnovationPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className={`w-14 h-14 ${innovation.bgColor} rounded-lg flex items-center justify-center mb-6`}>
+                <div className={`w-14 h-14 ${innovation.bgColor} flex items-center justify-center mb-6`}>
                   <innovation.icon className={`w-7 h-7 ${innovation.color}`} />
                 </div>
                 <h3 className="text-xl font-bold text-laps-navy mb-3">{innovation.title}</h3>
@@ -154,11 +155,10 @@ export function InnovationPage() {
       {/* Innovation Across Divisions */}
       <section className="py-20 bg-white">
         <div className="container-wide">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Innovation Across Divisions</h2>
-            <p className="section-subtitle mx-auto">
-              How each division drives innovation in their domain
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Innovation Across Divisions
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -230,7 +230,9 @@ export function InnovationPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="section-title">Innovate With Us</h2>
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">
+              Innovate With Us
+            </h2>
             <p className="text-laps-slate mb-8">
               Have an innovative idea or looking for a partner to bring your vision to life? 
               Let's explore the possibilities together.

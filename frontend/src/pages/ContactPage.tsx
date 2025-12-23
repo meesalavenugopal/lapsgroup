@@ -93,11 +93,11 @@ export function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-bold text-laps-navy mb-6">Send us a Message</h2>
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">Send us a Message</h2>
 
               {isSubmitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-green-50 border border-green-200 p-8 text-center">
+                  <div className="w-16 h-16 bg-green-100 flex items-center justify-center mx-auto mb-4">
                     <Send className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-semibold text-green-800 mb-2">
@@ -121,7 +121,7 @@ export function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-laps-blue focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-laps-blue focus:border-transparent"
                         placeholder="John Doe"
                       />
                     </div>
@@ -136,7 +136,7 @@ export function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-laps-blue focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-laps-blue focus:border-transparent"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -153,7 +153,7 @@ export function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-laps-blue focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-laps-blue focus:border-transparent"
                         placeholder="+91 98765 43210"
                       />
                     </div>
@@ -166,7 +166,7 @@ export function ContactPage() {
                         name="division"
                         value={formData.division}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-laps-blue focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-laps-blue focus:border-transparent"
                       >
                         <option value="">General Inquiry</option>
                         {divisions.map((div) => (
@@ -189,7 +189,7 @@ export function ContactPage() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-laps-blue focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-laps-blue focus:border-transparent"
                       placeholder="How can we help?"
                     />
                   </div>
@@ -205,7 +205,7 @@ export function ContactPage() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-laps-blue focus:border-transparent resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-laps-blue focus:border-transparent resize-none"
                       placeholder="Tell us more about your inquiry..."
                     />
                   </div>
@@ -238,16 +238,16 @@ export function ContactPage() {
               viewport={{ once: true }}
               className="lg:pl-12"
             >
-              <h2 className="text-2xl font-bold text-laps-navy mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2 mb-6">Contact Information</h2>
 
               <div className="space-y-6 mb-12">
                 {contactInfo.map((info) => (
                   <a
                     key={info.label}
                     href={info.href}
-                    className="flex items-start gap-4 p-4 bg-laps-light rounded-xl hover:bg-gray-100 transition-colors"
+                    className="flex items-start gap-4 p-4 bg-laps-light hover:bg-gray-100 transition-colors"
                   >
-                    <div className="p-3 bg-laps-blue/10 rounded-lg">
+                    <div className="p-3 bg-laps-blue/10">
                       <info.icon className="w-6 h-6 text-laps-blue" />
                     </div>
                     <div>
@@ -266,10 +266,10 @@ export function ContactPage() {
                   return (
                     <div
                       key={div.key}
-                      className="flex items-center gap-3 p-3 border rounded-lg"
+                      className="flex items-center gap-3 p-3 border"
                     >
                       <div
-                        className="p-2 rounded-lg"
+                        className="p-2"
                         style={{ backgroundColor: `${div.accentColor}15` }}
                       >
                         <Icon

@@ -63,7 +63,7 @@ export function DivisionPage({ division: divisionKey }: DivisionPageProps) {
 
             <div className="flex items-center gap-4 mb-6">
               <div
-                className="p-4 rounded-xl"
+                className="p-4"
                 style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}
               >
                 <Icon className="w-10 h-10" />
@@ -109,11 +109,10 @@ export function DivisionPage({ division: divisionKey }: DivisionPageProps) {
       {/* Services */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Our Services</h2>
-            <p className="section-subtitle mx-auto">
-              Comprehensive solutions tailored to your needs
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Our Services
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -124,7 +123,7 @@ export function DivisionPage({ division: divisionKey }: DivisionPageProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-start gap-4">
                   <CheckCircle
@@ -147,11 +146,10 @@ export function DivisionPage({ division: divisionKey }: DivisionPageProps) {
       {/* Featured Work Placeholder */}
       <section className="py-20 bg-white">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Featured Work</h2>
-            <p className="section-subtitle mx-auto">
-              Showcasing our best projects and achievements
-            </p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+              Featured Work
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -161,7 +159,7 @@ export function DivisionPage({ division: divisionKey }: DivisionPageProps) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="relative group overflow-hidden rounded-xl aspect-[4/3]"
+                className="relative group overflow-hidden aspect-[4/3]"
               >
                 <div
                   className="absolute inset-0"
@@ -202,7 +200,7 @@ export function DivisionPage({ division: divisionKey }: DivisionPageProps) {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-white text-laps-navy px-8 py-4 rounded-lg font-medium hover:bg-laps-light transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-laps-navy px-8 py-4 font-medium hover:bg-laps-light transition-colors"
             >
               Get in Touch
               <ArrowRight className="w-5 h-5" />

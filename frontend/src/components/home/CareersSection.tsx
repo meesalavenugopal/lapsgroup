@@ -30,14 +30,13 @@ export function CareersSection() {
       <div className="container-wide">
         {/* Section Header */}
         <div className="mb-10">
-          <div className="flex items-center gap-4">
-            <div className="w-1 h-8 bg-laps-blue"></div>
-            <h2 className="text-2xl font-semibold text-laps-navy">Careers</h2>
-          </div>
+          <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
+            Careers
+          </h2>
         </div>
 
         {/* Top Row - 2 Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
           {/* Left - Image Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -46,7 +45,7 @@ export function CareersSection() {
           >
             <Link 
               to="/careers"
-              className="block relative h-[320px] rounded-xl overflow-hidden group"
+              className="block relative h-[320px] overflow-hidden group"
             >
               <img
                 src={careerImages[0]}
@@ -74,7 +73,7 @@ export function CareersSection() {
           >
             <Link 
               to="/careers"
-              className="block relative h-[320px] rounded-xl overflow-hidden group"
+              className="block relative h-[320px] overflow-hidden group"
               style={{ backgroundColor: '#2D5016' }}
             >
               <img
@@ -104,13 +103,13 @@ export function CareersSection() {
         </div>
 
         {/* Bottom Row - 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Card 1 - Beware of Scams */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col relative group cursor-pointer hover:shadow-lg transition-shadow"
+            className="bg-white border border-gray-200 p-6 flex flex-col relative group cursor-pointer hover:shadow-lg transition-shadow"
           >
             <Link to="/careers" className="block h-full">
               <span className="text-laps-blue text-xs font-semibold tracking-wider uppercase">
@@ -137,7 +136,7 @@ export function CareersSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center justify-center text-center relative group cursor-pointer hover:shadow-lg transition-shadow"
+            className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center relative group cursor-pointer hover:shadow-lg transition-shadow"
           >
             <Link to="/about" className="block">
               <span className="text-laps-gold text-xs font-semibold tracking-wider uppercase">
@@ -162,7 +161,7 @@ export function CareersSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="rounded-xl p-6 flex flex-col relative overflow-hidden"
+            className="p-6 flex flex-col relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #0A1628 0%, #0066CC 100%)' }}
           >
             <span className="text-white/80 text-xs font-semibold tracking-wider uppercase">
@@ -177,7 +176,7 @@ export function CareersSection() {
                 <Link
                   key={job.id}
                   to={`/careers/openings/${job.id}`}
-                  className={`flex items-start gap-2 p-2 rounded transition-all ${
+                  className={`flex items-start gap-2 p-2 transition-all ${
                     idx === featuredJobIndex ? 'bg-white/10' : 'hover:bg-white/5'
                   }`}
                 >
@@ -200,7 +199,7 @@ export function CareersSection() {
                 <button
                   key={idx}
                   onClick={() => setFeaturedJobIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all ${
+                  className={`w-2 h-2 transition-all ${
                     idx === featuredJobIndex ? 'bg-white w-4' : 'bg-white/40'
                   }`}
                 />

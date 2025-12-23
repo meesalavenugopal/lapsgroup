@@ -51,26 +51,26 @@ export function NewsroomPage() {
                 to={newsItems[0].link}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8 group"
               >
-                <div className="relative overflow-hidden rounded-xl aspect-video lg:aspect-[4/3]">
+                <div className="relative overflow-hidden aspect-video lg:aspect-[4/3]">
                   <img
                     src={newsItems[0].image}
                     alt={newsItems[0].title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-laps-blue text-white text-sm font-medium rounded-full">
+                    <span className="px-3 py-1 bg-laps-blue text-white text-sm font-medium">
                       Featured
                     </span>
                   </div>
                 </div>
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-laps-light text-laps-navy text-sm font-medium rounded-full">
+                    <span className="px-3 py-1 bg-laps-light text-laps-navy text-sm font-medium">
                       {newsItems[0].category}
                     </span>
                     {newsItems[0].division && (
                       <span
-                        className="px-3 py-1 text-sm font-medium rounded-full"
+                        className="px-3 py-1 text-sm font-medium"
                         style={{
                           backgroundColor: `${getDivisionInfo(newsItems[0].division)?.accentColor}15`,
                           color: getDivisionInfo(newsItems[0].division)?.accentColor,
@@ -104,7 +104,7 @@ export function NewsroomPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
+                  className="bg-white overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
                 >
                   <Link to={item.link}>
                     <div className="relative overflow-hidden aspect-video">
@@ -114,7 +114,7 @@ export function NewsroomPage() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-laps-navy/80 text-white text-xs font-medium rounded-full">
+                        <span className="px-3 py-1 bg-laps-navy/80 text-white text-xs font-medium">
                           {item.category}
                         </span>
                       </div>
@@ -123,7 +123,7 @@ export function NewsroomPage() {
                       {division && (
                         <div className="flex items-center gap-2 mb-3">
                           <div
-                            className="w-2 h-2 rounded-full"
+                            className="w-2 h-2"
                             style={{ backgroundColor: division.accentColor }}
                           />
                           <span className="text-xs text-laps-slate">{division.name}</span>
@@ -173,7 +173,7 @@ export function NewsroomPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-laps-blue focus:border-transparent"
+                className="flex-1 px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-laps-blue focus:border-transparent"
               />
               <button type="submit" className="btn-primary whitespace-nowrap">
                 Subscribe
