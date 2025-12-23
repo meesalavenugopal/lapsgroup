@@ -26,13 +26,18 @@
   }
   
   .btn-primary {
-    @apply bg-laps-blue text-white px-6 py-3 rounded-lg font-medium 
-           hover:bg-blue-700 transition-colors duration-200;
+    @apply inline-flex items-center gap-2 border-2 border-laps-gold text-laps-gold px-5 py-2.5 text-sm font-medium 
+           hover:bg-laps-gold hover:text-laps-navy transition-all duration-300;
   }
   
   .btn-secondary {
-    @apply bg-transparent border-2 border-laps-navy text-laps-navy px-6 py-3 rounded-lg font-medium 
-           hover:bg-laps-navy hover:text-white transition-colors duration-200;
+    @apply inline-flex items-center gap-2 border-2 border-white text-white px-5 py-2.5 text-sm font-medium 
+           hover:bg-white hover:text-laps-navy transition-all duration-300;
+  }
+  
+  .btn-solid {
+    @apply inline-flex items-center gap-2 bg-laps-blue text-white px-5 py-2.5 text-sm font-medium 
+           hover:bg-blue-700 transition-colors duration-200;
   }
   
   .section-title {

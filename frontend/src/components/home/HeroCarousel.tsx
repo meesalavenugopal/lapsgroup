@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Pause, Play, ArrowRight } from 'lucide-react';
 import { heroSlides } from '@/data/content';
 import clsx from 'clsx';
 
@@ -60,7 +60,7 @@ export function HeroCarousel() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="inline-block px-4 py-1 bg-laps-blue rounded-full text-sm font-medium mb-4"
+                        className="inline-block px-4 py-1.5 bg-laps-blue text-sm font-medium mb-4"
                       >
                         {slide.tag}
                       </motion.div>
@@ -104,11 +104,11 @@ export function HeroCarousel() {
                     >
                       <Link
                         to={slide.ctaLink}
-                        className="inline-flex items-center gap-2 bg-laps-blue text-white px-8 py-4 
-                                   rounded-lg font-medium hover:bg-blue-600 transition-colors"
+                        className="inline-flex items-center gap-3 border-2 border-laps-gold text-laps-gold 
+                                   px-5 py-2.5 text-sm font-medium hover:bg-laps-gold hover:text-laps-navy transition-all duration-300"
                       >
                         {slide.ctaText}
-                        <ChevronRight className="w-5 h-5" />
+                        <ArrowRight className="w-4 h-4" />
                       </Link>
                     </motion.div>
                   </div>
@@ -146,17 +146,17 @@ export function HeroCarousel() {
             <span className="text-white/50">{heroSlides.length}</span>
           </div>
 
-          {/* Dots Navigation */}
-          <div className="flex items-center gap-3">
+          {/* Line Navigation */}
+          <div className="flex items-center gap-2">
             {heroSlides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={clsx(
-                  'w-3 h-3 rounded-full transition-all duration-300',
+                  'h-0.5 transition-all duration-500',
                   index === currentSlide
-                    ? 'bg-white w-8'
-                    : 'bg-white/40 hover:bg-white/60'
+                    ? 'bg-white w-12'
+                    : 'bg-white/30 w-8 hover:bg-white/50'
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />

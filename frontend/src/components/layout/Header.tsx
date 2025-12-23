@@ -1,10 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Search, ChevronDown } from 'lucide-react';
+import { Menu, X, Search, ChevronDown, ArrowRight } from 'lucide-react';
 import { divisions } from '@/data/content';
 import { Logo } from '@components/common/Logo';
 import clsx from 'clsx';
+
+const divisionImages: Record<string, string> = {
+  architecture: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=200&q=80',
+  apps: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=200&q=80',
+  ads: 'https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=200&q=80',
+  suites: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=200&q=80',
+  photo: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=200&q=80',
+};
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,83 +42,289 @@ export function Header() {
   ];
 
   return (
-    <header
-      className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-white shadow-md py-2'
-          : 'bg-laps-navy/90 backdrop-blur-sm py-4'
-      )}
-    >
-      <div className="container-wide">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <Logo variant={isScrolled ? 'dark' : 'light'} />
-          </Link>
+    <>
+      <header
+        className={clsx(
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          isScrolled
+            ? 'bg-white shadow-lg py-3'
+            : 'bg-transparent py-5'
+        )}
+      >
+        <div className="container-wide">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <Logo variant={isScrolled ? 'dark' : 'light'} />
+            </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <div key={link.name} className="relative">
-                {link.hasDropdown ? (
-                  <button
-                    onMouseEnter={() => setIsDivisionsOpen(true)}
-                    onMouseLeave={() => setIsDivisionsOpen(false)}
-                    className={clsx(
-                      'flex items-center gap-1 font-medium transition-colors',
-                      isScrolled
-                        ? 'text-laps-navy hover:text-laps-blue'
-                        : 'text-white hover:text-laps-gold'
-                    )}
-                  >
-                    {link.name}
-                    <ChevronDown className="w-4 h-4" />
-                  </button>
-                ) : (
-                  <Link
-                    to={link.href}
-                    className={clsx(
-                      'font-medium transition-colors',
-                      isScrolled
-                        ? 'text-laps-navy hover:text-laps-blue'
-                        : 'text-white hover:text-laps-gold'
-                    )}
-                  >
-                    {link.name}
-                  </Link>
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-10">
+              {navLinks.map((link) => (
+                <div key={link.name} className="relative">
+                  {link.hasDropdown ? (
+                    <button
+                      onMouseEnter={() => setIsDivisionsOpen(true)}
+                      onClick={() => setIsDivisionsOpen(!isDivisionsOpen)}
+                      className={clsx(
+                        'flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors',
+                        isScrolled
+                          ? 'text-laps-navy hover:text-laps-blue'
+                          : 'text-white hover:text-laps-gold'
+                      )}
+                    >
+                      {link.name}
+                      <ChevronDown className={clsx(
+                        'w-4 h-4 transition-transform duration-200',
+                        isDivisionsOpen && 'rotate-180'
+                      )} />
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className={clsx(
+                        'text-sm font-medium tracking-wide transition-colors relative group',
+                        isScrolled
+                          ? 'text-laps-navy hover:text-laps-blue'
+                          : 'text-white hover:text-laps-gold'
+                      )}
+                    >
+                      {link.name}
+                      <span className={clsx(
+                        'absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full',
+                        isScrolled ? 'bg-laps-blue' : 'bg-laps-gold'
+                      )} />
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            {/* Right side actions */}
+            <div className="flex items-center gap-3">
+              <button
+                className={clsx(
+                  'hidden sm:flex p-2.5 rounded-full transition-colors',
+                  isScrolled
+                    ? 'text-laps-navy hover:bg-laps-light'
+                    : 'text-white hover:bg-white/10'
                 )}
+              >
+                <Search className="w-5 h-5" />
+              </button>
 
-                {/* Divisions Dropdown */}
-                {link.hasDropdown && (
+              {/* CTA Button */}
+              <Link
+                to="/contact"
+                className={clsx(
+                  'hidden md:flex items-center gap-1.5 px-4 py-2 text-xs font-medium rounded transition-all duration-300',
+                  isScrolled
+                    ? 'bg-laps-navy text-white hover:bg-laps-blue'
+                    : 'bg-white text-laps-navy hover:bg-laps-gold hover:text-white'
+                )}
+              >
+                Get in Touch
+              </Link>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={clsx(
+                  'lg:hidden p-2.5 rounded-full transition-colors',
+                  isScrolled
+                    ? 'text-laps-navy hover:bg-laps-light'
+                    : 'text-white hover:bg-white/10'
+                )}
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Full-Width Mega Menu */}
+      <AnimatePresence>
+        {isDivisionsOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsDivisionsOpen(false)}
+              className="fixed inset-0 bg-black/20 z-40 backdrop-blur-sm"
+            />
+            
+            {/* Mega Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              onMouseLeave={() => setIsDivisionsOpen(false)}
+              className={clsx(
+                'fixed left-0 right-0 z-50 bg-white shadow-2xl',
+                isScrolled ? 'top-[68px]' : 'top-[76px]'
+              )}
+            >
+              <div className="container-wide py-10">
+                <div className="grid grid-cols-12 gap-8">
+                  {/* Left: Title & Description */}
+                  <div className="col-span-3">
+                    <h3 className="text-2xl font-bold text-laps-navy mb-3">
+                      Our Divisions
+                    </h3>
+                    <p className="text-laps-slate text-sm leading-relaxed mb-6">
+                      Five specialized verticals delivering excellence across architecture, 
+                      technology, marketing, events, and photography.
+                    </p>
+                    <Link
+                      to="/about"
+                      onClick={() => setIsDivisionsOpen(false)}
+                      className="inline-flex items-center gap-2 text-laps-blue text-sm font-medium hover:gap-3 transition-all"
+                    >
+                      Learn About LAPS Group
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+
+                  {/* Right: Division Cards Grid */}
+                  <div className="col-span-9">
+                    <div className="grid grid-cols-3 gap-5">
+                      {divisions.map((division) => (
+                        <Link
+                          key={division.key}
+                          to={`/${division.slug}`}
+                          onClick={() => setIsDivisionsOpen(false)}
+                          className="group p-5 border-t border-gray-200 hover:bg-laps-light/50 transition-all duration-300"
+                        >
+                          {/* Image */}
+                          <div className="w-14 h-14 rounded-lg overflow-hidden mb-4">
+                            <img
+                              src={divisionImages[division.key]}
+                              alt={division.name}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                          </div>
+
+                          {/* Content */}
+                          <h4 className="font-semibold text-laps-navy mb-1 group-hover:text-laps-blue transition-colors">
+                            {division.name}
+                          </h4>
+                          <p className="text-xs text-laps-gold font-medium mb-2">
+                            {division.tagline}
+                          </p>
+                          <p className="text-sm text-laps-slate line-clamp-2">
+                            {division.description}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Stats Bar */}
+                <div className="mt-10 pt-8 border-t border-gray-200">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-16">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-4xl font-bold text-laps-navy">5</span>
+                        <span className="text-sm text-laps-slate uppercase tracking-wider">Divisions</span>
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-4xl font-bold text-laps-navy">15+</span>
+                        <span className="text-sm text-laps-slate uppercase tracking-wider">Services</span>
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-4xl font-bold text-laps-navy">100+</span>
+                        <span className="text-sm text-laps-slate uppercase tracking-wider">Projects</span>
+                      </div>
+                    </div>
+                    <Link
+                      to="/careers"
+                      onClick={() => setIsDivisionsOpen(false)}
+                      className="flex items-center gap-3 px-5 py-2.5 border border-laps-navy text-laps-navy text-sm font-medium hover:bg-laps-navy hover:text-white transition-all duration-300"
+                    >
+                      Join Our Team
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed inset-0 z-50 bg-white lg:hidden"
+          >
+            {/* Mobile Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b">
+              <Logo variant="dark" />
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 text-laps-navy"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Mobile Nav */}
+            <div className="px-6 py-6 overflow-y-auto h-[calc(100vh-80px)]">
+              <nav className="flex flex-col gap-1">
+                {/* Divisions Accordion */}
+                <div>
+                  <button
+                    onClick={() => setIsDivisionsOpen(!isDivisionsOpen)}
+                    className="flex items-center justify-between w-full py-4 text-lg font-semibold text-laps-navy"
+                  >
+                    Divisions
+                    <ChevronDown
+                      className={clsx(
+                        'w-5 h-5 transition-transform',
+                        isDivisionsOpen && 'rotate-180'
+                      )}
+                    />
+                  </button>
                   <AnimatePresence>
                     {isDivisionsOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        onMouseEnter={() => setIsDivisionsOpen(true)}
-                        onMouseLeave={() => setIsDivisionsOpen(false)}
-                        className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl overflow-hidden"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="overflow-hidden"
                       >
-                        <div className="p-2">
+                        <div className="pb-4 space-y-2">
                           {divisions.map((division) => (
                             <Link
                               key={division.key}
                               to={`/${division.slug}`}
-                              className="flex items-start gap-3 p-3 rounded-lg hover:bg-laps-light transition-colors group"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="flex items-center gap-3 p-3 rounded-lg bg-laps-light"
                             >
-                              <div
-                                className="w-2 h-2 rounded-full mt-2"
-                                style={{ backgroundColor: division.accentColor }}
-                              />
+                              <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                <img
+                                  src={divisionImages[division.key]}
+                                  alt={division.name}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
                               <div>
-                                <div className="font-medium text-laps-navy group-hover:text-laps-blue">
-                                  {division.name}
-                                </div>
-                                <div className="text-sm text-laps-slate">
-                                  {division.tagline}
-                                </div>
+                                <div className="font-medium text-laps-navy">{division.name}</div>
+                                <div className="text-xs text-laps-slate">{division.tagline}</div>
                               </div>
                             </Link>
                           ))}
@@ -118,107 +332,54 @@ export function Header() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                )}
-              </div>
-            ))}
-          </nav>
+                </div>
 
-          {/* Right side actions */}
-          <div className="flex items-center gap-4">
-            <button
-              className={clsx(
-                'p-2 rounded-full transition-colors',
-                isScrolled
-                  ? 'text-laps-navy hover:bg-laps-light'
-                  : 'text-white hover:bg-white/10'
-              )}
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={clsx(
-                'lg:hidden p-2 rounded-full transition-colors',
-                isScrolled
-                  ? 'text-laps-navy hover:bg-laps-light'
-                  : 'text-white hover:bg-white/10'
-              )}
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t"
-          >
-            <div className="container-wide py-4">
-              <nav className="flex flex-col gap-2">
-                {navLinks.map((link) => (
-                  <div key={link.name}>
-                    {link.hasDropdown ? (
-                      <>
-                        <button
-                          onClick={() => setIsDivisionsOpen(!isDivisionsOpen)}
-                          className="flex items-center justify-between w-full py-3 text-laps-navy font-medium"
-                        >
-                          {link.name}
-                          <ChevronDown
-                            className={clsx(
-                              'w-5 h-5 transition-transform',
-                              isDivisionsOpen && 'rotate-180'
-                            )}
-                          />
-                        </button>
-                        <AnimatePresence>
-                          {isDivisionsOpen && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              exit={{ opacity: 0, height: 0 }}
-                              className="pl-4 border-l-2 border-laps-light"
-                            >
-                              {divisions.map((division) => (
-                                <Link
-                                  key={division.key}
-                                  to={`/${division.slug}`}
-                                  className="block py-2 text-laps-slate hover:text-laps-blue"
-                                >
-                                  {division.name}
-                                </Link>
-                              ))}
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </>
-                    ) : (
-                      <Link
-                        to={link.href}
-                        className="block py-3 text-laps-navy font-medium hover:text-laps-blue"
-                      >
-                        {link.name}
-                      </Link>
-                    )}
-                  </div>
+                {/* Other Links */}
+                {navLinks.filter(l => !l.hasDropdown).map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="py-4 text-lg font-semibold text-laps-navy border-b border-gray-100"
+                  >
+                    {link.name}
+                  </Link>
                 ))}
               </nav>
+
+              {/* Mobile CTA */}
+              <div className="mt-8">
+                <Link
+                  to="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full py-4 bg-laps-navy text-white font-medium"
+                >
+                  Get in Touch
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* Mobile Stats */}
+              <div className="mt-8 pt-8 border-t border-gray-100">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-laps-navy">5</div>
+                    <div className="text-xs text-laps-slate">Divisions</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-laps-navy">15+</div>
+                    <div className="text-xs text-laps-slate">Services</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-laps-navy">100+</div>
+                    <div className="text-xs text-laps-slate">Projects</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
