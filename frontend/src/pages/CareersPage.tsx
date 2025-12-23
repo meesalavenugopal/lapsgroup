@@ -560,8 +560,12 @@ export function CareersPage() {
       </section>
 
       {/* CTA - Bento */}
-      <section className="py-20 bg-laps-navy">
-        <div className="container-wide">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80" alt="Team" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-laps-navy/90" />
+        </div>
+        <div className="container-wide relative z-10">
           <div className="grid grid-cols-12 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

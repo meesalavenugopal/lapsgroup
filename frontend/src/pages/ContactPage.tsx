@@ -553,8 +553,12 @@ export function ContactPage() {
       </section>
 
       {/* CTA - Bento */}
-      <section id="partnerships" className="py-20 bg-white">
-        <div className="container-wide">
+      <section id="partnerships" className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80" alt="Partnership" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-laps-navy/80" />
+        </div>
+        <div className="container-wide relative z-10">
           <div className="grid grid-cols-12 gap-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
