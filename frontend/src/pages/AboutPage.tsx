@@ -565,15 +565,19 @@ export function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-laps-navy text-white">
-        <div className="container-wide">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" alt="Work Together" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-laps-navy/90" />
+        </div>
+        <div className="container-wide relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6">Ready to Work Together?</h2>
+              <h2 className="text-3xl font-bold mb-6 text-white">Ready to Work Together?</h2>
               <p className="text-white/80 text-lg mb-8">
                 Whether you need architectural excellence, digital solutions, marketing expertise, 
                 event management, or creative photography—we're here to help.
