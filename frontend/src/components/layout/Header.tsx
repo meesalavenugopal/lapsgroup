@@ -21,8 +21,9 @@ export function Header() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const location = useLocation();
   
-  // Check if we're on home page
-  const isHomePage = location.pathname === '/';
+  // Pages that have hero carousels (should have transparent navbar at top)
+  const pagesWithHero = ['/', '/newsroom', '/careers', '/contact', '/architecture-planning', '/apps-platforms', '/ads-services', '/suites-events', '/photo-studio'];
+  const hasHeroSection = pagesWithHero.includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,8 +61,8 @@ export function Header() {
     ],
   };
   
-  // Use dark variant (white bg) when scrolled OR when not on home page
-  const useDarkHeader = isScrolled || !isHomePage;
+  // Use dark variant (white bg) when scrolled OR when page doesn't have hero
+  const useDarkHeader = isScrolled || !hasHeroSection;
 
   return (
     <>
