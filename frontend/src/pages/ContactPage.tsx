@@ -129,9 +129,37 @@ export function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    
+    try {
+      const response = await fetch('http://localhost:8000/api/v1/contact/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        const error = await response.json().catch(() => ({ detail: 'Failed to send message' }));
+        throw new Error(error.detail || 'Failed to send message');
+      }
+      
+      setIsSubmitted(true);
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        division: '',
+        subject: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Failed to submit contact form:', error);
+      alert(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Division images for contact cards
