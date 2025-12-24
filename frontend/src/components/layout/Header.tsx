@@ -24,8 +24,8 @@ export function Header() {
   const location = useLocation();
   
   // Pages that have hero carousels (should have transparent navbar at top)
-  const pagesWithHero = ['/', '/about', '/newsroom', '/careers', '/contact', '/architecture-planning', '/apps-platforms', '/ads-services', '/suites-events', '/photo-studio'];
-  const hasHeroSection = pagesWithHero.includes(location.pathname);
+  const pagesWithHero = ['/', '/about', '/newsroom', '/careers', '/contact', '/architecture-planning', '/apps-platforms', '/ads-services', '/suites', '/photography-studios'];
+  const hasHeroSection = pagesWithHero.some(path => location.pathname === path || location.pathname.startsWith(path + '/'));
 
   useEffect(() => {
     const handleScroll = () => {
