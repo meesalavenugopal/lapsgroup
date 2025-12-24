@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Card -->
+<div class="bento-card bento-card-navy">
+    <div class="bento-icon icon-briefcase"></div>
+    <div class="bento-label">Application Received</div>
+    <h1 class="bento-title">Thank You, {{ name }}!</h1>
+    <p class="bento-text">Your application has been successfully submitted. Our talent team will review it carefully.</p>
+</div>
+
+<!-- Status Grid -->
+<table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 2px; border-collapse: separate;">
+    <tr>
+        <td style="width: 50%; vertical-align: top;">
+            <div class="bento-card bento-card-gold" style="text-align: center;">
+                <div class="bento-stat" style="font-size: 24px;">Received</div>
+                <div class="bento-stat-label">Status</div>
+            </div>
+        </td>
+        <td style="width: 50%; vertical-align: top;">
+            <div class="bento-card bento-card-light" style="text-align: center;">
+                <div class="bento-stat" style="font-size: 24px;">5-7 Days</div>
+                <div class="bento-stat-label">Review Time</div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<!-- Application Details Card -->
+<div class="bento-card">
+    <div class="bento-label">Application Details</div>
+    <div class="bento-divider"></div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Position</div>
+        <div class="bento-info-value">{{ position }}</div>
+    </div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Division</div>
+        <div class="bento-info-value">{{ division }}</div>
+    </div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Reference ID</div>
+        <div class="bento-info-value">{{ reference_id | default('APP-2024') }}</div>
+    </div>
+</div>
+
+<!-- Next Steps Card -->
+<div class="bento-card bento-card-light">
+    <div class="bento-label">What Happens Next</div>
+    <div class="bento-divider"></div>
+    <ul class="bento-list">
+        <li><strong>Step 1:</strong> Application Review (5-7 business days)</li>
+        <li><strong>Step 2:</strong> Initial Screening Call</li>
+        <li><strong>Step 3:</strong> Technical Assessment</li>
+        <li><strong>Step 4:</strong> Final Interview</li>
+        <li><strong>Step 5:</strong> Offer & Onboarding</li>
+    </ul>
+</div>
+
+<!-- Why LAPS Card -->
+<table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 2px; border-collapse: separate;">
+    <tr>
+        <td style="width: 33%; vertical-align: top;">
+            <div class="bento-card bento-card-navy" style="text-align: center;">
+                <div class="bento-stat">5</div>
+                <div class="bento-stat-label">Divisions</div>
+            </div>
+        </td>
+        <td style="width: 34%; vertical-align: top;">
+            <div class="bento-card bento-card-navy" style="text-align: center;">
+                <div class="bento-stat">50+</div>
+                <div class="bento-stat-label">Team Members</div>
+            </div>
+        </td>
+        <td style="width: 33%; vertical-align: top;">
+            <div class="bento-card bento-card-navy" style="text-align: center;">
+                <div class="bento-stat">100%</div>
+                <div class="bento-stat-label">Growth Focus</div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<!-- CTA Card -->
+<div class="bento-card" style="text-align: center;">
+    <p class="bento-text">While you wait, explore more about life at LAPS Group.</p>
+    <a href="https://lapsgroup.com/careers" class="bento-button">Explore Careers</a>
+</div>
+{% endblock %}

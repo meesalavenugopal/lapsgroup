@@ -1,9 +1,19 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Clock, ChevronLeft, ChevronRight, Pause, Play, ArrowRight, MessageCircle, HelpCircle, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, ChevronLeft, ChevronRight, Pause, Play, ArrowRight, MessageCircle, HelpCircle, ExternalLink, Sparkles, Loader2, X, Check, AlignLeft, RefreshCw, Briefcase, Heart } from 'lucide-react';
 import { divisions } from '@/data/content';
 import { DivisionKey } from '@/types';
+import { getAIAssist, AI_ACTIONS, AIAction, AIField } from '@/services/aiService';
 import clsx from 'clsx';
+
+// Icon mapping for AI actions
+const AI_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  Sparkles,
+  AlignLeft,
+  RefreshCw,
+  Briefcase,
+  Heart,
+};
 
 export function ContactPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,6 +28,47 @@ export function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  // AI Assistant state
+  const [aiLoading, setAiLoading] = useState<AIField | null>(null);
+  const [aiSuggestion, setAiSuggestion] = useState<{ field: AIField; text: string } | null>(null);
+  const [aiMenuOpen, setAiMenuOpen] = useState<AIField | null>(null);
+  const [aiError, setAiError] = useState<string | null>(null);
+
+  const handleAIAssist = async (field: AIField, action: AIAction) => {
+    const text = formData[field];
+    const division = formData.division ? divisions.find(d => d.key === formData.division)?.name : undefined;
+    
+    setAiMenuOpen(null);
+    setAiLoading(field);
+    setAiError(null);
+    setAiSuggestion(null);
+    
+    try {
+      const response = await getAIAssist({
+        text,
+        action,
+        field,
+        context: division,
+      });
+      setAiSuggestion({ field, text: response.suggestion });
+    } catch (error) {
+      setAiError(error instanceof Error ? error.message : 'AI service unavailable');
+    } finally {
+      setAiLoading(null);
+    }
+  };
+
+  const acceptAiSuggestion = () => {
+    if (aiSuggestion) {
+      setFormData(prev => ({ ...prev, [aiSuggestion.field]: aiSuggestion.text }));
+      setAiSuggestion(null);
+    }
+  };
+
+  const rejectAiSuggestion = () => {
+    setAiSuggestion(null);
+  };
 
   const heroSlides = [
     {
@@ -354,15 +405,206 @@ export function ContactPage() {
                     </div>
                   </div>
 
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-laps-navy mb-2">Subject *</label>
+                  {/* Subject with AI Assist */}
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-laps-navy">Subject *</label>
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setAiMenuOpen(aiMenuOpen === 'subject' ? null : 'subject')}
+                          disabled={aiLoading === 'subject'}
+                          className={clsx(
+                            "flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full transition-all",
+                            aiLoading === 'subject' 
+                              ? "bg-laps-gold/20 text-laps-gold cursor-wait"
+                              : "bg-laps-light text-laps-blue hover:bg-laps-gold/20 hover:text-laps-gold"
+                          )}
+                        >
+                          {aiLoading === 'subject' ? (
+                            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          ) : (
+                            <Sparkles className="w-3.5 h-3.5" />
+                          )}
+                          AI Assist
+                        </button>
+                        
+                        {/* AI Actions Dropdown */}
+                        <AnimatePresence>
+                          {aiMenuOpen === 'subject' && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -5, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -5, scale: 0.95 }}
+                              className="absolute right-0 top-full mt-2 w-48 bg-white shadow-lg border border-gray-100 z-20"
+                            >
+                              {AI_ACTIONS.map((action) => {
+                                const IconComponent = AI_ICONS[action.icon];
+                                return (
+                                  <button
+                                    key={action.value}
+                                    type="button"
+                                    onClick={() => handleAIAssist('subject', action.value)}
+                                    className="w-full px-4 py-2.5 text-left text-sm hover:bg-laps-light flex items-center gap-3 transition-colors"
+                                  >
+                                    {IconComponent && <IconComponent className="w-4 h-4 text-laps-gold" />}
+                                    <div>
+                                      <div className="font-medium text-laps-navy">{action.label}</div>
+                                      <div className="text-xs text-laps-slate">{action.description}</div>
+                                    </div>
+                                  </button>
+                                );
+                              })}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </div>
                     <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-4 bg-laps-light border-0 focus:ring-2 focus:ring-laps-gold focus:bg-white transition-colors" placeholder="How can we help?" />
+                    
+                    {/* AI Suggestion for Subject */}
+                    <AnimatePresence>
+                      {aiSuggestion?.field === 'subject' && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="mt-2 p-3 bg-laps-gold/10 border border-laps-gold/30"
+                        >
+                          <div className="flex items-start gap-2 mb-2">
+                            <Sparkles className="w-4 h-4 text-laps-gold mt-0.5" />
+                            <span className="text-xs font-medium text-laps-gold uppercase tracking-wider">AI Suggestion</span>
+                          </div>
+                          <p className="text-sm text-laps-navy mb-3">{aiSuggestion.text}</p>
+                          <div className="flex gap-2">
+                            <button
+                              type="button"
+                              onClick={acceptAiSuggestion}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-laps-gold text-white text-xs font-medium hover:bg-laps-gold/90 transition-colors"
+                            >
+                              <Check className="w-3.5 h-3.5" /> Accept
+                            </button>
+                            <button
+                              type="button"
+                              onClick={rejectAiSuggestion}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 text-laps-slate text-xs font-medium hover:bg-gray-50 transition-colors"
+                            >
+                              <X className="w-3.5 h-3.5" /> Dismiss
+                            </button>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-laps-navy mb-2">Message *</label>
+                  {/* Message with AI Assist */}
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-laps-navy">Message *</label>
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setAiMenuOpen(aiMenuOpen === 'message' ? null : 'message')}
+                          disabled={aiLoading === 'message'}
+                          className={clsx(
+                            "flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full transition-all",
+                            aiLoading === 'message' 
+                              ? "bg-laps-gold/20 text-laps-gold cursor-wait"
+                              : "bg-laps-light text-laps-blue hover:bg-laps-gold/20 hover:text-laps-gold"
+                          )}
+                        >
+                          {aiLoading === 'message' ? (
+                            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          ) : (
+                            <Sparkles className="w-3.5 h-3.5" />
+                          )}
+                          AI Assist
+                        </button>
+                        
+                        {/* AI Actions Dropdown */}
+                        <AnimatePresence>
+                          {aiMenuOpen === 'message' && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -5, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -5, scale: 0.95 }}
+                              className="absolute right-0 top-full mt-2 w-48 bg-white shadow-lg border border-gray-100 z-20"
+                            >
+                              {AI_ACTIONS.map((action) => {
+                                const IconComponent = AI_ICONS[action.icon];
+                                return (
+                                  <button
+                                    key={action.value}
+                                    type="button"
+                                    onClick={() => handleAIAssist('message', action.value)}
+                                    className="w-full px-4 py-2.5 text-left text-sm hover:bg-laps-light flex items-center gap-3 transition-colors"
+                                  >
+                                    {IconComponent && <IconComponent className="w-4 h-4 text-laps-gold" />}
+                                    <div>
+                                      <div className="font-medium text-laps-navy">{action.label}</div>
+                                      <div className="text-xs text-laps-slate">{action.description}</div>
+                                    </div>
+                                  </button>
+                                );
+                              })}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </div>
                     <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className="w-full px-4 py-4 bg-laps-light border-0 focus:ring-2 focus:ring-laps-gold focus:bg-white transition-colors resize-none" placeholder="Tell us more about your inquiry..." />
+                    
+                    {/* AI Suggestion for Message */}
+                    <AnimatePresence>
+                      {aiSuggestion?.field === 'message' && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="mt-2 p-3 bg-laps-gold/10 border border-laps-gold/30"
+                        >
+                          <div className="flex items-start gap-2 mb-2">
+                            <Sparkles className="w-4 h-4 text-laps-gold mt-0.5" />
+                            <span className="text-xs font-medium text-laps-gold uppercase tracking-wider">AI Suggestion</span>
+                          </div>
+                          <p className="text-sm text-laps-navy whitespace-pre-wrap mb-3">{aiSuggestion.text}</p>
+                          <div className="flex gap-2">
+                            <button
+                              type="button"
+                              onClick={acceptAiSuggestion}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-laps-gold text-white text-xs font-medium hover:bg-laps-gold/90 transition-colors"
+                            >
+                              <Check className="w-3.5 h-3.5" /> Accept
+                            </button>
+                            <button
+                              type="button"
+                              onClick={rejectAiSuggestion}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 text-laps-slate text-xs font-medium hover:bg-gray-50 transition-colors"
+                            >
+                              <X className="w-3.5 h-3.5" /> Dismiss
+                            </button>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
+
+                  {/* AI Error Message */}
+                  <AnimatePresence>
+                    {aiError && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="p-3 bg-red-50 border border-red-200 text-red-700 text-sm flex items-center justify-between"
+                      >
+                        <span>{aiError}</span>
+                        <button type="button" onClick={() => setAiError(null)}>
+                          <X className="w-4 h-4" />
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
                   <button type="submit" disabled={isSubmitting} className="w-full bg-laps-navy text-white py-4 font-medium hover:bg-laps-blue transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                     {isSubmitting ? (

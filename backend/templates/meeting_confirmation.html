@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Card -->
+<div class="bento-card bento-card-gold">
+    <div class="bento-icon icon-calendar"></div>
+    <div class="bento-label">Meeting Confirmed</div>
+    <h1 class="bento-title">You're All Set, {{ name }}!</h1>
+    <p class="bento-text">Your meeting has been scheduled. We look forward to connecting with you.</p>
+</div>
+
+<!-- Meeting Details Grid -->
+<table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 2px; border-collapse: separate;">
+    <tr>
+        <td style="width: 50%; vertical-align: top;">
+            <div class="bento-card bento-card-navy" style="text-align: center;">
+                <div class="bento-stat" style="font-size: 28px;">{{ date }}</div>
+                <div class="bento-stat-label">Date</div>
+            </div>
+        </td>
+        <td style="width: 50%; vertical-align: top;">
+            <div class="bento-card bento-card-navy" style="text-align: center;">
+                <div class="bento-stat" style="font-size: 28px;">{{ time }}</div>
+                <div class="bento-stat-label">Time (IST)</div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<!-- Meeting Info Card -->
+<div class="bento-card">
+    <div class="bento-label">Meeting Details</div>
+    <div class="bento-divider"></div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Meeting Type</div>
+        <div class="bento-info-value">{{ meeting_type | default('Consultation Call') }}</div>
+    </div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Duration</div>
+        <div class="bento-info-value">{{ duration | default('30 minutes') }}</div>
+    </div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Division</div>
+        <div class="bento-info-value">{{ division | default('LAPS Group') }}</div>
+    </div>
+    {% if meeting_link %}
+    <div class="bento-info-row">
+        <div class="bento-info-label">Join Link</div>
+        <div class="bento-info-value"><a href="{{ meeting_link }}" style="color: #0066CC;">{{ meeting_link }}</a></div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- With Card -->
+<div class="bento-card bento-card-light">
+    <div class="bento-label">Meeting With</div>
+    <div class="bento-divider"></div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Representative</div>
+        <div class="bento-info-value">{{ host_name | default('LAPS Team') }}</div>
+    </div>
+    {% if host_title %}
+    <div class="bento-info-row">
+        <div class="bento-info-label">Title</div>
+        <div class="bento-info-value">{{ host_title }}</div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Prepare Card -->
+<div class="bento-card bento-card-navy">
+    <div class="bento-label">Prepare for Your Meeting</div>
+    <div class="bento-divider"></div>
+    <ul class="bento-list" style="color: rgba(255, 255, 255, 0.7);">
+        <li style="border-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8);"><span style="color: #C9A227; margin-right: 8px;">01</span> Test your audio/video before the call</li>
+        <li style="border-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8);"><span style="color: #C9A227; margin-right: 8px;">02</span> Have your questions ready</li>
+        <li style="border-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8);"><span style="color: #C9A227; margin-right: 8px;">03</span> Join the meeting 2 minutes early</li>
+    </ul>
+</div>
+
+<!-- CTA Card -->
+<div class="bento-card" style="text-align: center;">
+    <p class="bento-text">Add this meeting to your calendar so you don't miss it.</p>
+    <a href="#" class="bento-button bento-button-gold">Add to Calendar</a>
+</div>
+{% endblock %}

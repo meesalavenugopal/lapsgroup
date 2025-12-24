@@ -4,6 +4,7 @@ API v1 Router
 from fastapi import APIRouter
 
 from app.api.v1.endpoints import (
+    ai,
     contact,
     divisions,
     jobs,
@@ -23,3 +24,4 @@ router.include_router(jobs.router, prefix="/jobs", tags=["Jobs"])
 router.include_router(projects.router, prefix="/projects", tags=["Projects"])
 router.include_router(contact.router, prefix="/contact", tags=["Contact"])
 router.include_router(newsletter.router, prefix="/newsletter", tags=["Newsletter"])
+router.include_router(ai.router, prefix="/ai", tags=["AI Assistant"])

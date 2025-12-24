@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Card -->
+<div class="bento-card bento-card-navy">
+    <div class="bento-icon icon-check"></div>
+    <div class="bento-label">Confirmation</div>
+    <h1 class="bento-title">Thank You, {{ name }}!</h1>
+    <p class="bento-text">We've received your message and our team will respond within 24-48 hours.</p>
+</div>
+
+<!-- Info Grid -->
+<table width="100%" cellpadding="0" cellspacing="2" style="border-collapse: separate;">
+    <tr>
+        <td style="width: 50%; vertical-align: middle; background-color: #ffffff; padding: 24px 28px;">
+            <div class="bento-label">Reference ID</div>
+            <div class="bento-stat" style="font-size: 28px; color: #0A1628;">{{ reference_id | default('#2024') }}</div>
+        </td>
+        <td style="width: 50%; vertical-align: middle; background-color: #C9A227; padding: 24px 28px;">
+            <div class="bento-label" style="color: rgba(10, 22, 40, 0.6);">Response Time</div>
+            <div class="bento-stat" style="color: #0A1628;">24h</div>
+            <div class="bento-stat-label" style="color: rgba(10, 22, 40, 0.7);">Business Hours</div>
+        </td>
+    </tr>
+</table>
+
+<!-- Message Details Card -->
+<div class="bento-card">
+    <div class="bento-label">Your Message</div>
+    <div class="bento-divider"></div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Subject</div>
+        <div class="bento-info-value">{{ subject }}</div>
+    </div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Message</div>
+        <pre class="bento-message">{{ message }}</pre>
+    </div>
+</div>
+
+<!-- Contact Info Card -->
+<div class="bento-card bento-card-light">
+    <div class="bento-label">Contact Details Provided</div>
+    <div class="bento-divider"></div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Email</div>
+        <div class="bento-info-value">{{ email }}</div>
+    </div>
+    {% if phone %}
+    <div class="bento-info-row">
+        <div class="bento-info-label">Phone</div>
+        <div class="bento-info-value">{{ phone }}</div>
+    </div>
+    {% endif %}
+    {% if company %}
+    <div class="bento-info-row">
+        <div class="bento-info-label">Company</div>
+        <div class="bento-info-value">{{ company }}</div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- CTA Card -->
+<div class="bento-card" style="text-align: center;">
+    <p class="bento-text">Have more questions? Explore our divisions to learn more.</p>
+    <a href="https://lapsgroup.com" class="bento-button">Explore LAPS Group</a>
+</div>
+{% endblock %}

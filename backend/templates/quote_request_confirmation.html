@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Card -->
+<div class="bento-card bento-card-navy">
+    <div class="bento-icon icon-document"></div>
+    <div class="bento-label">Quote Request</div>
+    <h1 class="bento-title">Request Received, {{ name }}!</h1>
+    <p class="bento-text">Thank you for your interest. Our team will prepare a customized quote for you.</p>
+</div>
+
+<!-- Status Grid -->
+<table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 2px; border-collapse: separate;">
+    <tr>
+        <td style="width: 33%; vertical-align: top;">
+            <div class="bento-card bento-card-gold" style="text-align: center;">
+                <div class="bento-stat" style="font-size: 22px;">Received</div>
+                <div class="bento-stat-label">Status</div>
+            </div>
+        </td>
+        <td style="width: 34%; vertical-align: top;">
+            <div class="bento-card bento-card-light" style="text-align: center;">
+                <div class="bento-stat" style="font-size: 22px;">24-48h</div>
+                <div class="bento-stat-label">Quote Time</div>
+            </div>
+        </td>
+        <td style="width: 33%; vertical-align: top;">
+            <div class="bento-card" style="text-align: center;">
+                <div class="bento-stat" style="font-size: 16px;">{{ reference_id | default('QR-2024') }}</div>
+                <div class="bento-stat-label">Reference</div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<!-- Request Summary Card -->
+<div class="bento-card">
+    <div class="bento-label">Request Summary</div>
+    <div class="bento-divider"></div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Service Category</div>
+        <div class="bento-info-value">{{ service_category | default('General') }}</div>
+    </div>
+    <div class="bento-info-row">
+        <div class="bento-info-label">Division</div>
+        <div class="bento-info-value">{{ division | default('LAPS Group') }}</div>
+    </div>
+    {% if project_type %}
+    <div class="bento-info-row">
+        <div class="bento-info-label">Project Type</div>
+        <div class="bento-info-value">{{ project_type }}</div>
+    </div>
+    {% endif %}
+    {% if budget_range %}
+    <div class="bento-info-row">
+        <div class="bento-info-label">Budget Range</div>
+        <div class="bento-info-value">{{ budget_range }}</div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Requirements Card -->
+{% if requirements %}
+<div class="bento-card bento-card-light">
+    <div class="bento-label">Your Requirements</div>
+    <div class="bento-divider"></div>
+    <pre class="bento-message">{{ requirements }}</pre>
+</div>
+{% endif %}
+
+<!-- Process Card -->
+<div class="bento-card bento-card-navy">
+    <div class="bento-label">Our Quote Process</div>
+    <div class="bento-divider"></div>
+    <ul class="bento-list" style="color: rgba(255, 255, 255, 0.7);">
+        <li style="border-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8);"><strong style="color: #C9A227;">1.</strong> Requirement Analysis (Today)</li>
+        <li style="border-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8);"><strong style="color: #C9A227;">2.</strong> Scope Definition</li>
+        <li style="border-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8);"><strong style="color: #C9A227;">3.</strong> Quote Preparation</li>
+        <li style="border-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8);"><strong style="color: #C9A227;">4.</strong> Delivery (24-48 hours)</li>
+    </ul>
+</div>
+
+<!-- Contact Card -->
+<table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 2px; border-collapse: separate;">
+    <tr>
+        <td style="width: 50%; vertical-align: top;">
+            <div class="bento-card bento-card-light" style="text-align: center;">
+                <div class="bento-label">Questions?</div>
+                <p class="bento-text" style="margin-bottom: 12px;">Contact our team</p>
+                <a href="mailto:quotes@lapsgroup.com" class="bento-button" style="font-size: 11px; padding: 10px 16px;">Email Us</a>
+            </div>
+        </td>
+        <td style="width: 50%; vertical-align: top;">
+            <div class="bento-card bento-card-gold" style="text-align: center;">
+                <div class="bento-label">Urgent?</div>
+                <p class="bento-text" style="margin-bottom: 12px;">Schedule a call</p>
+                <a href="https://lapsgroup.com/contact" class="bento-button" style="font-size: 11px; padding: 10px 16px;">Book Meeting</a>
+            </div>
+        </td>
+    </tr>
+</table>
+{% endblock %}
