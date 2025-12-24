@@ -108,7 +108,7 @@ export function ContactPage() {
   return (
     <div>
       {/* Hero Carousel */}
-      <div className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden bg-laps-navy">
+      <div className="relative min-h-[650px] max-h-[800px] overflow-hidden bg-laps-navy">
         <AnimatePresence initial={false} mode="popLayout">
           {heroSlides.map(
             (slide, index) =>
