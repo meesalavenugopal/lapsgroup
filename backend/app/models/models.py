@@ -165,16 +165,21 @@ class ContactSubmission(Base, TimestampMixin):
     __tablename__ = "contact_submissions"
 
     id: Mapped[str] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid4)
+    reference_id: Mapped[str] = mapped_column(String(50), unique=True, nullable=False)
     division_id: Mapped[Optional[str]] = mapped_column(
         UUID(as_uuid=True), ForeignKey("divisions.id"), nullable=True
     )
     name: Mapped[str] = mapped_column(String(200), nullable=False)
     email: Mapped[str] = mapped_column(String(200), nullable=False)
-    phone: Mapped[str] = mapped_column(String(20), nullable=True)
+    phone: Mapped[Optional[str]] = mapped_column(String(20), nullable=True)
+    company: Mapped[Optional[str]] = mapped_column(String(200), nullable=True)
     subject: Mapped[str] = mapped_column(String(300), nullable=False)
     message: Mapped[str] = mapped_column(Text, nullable=False)
+    is_read: Mapped[bool] = mapped_column(Boolean, default=False)
     status: Mapped[str] = mapped_column(String(50), default="new")
     responded_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    responded_by: Mapped[Optional[str]] = mapped_column(String(200), nullable=True)
+    response_notes: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
 
 
 class NewsletterSubscriber(Base, TimestampMixin):

@@ -114,7 +114,9 @@ class EmailService:
         name: str,
         subject: str,
         message: str,
-        division: Optional[str] = None,
+        phone: Optional[str] = None,
+        company: Optional[str] = None,
+        reference_id: Optional[str] = None,
     ) -> bool:
         """Send contact form confirmation to the user"""
         return self.send_email(
@@ -123,9 +125,12 @@ class EmailService:
             template_name="contact_confirmation.html",
             context={
                 "name": name,
+                "email": to_email,
                 "subject": subject,
                 "message": message,
-                "division": division,
+                "phone": phone,
+                "company": company,
+                "reference_id": reference_id,
             },
         )
 
@@ -133,11 +138,11 @@ class EmailService:
         self,
         name: str,
         email: str,
-        phone: Optional[str],
         subject: str,
         message: str,
-        division: Optional[str],
-        submitted_at: str,
+        phone: Optional[str] = None,
+        company: Optional[str] = None,
+        division: Optional[str] = None,
     ) -> bool:
         """Send notification to admin about new contact form submission"""
         # Send to admin email (could be configured)
@@ -151,10 +156,10 @@ class EmailService:
                 "name": name,
                 "email": email,
                 "phone": phone,
+                "company": company,
                 "subject": subject,
                 "message": message,
                 "division": division,
-                "submitted_at": submitted_at,
             },
         )
 

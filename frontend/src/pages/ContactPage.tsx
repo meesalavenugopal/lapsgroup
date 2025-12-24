@@ -23,6 +23,7 @@ export function ContactPage() {
     name: '',
     email: '',
     phone: '',
+    company: '',
     division: '' as DivisionKey | '',
     subject: '',
     message: '',
@@ -151,6 +152,7 @@ export function ContactPage() {
         name: '',
         email: '',
         phone: '',
+        company: '',
         division: '',
         subject: '',
         message: '',
@@ -424,14 +426,19 @@ export function ContactPage() {
                       <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-4 bg-laps-light border-0 focus:ring-2 focus:ring-laps-gold focus:bg-white transition-colors" placeholder="+91 98765 43210" />
                     </div>
                     <div>
-                      <label htmlFor="division" className="block text-sm font-medium text-laps-navy mb-2">Select Division</label>
-                      <select id="division" name="division" value={formData.division} onChange={handleChange} className="w-full px-4 py-4 bg-laps-light border-0 focus:ring-2 focus:ring-laps-gold focus:bg-white transition-colors">
-                        <option value="">General Inquiry</option>
-                        {divisions.map((div) => (
-                          <option key={div.key} value={div.key}>{div.name}</option>
-                        ))}
-                      </select>
+                      <label htmlFor="company" className="block text-sm font-medium text-laps-navy mb-2">Company Name</label>
+                      <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="w-full px-4 py-4 bg-laps-light border-0 focus:ring-2 focus:ring-laps-gold focus:bg-white transition-colors" placeholder="Your Company" />
                     </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="division" className="block text-sm font-medium text-laps-navy mb-2">Select Division (Optional)</label>
+                    <select id="division" name="division" value={formData.division} onChange={handleChange} className="w-full px-4 py-4 bg-laps-light border-0 focus:ring-2 focus:ring-laps-gold focus:bg-white transition-colors">
+                      <option value="">General Inquiry</option>
+                      {divisions.map((div) => (
+                        <option key={div.key} value={div.key}>{div.name}</option>
+                      ))}
+                    </select>
                   </div>
 
                   {/* Subject with AI Assist */}
