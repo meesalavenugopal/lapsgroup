@@ -185,33 +185,33 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
             </button>
           </div>
 
-          {/* Search Results - Bento Grid */}
+          {/* Search Results - List with images on left */}
           <div className="max-h-[70vh] overflow-y-auto p-4">
             {query && results.length === 0 ? (
               <div className="p-12 text-center">
                 <p className="text-laps-slate">No results found for "{query}"</p>
               </div>
             ) : results.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="flex flex-col gap-2">
                 {results.map((result, index) => (
                   <Link
                     key={index}
                     to={result.link}
                     onClick={handleResultClick}
-                    className="group relative overflow-hidden bg-white border border-gray-200 hover:border-laps-gold transition-all duration-300"
+                    className="group flex items-center gap-4 bg-white border border-gray-200 hover:border-laps-gold transition-all duration-300 overflow-hidden"
                   >
-                    {/* Image */}
+                    {/* Image on Left */}
                     {result.image && (
-                      <div className="relative h-32 overflow-hidden">
+                      <div className="relative w-32 h-24 flex-shrink-0 overflow-hidden">
                         <img
                           src={result.image}
                           alt={result.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
                         {result.category && (
                           <div 
-                            className="absolute top-3 left-3 px-2 py-1 text-xs font-medium text-white"
+                            className="absolute top-2 left-2 px-2 py-0.5 text-xs font-medium text-white"
                             style={{ backgroundColor: result.accentColor || '#0066CC' }}
                           >
                             {result.category}
@@ -221,9 +221,9 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     )}
 
                     {/* Content */}
-                    <div className="p-4">
-                      <div className="flex items-start justify-between gap-2 mb-2">
-                        <h3 className="text-base font-semibold text-laps-navy group-hover:text-laps-gold transition-colors line-clamp-1">
+                    <div className="flex-1 py-3 pr-4">
+                      <div className="flex items-start justify-between gap-2 mb-1">
+                        <h3 className="text-base font-semibold text-laps-navy group-hover:text-laps-gold transition-colors">
                           {result.title}
                         </h3>
                         <ArrowRight className="w-4 h-4 text-laps-slate group-hover:text-laps-gold transition-colors flex-shrink-0 mt-0.5" />
