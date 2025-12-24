@@ -152,20 +152,9 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container-wide py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center justify-center">
             <p className="text-sm text-laps-slate">
               © {currentYear} LAPS Group. All Rights Reserved.
-            </p>
-            <p className="text-sm text-laps-slate">
-              Founded by{' '}
-              <a
-                href={founderInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-laps-gold transition-colors"
-              >
-                {founderInfo.name}
-              </a>
             </p>
           </div>
         </div>
