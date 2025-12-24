@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Building2, Code2, Megaphone, PartyPopper, Camera, CheckCircle, Quote } from 'lucide-react';
 import { divisions } from '@/data/content';
 import { DivisionKey } from '@/types';
+import { DivisionHeroCarousel } from '@/components/division/DivisionHeroCarousel';
 
 interface DivisionPageProps {
   division: DivisionKey;
@@ -73,89 +74,9 @@ export function DivisionPage({ division: divisionKey }: DivisionPageProps) {
   const nextDivision = divisions[divisionIndex + 1];
 
   return (
-    <div className="pt-20">
-      {/* Hero Section - Dynamic with Background Image */}
-      <section className="relative min-h-[550px] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img 
-            src={images[0]} 
-            alt={division.name} 
-            className="w-full h-full object-cover"
-          />
-          <div 
-            className="absolute inset-0" 
-            style={{
-              background: `linear-gradient(to right, ${division.accentColor}ee 0%, ${division.accentColor}aa 40%, transparent 100%)`,
-            }}
-          />
-        </div>
-
-        <div className="container-wide relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              {/* Breadcrumb */}
-              <div className="flex items-center gap-2 text-white/60 mb-6 text-sm">
-                <Link to="/" className="hover:text-white">Home</Link>
-                <span>/</span>
-                <span>Divisions</span>
-                <span>/</span>
-                <span className="text-white">{division.name}</span>
-              </div>
-
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-white/20 backdrop-blur-sm">
-                  <Icon className="w-10 h-10 text-white" />
-                </div>
-                <h1 className="text-4xl md:text-6xl font-bold text-white">{division.name}</h1>
-              </div>
-
-              <p className="text-2xl text-white font-medium mb-4">{division.tagline}</p>
-              <p className="text-lg text-white/80 mb-8">{division.description}</p>
-
-              <div className="flex gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-laps-navy font-semibold hover:bg-laps-gold hover:text-white transition-colors"
-                >
-                  Get Started
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <a
-                  href="#services"
-                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold hover:bg-white hover:text-laps-navy transition-colors"
-                >
-                  Our Services
-                </a>
-              </div>
-            </motion.div>
-
-            {/* Right - Quick Stats */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:block"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                {division.stats.map((stat, index) => (
-                  <div 
-                    key={stat.label} 
-                    className="bg-white/10 backdrop-blur-sm p-6 border border-white/20 text-center"
-                  >
-                    <div className="text-4xl font-bold text-white mb-1">{stat.value}</div>
-                    <p className="text-white/70 text-sm">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+    <div>
+      {/* Hero Carousel */}
+      <DivisionHeroCarousel division={division} images={images} />
 
       {/* Services - Bento Grid */}
       <section id="services" className="py-20 bg-laps-light">
