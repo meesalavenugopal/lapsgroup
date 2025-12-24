@@ -58,9 +58,9 @@ export function AboutPage() {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section - Dynamic with Image and Stats */}
-      <section className="relative min-h-[500px] flex items-center overflow-hidden">
+      <div className="relative h-[650px] overflow-hidden bg-laps-navy">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -68,11 +68,18 @@ export function AboutPage() {
             alt="LAPS Group Office" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/95 to-laps-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy/90 via-laps-navy/70 to-transparent" />
+          <div 
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+              backgroundSize: '4px 4px'
+            }}
+          />
         </div>
 
-        <div className="container-wide relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative h-full container-wide flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left - Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -115,19 +122,19 @@ export function AboutPage() {
               className="hidden lg:block"
             >
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20 text-center">
                   <div className="text-5xl font-bold text-laps-gold mb-2">5</div>
                   <p className="text-white/80">Business Divisions</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20 text-center">
                   <div className="text-5xl font-bold text-laps-gold mb-2">15+</div>
                   <p className="text-white/80">Cities Served</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20 text-center">
                   <div className="text-5xl font-bold text-laps-gold mb-2">100+</div>
                   <p className="text-white/80">Team Members</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+                <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20 text-center">
                   <div className="text-5xl font-bold text-laps-gold mb-2">4+</div>
                   <p className="text-white/80">Years Strong</p>
                 </div>
@@ -135,7 +142,7 @@ export function AboutPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Our Story */}
       <section className="py-20 bg-white">
