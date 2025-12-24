@@ -16,7 +16,24 @@ interface SearchResult {
   description: string;
   link: string;
   category?: string;
+  image?: string;
+  accentColor?: string;
 }
+
+const divisionImages: Record<string, string> = {
+  architecture: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=200&q=80',
+  apps: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=200&q=80',
+  ads: 'https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=200&q=80',
+  suites: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=200&q=80',
+  photo: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=200&q=80',
+};
+
+const pageImages: Record<string, string> = {
+  '/about': 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=200&q=80',
+  '/newsroom': 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=200&q=80',
+  '/careers': 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=200&q=80',
+  '/contact': 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=200&q=80',
+};
 
 const staticPages = [
   { title: 'About Us', description: 'Learn about LAPS Group and our mission', link: '/about' },
@@ -77,6 +94,8 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           description: division.tagline,
           link: `/${division.slug}`,
           category: 'Division',
+          image: divisionImages[division.key],
+          accentColor: division.accentColor,
         });
       }
     });
@@ -93,6 +112,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           description: page.description,
           link: page.link,
           category: 'Page',
+          image: pageImages[page.link],
         });
       }
     });
@@ -110,6 +130,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           description: news.excerpt,
           link: `/newsroom/${news.id}`,
           category: news.category,
+          image: news.image,
         });
       }
     });
@@ -137,15 +158,15 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         />
 
-        {/* Search Modal */}
+        {/* Search Modal - Bento Style */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="relative w-full max-w-2xl bg-white rounded-lg shadow-2xl overflow-hidden"
+          className="relative w-full max-w-4xl bg-white shadow-2xl overflow-hidden"
         >
           {/* Search Input */}
-          <div className="flex items-center gap-4 p-6 border-b">
+          <div className="flex items-center gap-4 p-6 border-b border-gray-200">
             <Search className="w-6 h-6 text-laps-slate flex-shrink-0" />
             <input
               ref={inputRef}
@@ -157,63 +178,71 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
             />
             <button
               onClick={onClose}
-              className="p-2 hover:bg-laps-light rounded-full transition-colors"
+              className="p-2 hover:bg-gray-100 transition-colors"
               aria-label="Close search"
             >
               <X className="w-5 h-5 text-laps-slate" />
             </button>
           </div>
 
-          {/* Search Results */}
-          <div className="max-h-[60vh] overflow-y-auto">
+          {/* Search Results - Bento Grid */}
+          <div className="max-h-[70vh] overflow-y-auto p-4">
             {query && results.length === 0 ? (
-              <div className="p-8 text-center">
+              <div className="p-12 text-center">
                 <p className="text-laps-slate">No results found for "{query}"</p>
               </div>
             ) : results.length > 0 ? (
-              <div className="py-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {results.map((result, index) => (
                   <Link
                     key={index}
                     to={result.link}
                     onClick={handleResultClick}
-                    className="flex items-start gap-4 px-6 py-4 hover:bg-laps-light transition-colors group"
+                    className="group relative overflow-hidden bg-white border border-gray-200 hover:border-laps-gold transition-all duration-300"
                   >
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
+                    {/* Image */}
+                    {result.image && (
+                      <div className="relative h-32 overflow-hidden">
+                        <img
+                          src={result.image}
+                          alt={result.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         {result.category && (
-                          <span className="text-xs font-medium text-laps-blue">
+                          <div 
+                            className="absolute top-3 left-3 px-2 py-1 text-xs font-medium text-white"
+                            style={{ backgroundColor: result.accentColor || '#0066CC' }}
+                          >
                             {result.category}
-                          </span>
+                          </div>
                         )}
                       </div>
-                      <h3 className="text-base font-semibold text-laps-navy mb-1 group-hover:text-laps-gold transition-colors">
-                        {result.title}
-                      </h3>
-                      <p className="text-sm text-laps-slate line-clamp-1">
+                    )}
+
+                    {/* Content */}
+                    <div className="p-4">
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h3 className="text-base font-semibold text-laps-navy group-hover:text-laps-gold transition-colors line-clamp-1">
+                          {result.title}
+                        </h3>
+                        <ArrowRight className="w-4 h-4 text-laps-slate group-hover:text-laps-gold transition-colors flex-shrink-0 mt-0.5" />
+                      </div>
+                      <p className="text-sm text-laps-slate line-clamp-2">
                         {result.description}
                       </p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-laps-slate group-hover:text-laps-gold transition-colors flex-shrink-0 mt-1" />
                   </Link>
                 ))}
               </div>
             ) : (
-              <div className="p-8 text-center">
-                <Search className="w-12 h-12 text-laps-slate/30 mx-auto mb-3" />
-                <p className="text-laps-slate">Start typing to search...</p>
+              <div className="p-12 text-center">
+                <Search className="w-16 h-16 text-laps-slate/20 mx-auto mb-4" />
+                <p className="text-laps-slate text-lg mb-2">Start typing to search...</p>
+                <p className="text-sm text-laps-slate/70">Search for divisions, pages, news, or services</p>
               </div>
             )}
           </div>
-
-          {/* Quick Tips */}
-          {!query && (
-            <div className="border-t bg-laps-light/30 px-6 py-4">
-              <p className="text-sm text-laps-slate">
-                <span className="font-medium">Quick tips:</span> Search for divisions, pages, news, or services
-              </p>
-            </div>
-          )}
         </motion.div>
       </div>
     </AnimatePresence>
