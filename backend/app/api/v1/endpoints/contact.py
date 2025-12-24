@@ -2,9 +2,12 @@
 Contact API endpoints
 """
 from typing import Optional
+from datetime import datetime
 
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, EmailStr
+
+from app.core.email import email_service
 
 router = APIRouter()
 
@@ -22,12 +25,43 @@ class ContactRequest(BaseModel):
 @router.post("/submit")
 async def submit_contact_form(contact: ContactRequest):
     """Submit a contact form"""
-    # In production, save to database and send email notification
-    return {
-        "success": True,
-        "message": "Thank you for reaching out. We'll get back to you shortly.",
-        "submission_id": "CONTACT-001",
-    }
+    try:
+        # Generate reference ID
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        reference_id = f"LAPS-{timestamp}"
+        
+        # Send confirmation email to user
+        await email_service.send_contact_confirmation(
+            to_email=contact.email,
+            name=contact.name,
+            subject=contact.subject,
+            message=contact.message,
+            phone=contact.phone,
+            company=None,  # Not collecting company in current form
+            reference_id=reference_id,
+        )
+        
+        # Send notification email to LAPS team
+        await email_service.send_contact_notification(
+            name=contact.name,
+            email=contact.email,
+            subject=contact.subject,
+            message=contact.message,
+            phone=contact.phone,
+            company=None,
+            division=contact.division,
+        )
+        
+        return {
+            "success": True,
+            "message": "Thank you for reaching out. We'll get back to you shortly.",
+            "reference_id": reference_id,
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to process contact form: {str(e)}"
+        )
 
 
 @router.get("/info")

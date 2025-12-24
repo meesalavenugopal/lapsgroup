@@ -1,8 +1,7 @@
 /**
  * AI Assistant Service for Contact Form
  */
-
-const API_BASE = 'http://localhost:8000/api/v1';
+import API_ENDPOINTS from '@/config/api';
 
 export type AIAction = 'suggest' | 'concise' | 'rephrase' | 'formal' | 'friendly';
 export type AIField = 'subject' | 'message';
@@ -28,7 +27,7 @@ export interface SubjectSuggestions {
  * Get AI-powered text assistance
  */
 export async function getAIAssist(request: AIAssistRequest): Promise<AIAssistResponse> {
-  const response = await fetch(`${API_BASE}/ai/assist`, {
+  const response = await fetch(API_ENDPOINTS.AI_ASSIST, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +47,7 @@ export async function getAIAssist(request: AIAssistRequest): Promise<AIAssistRes
  * Get pre-defined subject suggestions
  */
 export async function getSubjectSuggestions(): Promise<SubjectSuggestions> {
-  const response = await fetch(`${API_BASE}/ai/suggestions/subjects`);
+  const response = await fetch(API_ENDPOINTS.AI_SUBJECT_SUGGESTIONS);
 
   if (!response.ok) {
     throw new Error('Failed to get subject suggestions');

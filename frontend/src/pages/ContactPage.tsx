@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Send, Clock, ChevronLeft, ChevronRight, Pause, Pla
 import { divisions } from '@/data/content';
 import { DivisionKey } from '@/types';
 import { getAIAssist, AI_ACTIONS, AIAction, AIField } from '@/services/aiService';
+import API_ENDPOINTS from '@/config/api';
 import clsx from 'clsx';
 
 // Icon mapping for AI actions
@@ -131,7 +132,7 @@ export function ContactPage() {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:8000/api/v1/contact/submit', {
+      const response = await fetch(API_ENDPOINTS.CONTACT_SUBMIT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
