@@ -35,7 +35,7 @@ export function DivisionsSection() {
 
         {/* Top Row - 2 Image Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
-          {/* Left - Large Image Card */}
+          {/* Left - Large Image Card with Text */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,6 +50,23 @@ export function DivisionsSection() {
                 alt={divisions[0].name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy/90 via-laps-navy/40 to-transparent" />
+              {/* Text content */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                <span className="text-white/80 text-xs font-semibold tracking-wider uppercase mb-2">
+                  {divisions[0].tagline}
+                </span>
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  {divisions[0].name}
+                </h3>
+                <div className="flex items-start gap-2 max-w-sm">
+                  <div className="w-1 h-full min-h-[40px] bg-white/40"></div>
+                  <p className="text-white/80 text-sm leading-relaxed line-clamp-2">
+                    {divisions[0].description}
+                  </p>
+                </div>
+              </div>
               {/* Triangle accent */}
               <div 
                 className="absolute bottom-0 left-8 w-0 h-0"
