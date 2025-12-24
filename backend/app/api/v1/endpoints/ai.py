@@ -27,27 +27,47 @@ class AIAssistResponse(BaseModel):
 
 def get_system_prompt(action: str, field: str, context: Optional[str] = None) -> str:
     """Generate system prompt based on action and field"""
-    division_context = f" for {context} division" if context else ""
+    division_context = f" related to {context}" if context else ""
     
-    prompts = {
-        "suggest": f"""You are a professional writing assistant for LAPS Group, a multi-division company. 
-Generate a clear and professional {field}{division_context}. 
-LAPS Group operates in Architecture & Planning, Apps & Platforms, Ads & Services, Suites & Events, and Photo Studio divisions.
-Return only the suggested text, nothing else.""",
-        
-        "concise": f"""You are a professional editor. Make the following {field} more concise and to the point while keeping the key message.
-Return only the improved text, nothing else.""",
-        
-        "rephrase": f"""You are a professional writing assistant. Rephrase the following {field} to be clearer and more professional.
+    if field == "subject":
+        prompts = {
+            "suggest": f"""You are a professional writing assistant. Generate a clear, concise subject line{division_context}.
+Keep it under 10 words. Be specific and professional.
+Return ONLY the subject line, nothing else.""",
+            
+            "concise": f"""Make this subject line shorter and more direct while keeping the key message.
+Return ONLY the improved subject line, nothing else.""",
+            
+            "rephrase": f"""Rephrase this subject line to be clearer and more professional.
+Return ONLY the new subject line, nothing else.""",
+            
+            "formal": f"""Rewrite this subject line in a formal, business tone.
+Return ONLY the formal subject line, nothing else.""",
+            
+            "friendly": f"""Rewrite this subject line in a friendly yet professional tone.
+Return ONLY the friendly subject line, nothing else.""",
+        }
+    else:  # message
+        prompts = {
+            "suggest": f"""You are a professional writing assistant helping someone write to LAPS Group{division_context}.
+If they've started writing, improve and complete their message professionally. 
+If they haven't started, generate a brief, natural message (2-3 sentences).
+Be direct and helpful. No placeholders like [Name] or [Company]. 
+Return ONLY the message text.""",
+            
+            "concise": f"""Make this message more concise while keeping the key points.
+Return ONLY the improved message, nothing else.""",
+            
+            "rephrase": f"""Rephrase this message to be clearer and more professional.
 Maintain the original meaning but improve the wording.
-Return only the rephrased text, nothing else.""",
-        
-        "formal": f"""You are a professional writing assistant. Rewrite the following {field} in a formal, business-appropriate tone.
-Return only the formal version, nothing else.""",
-        
-        "friendly": f"""You are a professional writing assistant. Rewrite the following {field} in a friendly, approachable tone while maintaining professionalism.
-Return only the friendly version, nothing else.""",
-    }
+Return ONLY the rephrased message, nothing else.""",
+            
+            "formal": f"""Rewrite this message in a formal, business-appropriate tone.
+Return ONLY the formal message, nothing else.""",
+            
+            "friendly": f"""Rewrite this message in a friendly, approachable tone while maintaining professionalism.
+Return ONLY the friendly message, nothing else.""",
+        }
     
     return prompts.get(action, prompts["rephrase"])
 
@@ -75,7 +95,16 @@ async def ai_assist(request: AIAssistRequest):
         
         system_prompt = get_system_prompt(request.action, request.field, request.context)
         
-        user_prompt = request.text if request.text.strip() else f"Generate a professional {request.field} for a general inquiry"
+        # Better user prompts for empty text
+        if request.text.strip():
+            user_prompt = request.text
+        else:
+            if request.field == "subject":
+                context_msg = f"for a {request.context} inquiry" if request.context else "for a general inquiry"
+                user_prompt = f"Generate a subject line {context_msg}"
+            else:  # message
+                context_msg = f"expressing interest in {request.context} services" if request.context else "for a general inquiry"
+                user_prompt = f"Generate a brief message {context_msg}"
         
         response = client.chat.completions.create(
             model=settings.OPENAI_MODEL,
