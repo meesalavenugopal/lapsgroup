@@ -262,73 +262,109 @@ export function CareersPage() {
         </div>
       </div>
 
-      {/* Stats - Bento Grid */}
-      <section className="py-16 bg-laps-navy">
+      {/* Stats - Bento Cards */}
+      <section className="py-20 bg-laps-light">
         <div className="container-wide">
           <div className="grid grid-cols-12 gap-4">
-            {/* Large stat - Team Members */}
+            {/* Team Members - Large card with image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="col-span-12 md:col-span-6 lg:col-span-4 bg-laps-gold p-8 min-h-[200px] flex flex-col justify-between"
+              className="col-span-12 md:col-span-6 relative overflow-hidden group min-h-[220px]"
             >
-              <Users className="w-10 h-10 text-laps-navy/30" />
-              <div>
-                <div className="text-6xl font-bold text-laps-navy mb-2">200+</div>
-                <div className="text-laps-navy/70 text-lg">Team Members</div>
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-laps-navy/95 via-laps-navy/80 to-laps-navy/40" />
+              <div className="relative h-full p-8 flex flex-col justify-end">
+                <Users className="w-10 h-10 text-laps-gold mb-4" />
+                <div className="text-5xl font-bold text-white mb-1">200+</div>
+                <div className="text-white/70">Team Members across all divisions</div>
               </div>
             </motion.div>
 
-            {/* Divisions stat */}
+            {/* Divisions */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="col-span-6 md:col-span-3 lg:col-span-2 bg-laps-navy border border-white/10 p-6 min-h-[200px] flex flex-col justify-between"
+              className="col-span-6 md:col-span-3 bg-laps-navy p-6 min-h-[220px] flex flex-col justify-between"
             >
-              <Briefcase className="w-8 h-8 text-laps-gold/50" />
+              <Briefcase className="w-8 h-8 text-laps-gold" />
               <div>
-                <div className="text-5xl font-bold text-white">5</div>
+                <div className="text-5xl font-bold text-white mb-1">5</div>
                 <div className="text-white/60">Divisions</div>
               </div>
             </motion.div>
 
-            {/* Retention stat */}
+            {/* Retention */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="col-span-6 md:col-span-3 lg:col-span-3 bg-laps-navy border border-white/10 p-6 min-h-[200px] flex flex-col justify-between"
+              className="col-span-6 md:col-span-3 bg-laps-gold p-6 min-h-[220px] flex flex-col justify-between"
             >
-              <Heart className="w-8 h-8 text-rose-400/50" />
+              <Heart className="w-8 h-8 text-laps-navy/40" />
               <div>
-                <div className="text-5xl font-bold text-laps-gold">95%</div>
-                <div className="text-white/60">Retention Rate</div>
+                <div className="text-5xl font-bold text-laps-navy mb-1">95%</div>
+                <div className="text-laps-navy/70">Retention Rate</div>
               </div>
             </motion.div>
 
-            {/* Glassdoor stat */}
+            {/* Cities */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="col-span-12 md:col-span-12 lg:col-span-3 bg-emerald-500 p-6 min-h-[200px] flex items-center justify-between"
+              className="col-span-6 md:col-span-4 relative overflow-hidden group min-h-[180px]"
             >
-              <div>
-                <div className="text-5xl font-bold text-white">4.8</div>
-                <div className="text-white/90">Glassdoor Rating</div>
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-laps-navy/95 via-laps-navy/80 to-laps-navy/60" />
+              <div className="relative h-full p-6 flex flex-col justify-end">
+                <div className="text-4xl font-bold text-white mb-1">15+</div>
+                <div className="text-white/70">Cities</div>
               </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="flex gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className={clsx("w-5 h-5", i <= 4 ? "text-white fill-white" : "text-white/40")} />
-                  ))}
-                </div>
-                <span className="text-xs text-white/70">Based on 150+ reviews</span>
+            </motion.div>
+
+            {/* Rating */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="col-span-6 md:col-span-4 bg-white border border-gray-200 p-6 min-h-[180px] flex flex-col justify-between"
+            >
+              <div className="flex gap-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className={clsx("w-5 h-5", i <= 4 ? "text-laps-gold fill-laps-gold" : "text-gray-300")} />
+                ))}
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-laps-navy mb-1">4.8</div>
+                <div className="text-laps-slate">Glassdoor Rating</div>
+              </div>
+            </motion.div>
+
+            {/* Open Positions */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="col-span-12 md:col-span-4 bg-laps-blue p-6 min-h-[180px] flex flex-col justify-between"
+            >
+              <Zap className="w-8 h-8 text-white/40" />
+              <div>
+                <div className="text-4xl font-bold text-white mb-1">25+</div>
+                <div className="text-white/80">Open Positions</div>
               </div>
             </motion.div>
           </div>

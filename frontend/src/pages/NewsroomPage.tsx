@@ -503,16 +503,15 @@ export function NewsroomPage() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center justify-between p-6 bg-white hover:shadow-lg transition-all group"
                 >
-                  <div className="flex items-start gap-6">
-                    <div className="text-sm text-laps-slate whitespace-nowrap min-w-[120px]">{release.date}</div>
-                    <div>
-                      <span className="text-xs text-laps-blue font-medium">{release.division}</span>
+                  <div className="flex items-center gap-8">
+                    <div className="text-sm text-laps-slate whitespace-nowrap w-[140px]">{release.date}</div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-laps-blue font-medium mb-1">{release.division}</span>
                       <h3 className="font-semibold text-laps-navy group-hover:text-laps-blue transition-colors">{release.title}</h3>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <Download className="w-4 h-4 text-laps-slate" />
-                    <ExternalLink className="w-4 h-4 text-laps-blue opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </motion.a>
               ))}
