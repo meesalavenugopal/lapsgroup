@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Search, ChevronDown, ArrowRight } from 'lucide-react';
 import { divisions } from '@/data/content';
 import { Logo } from '@components/common/Logo';
+import { SearchModal } from '@components/common/SearchModal';
 import clsx from 'clsx';
 
 const divisionImages: Record<string, string> = {
@@ -19,10 +20,11 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
   
   // Pages that have hero carousels (should have transparent navbar at top)
-  const pagesWithHero = ['/', '/newsroom', '/careers', '/contact', '/architecture-planning', '/apps-platforms', '/ads-services', '/suites-events', '/photo-studio'];
+  const pagesWithHero = ['/', '/about', '/newsroom', '/careers', '/contact', '/architecture-planning', '/apps-platforms', '/ads-services', '/suites-events', '/photo-studio'];
   const hasHeroSection = pagesWithHero.includes(location.pathname);
 
   useEffect(() => {
@@ -147,12 +149,14 @@ export function Header() {
             {/* Right side actions */}
             <div className="flex items-center gap-3">
               <button
+                onClick={() => setIsSearchOpen(true)}
                 className={clsx(
                   'hidden sm:flex p-2.5 rounded-full transition-colors',
                   useDarkHeader
                     ? 'text-laps-navy hover:bg-laps-light'
                     : 'text-white hover:bg-white/10'
                 )}
+                aria-label="Open search"
               >
                 <Search className="w-5 h-5" />
               </button>
@@ -527,6 +531,9 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 }
