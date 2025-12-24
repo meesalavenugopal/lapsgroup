@@ -272,21 +272,23 @@ export function Header() {
                   </div>
                 </div>
 
-                {/* Bottom Stats Bar */}
+                {/* Bottom Stats Bar - Bento Style */}
                 <div className="mt-10 pt-8 border-t border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <div className="flex items-center gap-3 pr-12">
-                        <span className="text-4xl font-bold text-laps-navy">5</span>
-                        <span className="text-xs text-laps-slate uppercase tracking-widest">Divisions</span>
+                        <span className="text-3xl font-bold text-laps-navy">5</span>
+                        <span className="text-xs text-laps-slate uppercase tracking-[0.15em]">Divisions</span>
                       </div>
-                      <div className="flex items-center gap-3 px-12 border-l border-gray-200">
-                        <span className="text-4xl font-bold text-laps-navy">15+</span>
-                        <span className="text-xs text-laps-slate uppercase tracking-widest">Services</span>
+                      <div className="w-px h-8 bg-laps-gold/40" />
+                      <div className="flex items-center gap-3 px-12">
+                        <span className="text-3xl font-bold text-laps-navy">15+</span>
+                        <span className="text-xs text-laps-slate uppercase tracking-[0.15em]">Services</span>
                       </div>
-                      <div className="flex items-center gap-3 pl-12 border-l border-gray-200">
-                        <span className="text-4xl font-bold text-laps-navy">100+</span>
-                        <span className="text-xs text-laps-slate uppercase tracking-widest">Projects</span>
+                      <div className="w-px h-8 bg-laps-gold/40" />
+                      <div className="flex items-center gap-3 pl-12">
+                        <span className="text-3xl font-bold text-laps-navy">100+</span>
+                        <span className="text-xs text-laps-slate uppercase tracking-[0.15em]">Projects</span>
                       </div>
                     </div>
                     <Link
