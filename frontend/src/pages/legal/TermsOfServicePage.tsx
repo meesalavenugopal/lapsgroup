@@ -14,12 +14,12 @@ export const TermsOfServicePage = () => {
             backgroundSize: '4px 4px'
           }}
         />
-        <div className="relative container-wide h-full flex items-center justify-center min-h-[500px] py-20">
+        <div className="relative container-wide h-full flex items-center min-h-[500px] py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl text-center"
+            className="max-w-3xl"
           >
             <div className="inline-block px-4 py-1.5 bg-laps-blue text-sm font-medium mb-4">
               Legal
@@ -37,7 +37,7 @@ export const TermsOfServicePage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="col-span-12 bg-white rounded-2xl shadow-lg p-8 md:p-12"
+            className="col-span-12 bg-white shadow-lg p-8 md:p-12"
           >
           <div className="mb-8 pb-6 border-b border-gray-200">
             <p className="text-sm text-gray-500">
@@ -48,7 +48,7 @@ export const TermsOfServicePage = () => {
           <div className="prose prose-lg prose-slate max-w-none">
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   1
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Acceptance of Terms</h2>
@@ -60,7 +60,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   2
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Services Description</h2>
@@ -94,7 +94,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   3
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">User Responsibilities</h2>
@@ -128,7 +128,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   4
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Intellectual Property</h2>
@@ -140,7 +140,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   5
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Service Modifications</h2>
@@ -152,7 +152,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   6
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Limitation of Liability</h2>
@@ -164,7 +164,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   7
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Indemnification</h2>
@@ -176,7 +176,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   8
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Governing Law</h2>
@@ -188,7 +188,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   9
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Dispute Resolution</h2>
@@ -200,7 +200,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   10
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Changes to Terms</h2>
@@ -212,7 +212,7 @@ export const TermsOfServicePage = () => {
 
             <section className="mb-0">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-laps-blue/10 rounded-lg flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
                   11
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Contact Information</h2>
@@ -227,7 +227,7 @@ export const TermsOfServicePage = () => {
                 <motion.a
                   href="mailto:legal@lapsgroup.com"
                   whileHover={{ scale: 1.02 }}
-                  className="col-span-12 md:col-span-6 bg-gradient-to-br from-laps-blue to-laps-navy text-white p-6 rounded-xl group cursor-pointer transition-all duration-300 hover:shadow-xl"
+                  className="col-span-12 md:col-span-6 bg-gradient-to-br from-laps-blue to-laps-navy text-white p-6 group cursor-pointer transition-all duration-300 hover:shadow-xl"
                 >
                   <Mail className="w-8 h-8 mb-3 opacity-80" />
                   <p className="text-sm opacity-80 mb-1">Email Us</p>
@@ -238,7 +238,7 @@ export const TermsOfServicePage = () => {
                 <motion.a
                   href="tel:+919876543210"
                   whileHover={{ scale: 1.02 }}
-                  className="col-span-12 md:col-span-6 bg-gradient-to-br from-laps-gold to-amber-500 text-laps-navy p-6 rounded-xl group cursor-pointer transition-all duration-300 hover:shadow-xl"
+                  className="col-span-12 md:col-span-6 bg-gradient-to-br from-laps-gold to-amber-500 text-laps-navy p-6 group cursor-pointer transition-all duration-300 hover:shadow-xl"
                 >
                   <Phone className="w-8 h-8 mb-3 opacity-80" />
                   <p className="text-sm opacity-80 mb-1">Call Us</p>
@@ -248,7 +248,7 @@ export const TermsOfServicePage = () => {
                 {/* Address Card */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="col-span-12 bg-white border-2 border-laps-navy/10 p-6 rounded-xl transition-all duration-300 hover:shadow-xl hover:border-laps-navy/30"
+                  className="col-span-12 bg-white border-2 border-laps-navy/10 p-6 transition-all duration-300 hover:shadow-xl hover:border-laps-navy/30"
                 >
                   <MapPin className="w-8 h-8 mb-3 text-laps-blue" />
                   <p className="text-sm text-gray-600 mb-1">Visit Us</p>

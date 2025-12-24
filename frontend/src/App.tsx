@@ -14,7 +14,7 @@ import {
   SustainabilityPage,
   InnovationPage,
 } from '@pages/about';
-import { PrivacyPolicyPage, TermsOfServicePage } from '@pages/legal';
+import { PrivacyPolicyPage, TermsOfServicePage, CookiesPolicyPage } from '@pages/legal';
 
 function App() {
   return (
@@ -38,6 +38,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/legal/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/legal/terms" element={<TermsOfServicePage />} />
+        <Route path="/legal/cookies" element={<CookiesPolicyPage />} />
       </Routes>
     </Layout>
   );

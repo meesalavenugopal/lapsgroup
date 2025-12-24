@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-export const PrivacyPolicyPage = () => {
+export const CookiesPolicyPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -24,8 +24,8 @@ export const PrivacyPolicyPage = () => {
             <div className="inline-block px-4 py-1.5 bg-laps-blue text-sm font-medium mb-4">
               Legal
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">Privacy Policy</h1>
-            <p className="text-xl text-blue-100">Your privacy is important to us</p>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">Cookies Policy</h1>
+            <p className="text-xl text-blue-100">How we use cookies to enhance your experience</p>
           </motion.div>
         </div>
       </div>
@@ -48,189 +48,174 @@ export const PrivacyPolicyPage = () => {
           <div className="prose prose-lg prose-slate max-w-none">
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10 flex items-center justify-center text-laps-blue font-bold text-lg">
                   1
                 </div>
-                <h2 className="text-2xl font-bold text-laps-navy m-0">Information We Collect</h2>
+                <h2 className="text-2xl font-bold text-laps-navy m-0">What Are Cookies</h2>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                At LAPS Group, we collect information that you provide directly to us, including:
+              <p className="text-gray-700 leading-relaxed">
+                Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners.
               </p>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Name and contact information (email, phone number)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Company name and professional details</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Messages and inquiries submitted through our contact forms</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Job application materials (resumes, cover letters, portfolios)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Newsletter subscription preferences</span>
-                </li>
-              </ul>
             </section>
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10 flex items-center justify-center text-laps-blue font-bold text-lg">
                   2
                 </div>
-                <h2 className="text-2xl font-bold text-laps-navy m-0">How We Use Your Information</h2>
+                <h2 className="text-2xl font-bold text-laps-navy m-0">How We Use Cookies</h2>
               </div>
               <p className="text-gray-700 leading-relaxed mb-4">
-                We use the information we collect to:
+                LAPS Group uses cookies for the following purposes:
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Respond to your inquiries and provide customer support</span>
+                  <span>To remember your preferences and settings</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Process job applications and recruitment activities</span>
+                  <span>To understand how you use our website and improve your experience</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Send newsletters and marketing communications (with your consent)</span>
+                  <span>To provide personalized content and recommendations</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Improve our services and website functionality</span>
+                  <span>To analyze website traffic and performance</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Comply with legal obligations and protect our rights</span>
+                  <span>To enable certain website functionalities</span>
                 </li>
               </ul>
             </section>
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10 flex items-center justify-center text-laps-blue font-bold text-lg">
                   3
                 </div>
-                <h2 className="text-2xl font-bold text-laps-navy m-0">Information Sharing</h2>
+                <h2 className="text-2xl font-bold text-laps-navy m-0">Types of Cookies We Use</h2>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We do not sell, trade, or rent your personal information to third parties. We may share your information with:
-              </p>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Service providers who assist in our operations (email services, cloud hosting)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Professional advisors (lawyers, accountants, auditors)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Law enforcement or regulatory authorities when required by law</span>
-                </li>
-              </ul>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-laps-navy mb-2">Essential Cookies</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas of the website.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-laps-navy mb-2">Analytics Cookies</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website and services.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-laps-navy mb-2">Functionality Cookies</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    These cookies allow the website to remember choices you make (such as your language or region) and provide enhanced, more personalized features.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-laps-navy mb-2">Marketing Cookies</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    These cookies are used to track visitors across websites to display ads that are relevant and engaging for individual users.
+                  </p>
+                </div>
+              </div>
             </section>
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10 flex items-center justify-center text-laps-blue font-bold text-lg">
                   4
                 </div>
-                <h2 className="text-2xl font-bold text-laps-navy m-0">Data Security</h2>
+                <h2 className="text-2xl font-bold text-laps-navy m-0">Third-Party Cookies</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure.
+                In some cases, we use cookies provided by trusted third parties. Our website may use third-party analytics tools such as Google Analytics to help us measure traffic and usage trends for the service.
               </p>
             </section>
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10 flex items-center justify-center text-laps-blue font-bold text-lg">
                   5
                 </div>
-                <h2 className="text-2xl font-bold text-laps-navy m-0">Your Rights</h2>
+                <h2 className="text-2xl font-bold text-laps-navy m-0">Managing Cookies</h2>
               </div>
               <p className="text-gray-700 leading-relaxed mb-4">
-                You have the right to:
+                You can control and manage cookies in various ways:
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Access and obtain a copy of your personal information</span>
+                  <span>Most browsers allow you to refuse or accept cookies through their settings</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Correct inaccurate or incomplete information</span>
+                  <span>You can delete cookies that are already on your device</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Request deletion of your personal information</span>
+                  <span>You can set your browser to notify you when you receive a cookie</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-laps-blue mr-2">•</span>
-                  <span>Opt-out of marketing communications at any time</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-laps-blue mr-2">•</span>
-                  <span>Lodge a complaint with a data protection authority</span>
+                  <span>Please note that blocking all cookies may impact your experience on our website</span>
                 </li>
               </ul>
             </section>
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10 flex items-center justify-center text-laps-blue font-bold text-lg">
                   6
                 </div>
-                <h2 className="text-2xl font-bold text-laps-navy m-0">Cookies and Tracking</h2>
+                <h2 className="text-2xl font-bold text-laps-navy m-0">Cookie Duration</h2>
               </div>
-              <p className="text-gray-700 leading-relaxed">
-                We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand user preferences. You can control cookies through your browser settings.
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We use both session and persistent cookies:
               </p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-laps-blue mr-2">•</span>
+                  <span><strong>Session Cookies:</strong> Temporary cookies that expire when you close your browser</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-laps-blue mr-2">•</span>
+                  <span><strong>Persistent Cookies:</strong> Cookies that remain on your device until they expire or you delete them</span>
+                </li>
+              </ul>
             </section>
 
             <section className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
+                <div className="w-10 h-10 bg-laps-blue/10 flex items-center justify-center text-laps-blue font-bold text-lg">
                   7
-                </div>
-                <h2 className="text-2xl font-bold text-laps-navy m-0">Children's Privacy</h2>
-              </div>
-              <p className="text-gray-700 leading-relaxed">
-                Our services are not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13.
-              </p>
-            </section>
-
-            <section className="mb-10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
-                  8
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Changes to This Policy</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.
+                We may update this Cookies Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.
               </p>
             </section>
 
             <section className="mb-0">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-laps-blue/10  flex items-center justify-center text-laps-blue font-bold text-lg">
-                  9
+                <div className="w-10 h-10 bg-laps-blue/10 flex items-center justify-center text-laps-blue font-bold text-lg">
+                  8
                 </div>
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Contact Us</h2>
               </div>
               <p className="text-gray-700 leading-relaxed mb-6">
-                If you have any questions about this Privacy Policy, please contact us at:
+                If you have any questions about our use of cookies, please contact us at:
               </p>
               
               {/* Bento Contact Cards */}
