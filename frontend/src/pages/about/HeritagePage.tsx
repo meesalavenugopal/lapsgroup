@@ -88,7 +88,7 @@ export function HeritagePage() {
         </div>
       </div>
 
-      {/* Heritage Story */
+
       <section className="py-20 bg-white">
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px]">
@@ -147,7 +147,6 @@ export function HeritagePage() {
               <div className="absolute inset-0 bg-laps-navy/40" />
             </motion.div>
 
-            {/* Heritage Highlights - Bento Cards */}
             {heritageHighlights.map((highlight, index) => (
               <motion.div
                 key={highlight.title}
@@ -168,7 +167,6 @@ export function HeritagePage() {
         </div>
       </section>
 
-      {/* Our Roots */}
       <section className="py-20 bg-white">
         <div className="container-wide">
           <div className="max-w-4xl mx-auto">

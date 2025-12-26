@@ -78,7 +78,6 @@ export function ValuesPage() {
 
         <div className="relative h-full container-wide flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -102,7 +101,7 @@ export function ValuesPage() {
               className="hidden lg:block"
             >
               <div className="grid grid-cols-3 gap-3">
-                {['Excellence', 'Innovation', 'Integrity', 'Collaboration', 'Passion', 'Responsibility'].map((value, i) => (
+                {['Excellence', 'Innovation', 'Integrity', 'Collaboration', 'Passion', 'Responsibility'].map((value) => (
                   <div key={value} className="bg-white/10 backdrop-blur-sm px-4 py-3 border border-white/20 text-center">
                     <p className="text-white text-sm font-medium">{value}</p>
                   </div>
