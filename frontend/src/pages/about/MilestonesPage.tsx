@@ -18,9 +18,9 @@ export function MilestonesPage() {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section - Dynamic with Image */}
-      <section className="relative min-h-[450px] flex items-center overflow-hidden">
+      <div className="relative h-[650px] overflow-hidden bg-laps-navy">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -28,11 +28,18 @@ export function MilestonesPage() {
             alt="Milestones" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy via-laps-navy/90 to-laps-navy/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-laps-navy/90 via-laps-navy/70 to-transparent" />
+          <div 
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+              backgroundSize: '4px 4px'
+            }}
+          />
         </div>
 
-        <div className="container-wide relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative h-full container-wide flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -74,7 +81,7 @@ export function MilestonesPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Achievement Stats - Bento Style */}
       <section className="py-20 bg-white">

@@ -25,7 +25,16 @@ export function Header() {
   
   // Pages that have hero carousels (should have transparent navbar at top)
   const pagesWithHero = ['/', '/about', '/newsroom', '/careers', '/contact', '/architecture-planning', '/apps-platforms', '/ads-services', '/suites', '/photography-studios'];
-  const hasHeroSection = pagesWithHero.some(path => location.pathname === path || location.pathname.startsWith(path + '/'));
+  // Allow transparent navbar for all /about/* pages and division pages
+  const hasHeroSection = pagesWithHero.some(path => {
+    if (path === '/about') {
+      return location.pathname === path || location.pathname.startsWith(path + '/');
+    }
+    if (path === '/newsroom' || path === '/careers' || path === '/contact') {
+      return location.pathname === path;
+    }
+    return location.pathname === path || location.pathname.startsWith(path + '/');
+  });
 
   useEffect(() => {
     const handleScroll = () => {
