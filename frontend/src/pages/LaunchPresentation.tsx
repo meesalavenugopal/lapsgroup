@@ -562,7 +562,7 @@ export function LaunchPresentation() {
       title: 'Next Steps',
       theme: 'accent',
       content: (
-        <div className="space-y-8 relative">
+        <div className="space-y-6 relative h-full overflow-y-auto">
           <div className="absolute inset-0 opacity-10">
             <img 
               src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&h=800&fit=crop" 
@@ -570,14 +570,14 @@ export function LaunchPresentation() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="relative z-10 bg-white/10 backdrop-blur-sm p-10  border border-white/20">
-            <Rocket className="w-20 h-20 text-laps-gold mx-auto mb-6" />
-            <h2 className="text-4xl font-bold text-white text-center mb-8">
+          <div className="relative z-10 bg-white/10 backdrop-blur-sm p-6 border border-white/20">
+            <Rocket className="w-16 h-16 text-laps-gold mx-auto mb-3" />
+            <h2 className="text-3xl font-bold text-white text-center">
               Ready to Launch!
             </h2>
           </div>
 
-          <div className="relative z-10 grid grid-cols-2 gap-6">
+          <div className="relative z-10 grid grid-cols-2 gap-4">
             {[
               { step: '1', action: 'Approve launch plan and budget', status: 'Pending Review' },
               { step: '2', action: 'Finalize launch event date & venue', status: 'In Progress' },
@@ -591,14 +591,14 @@ export function LaunchPresentation() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm p-6 border border-white/20 flex items-start gap-4"
+                className="bg-white/10 backdrop-blur-sm p-4 border border-white/20 flex items-start gap-3"
               >
-                <div className="w-12 h-12 bg-laps-gold text-laps-navy flex items-center justify-center font-bold text-xl flex-shrink-0">
+                <div className="w-10 h-10 bg-laps-gold text-laps-navy flex items-center justify-center font-bold text-lg flex-shrink-0">
                   {item.step}
                 </div>
                 <div className="flex-1">
-                  <div className="text-white font-semibold mb-2">{item.action}</div>
-                  <div className="text-sm text-laps-gold">{item.status}</div>
+                  <div className="text-white font-semibold mb-1 text-sm">{item.action}</div>
+                  <div className="text-xs text-laps-gold">{item.status}</div>
                 </div>
               </motion.div>
             ))}
