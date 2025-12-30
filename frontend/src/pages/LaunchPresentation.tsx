@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Building2, Target, Rocket, TrendingUp, Users, DollarSign, Calendar, Award, MapPin, Check, Leaf, Link2, Cpu, UserCheck, Star, Globe, Mail, Megaphone, BarChart3, Briefcase, Home, Landmark } from 'lucide-react';
 
@@ -545,11 +545,11 @@ export function LaunchPresentation() {
               </div>
               <div className="text-right">
                 <div className="text-2xl font-semibold mb-2">Expected Year 1 Revenue</div>
-                <div className="text-6xl font-bold">₹1-1.5 Cr</div>
+                <div className="text-6xl font-bold">₹20+ Lakhs</div>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t-2 border-laps-navy/20 text-center">
-              <div className="text-xl font-semibold">ROI: 4-6x within 12 months</div>
+              <div className="text-xl font-semibold">ROI: 1-4x within 12 months</div>
             </div>
           </div>
         </div>
@@ -653,6 +653,32 @@ export function LaunchPresentation() {
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (currentSlide < slides.length - 1) {
+          nextSlide();
+        }
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (currentSlide > 0) {
+          prevSlide();
+        }
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        setCurrentSlide(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        setCurrentSlide(slides.length - 1);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentSlide, slides.length]);
 
   const currentSlideData = slides[currentSlide];
   const themeClasses = {
