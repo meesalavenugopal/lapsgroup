@@ -7,6 +7,7 @@ import { ContactPage } from '@pages/ContactPage';
 import { CareersPage } from '@pages/CareersPage';
 import { NewsroomPage } from '@pages/NewsroomPage';
 import { LaunchPresentation } from '@pages/LaunchPresentation';
+import { IDCardPreview } from '@components/IDCard';
 import {
   LeadershipPage,
   ValuesPage,
@@ -22,6 +23,8 @@ function App() {
     <Routes>
       {/* Architecture Division Launch Presentation - No Layout */}
       <Route path="/architecture-planning/launch-presentation" element={<LaunchPresentation />} />
+      {/* Employee ID Card Preview - No Layout */}
+      <Route path="/architecture-planning/id-card" element={<IDCardPreview />} />
       
       {/* Regular Routes with Layout */}
       <Route path="/*" element={
