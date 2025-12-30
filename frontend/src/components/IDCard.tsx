@@ -49,15 +49,7 @@ export function IDCard({
         <div className="px-6 pt-6 pb-4 text-center">
           <div className="inline-block relative mb-4">
             <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 ring-4 ring-white shadow-lg">
-              {photoUrl ? (
-                <img src={photoUrl} alt={name} className="w-full h-full object-cover" />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-white">
-                    {name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-              )}
+              <img src={photoUrl} alt={name} className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#2D5016] rounded-lg flex items-center justify-center shadow-md">
               <span className="text-white text-[10px] font-bold">{bloodGroup}</span>
@@ -65,14 +57,14 @@ export function IDCard({
           </div>
           
           <h2 className="text-xl font-bold text-[#0A1628] mb-1">{name}</h2>
-          <p className="text-[#2D5016] font-semibold text-sm mb-0.5">{designation}</p>
+          <p className="text-[#2D5016] font-semibold text-sm mb-2">{designation}</p>
           <p className="text-gray-500 text-xs uppercase tracking-wider">{department}</p>
         </div>
 
         {/* Employee ID */}
         <div className="mx-6 mb-4">
           <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-3 border border-gray-200">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-center gap-2">
               <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">ID</span>
               <span className="font-mono text-sm font-bold text-[#0A1628] tracking-wide">{employeeId}</span>
             </div>
@@ -99,15 +91,9 @@ export function IDCard({
         <div className="absolute bottom-0 left-0 right-0">
           <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
           <div className="px-6 py-4 bg-gradient-to-t from-gray-50/80 to-transparent">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-[9px] text-gray-400 uppercase tracking-wider">Joined</p>
-                <p className="text-xs text-gray-700 font-semibold">{joiningDate}</p>
-              </div>
-              <div className="text-right">
-                <p className="text-[9px] text-gray-400 uppercase tracking-wider">Valid Until</p>
-                <p className="text-xs text-gray-700 font-semibold">Dec 2026</p>
-              </div>
+            <div className="text-center">
+              <p className="text-[9px] text-gray-400 uppercase tracking-wider">Joined</p>
+              <p className="text-xs text-gray-700 font-semibold">{joiningDate}</p>
             </div>
           </div>
         </div>
@@ -126,7 +112,7 @@ export function IDCard({
 
         {/* QR Code */}
         <div className="flex flex-col items-center py-6">
-          <div className="w-40 h-40 bg-white border-2 border-gray-200 rounded-2xl p-3 shadow-sm">
+          <div className="w-40 h-40 bg-white border-2 border-dashed border-gray-300 rounded-2xl p-3 shadow-sm">
             <div className="w-full h-full bg-[#0A1628] rounded-lg flex items-center justify-center">
               <div className="grid grid-cols-5 gap-1">
                 {Array.from({ length: 25 }).map((_, i) => (
@@ -142,29 +128,29 @@ export function IDCard({
         </div>
 
         {/* Company Info */}
-        <div className="px-6 space-y-4 mt-2">
-          <div className="flex gap-3">
+        <div className="px-6 space-y-4 mt-2 mb-4">
+          <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <MapPin className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-xs">
+            <div className="text-xs flex-1">
               <p className="font-bold text-[#0A1628] mb-1">The LAPS Group Headquarters</p>
               <p className="text-gray-500">Hyderabad, Telangana, India</p>
             </div>
           </div>
-          <div className="flex gap-3">
+          <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <Globe className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-xs">
+            <div className="text-xs flex-1">
               <p className="text-gray-500">www.lapsgroup.com/architecture-planning</p>
             </div>
           </div>
-          <div className="flex gap-3">
+          <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <Phone className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-xs">
+            <div className="text-xs flex-1">
               <p className="text-gray-500">+91 40 1234 5678</p>
             </div>
           </div>
@@ -205,6 +191,7 @@ export function IDCardPreview() {
             email="venugopal.meesala@lapsgroup.com"
             phone="+91 98765 43210"
             joiningDate="January 2026"
+            photoUrl="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
             bloodGroup="O+"
           />
         </div>
