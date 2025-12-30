@@ -22,18 +22,28 @@ export function LaunchPresentation() {
       subtitle: 'Division Launch Presentation',
       theme: 'dark',
       content: (
-        <div className="text-center space-y-8">
-          <div className="inline-block">
-            <Building2 className="w-32 h-32 text-laps-gold mx-auto mb-6" strokeWidth={1} />
+        <div className="text-center space-y-8 relative min-h-[500px] flex flex-col justify-center">
+          <div className="absolute inset-0">
+            <img 
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop" 
+              alt="Modern architecture" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-laps-navy/70"></div>
           </div>
-          <h1 className="text-7xl font-bold text-white mb-4">
-            Designing Tomorrow's Spaces
-          </h1>
-          <p className="text-3xl text-white/80">
-            Landscape + Architecture + Planning Studios
-          </p>
-          <div className="pt-12 text-xl text-white/60">
-            Q1 2026 Launch Strategy
+          <div className="relative z-10">
+            <div className="inline-block">
+              <Building2 className="w-32 h-32 text-laps-gold mx-auto mb-6" strokeWidth={1} />
+            </div>
+            <h1 className="text-7xl font-bold text-white mb-4">
+              Designing Tomorrow's Spaces
+            </h1>
+            <p className="text-3xl text-white/80">
+              Landscape + Architecture + Planning Studios
+            </p>
+            <div className="pt-12 text-xl text-white/60">
+              Q1 2026 Launch
+            </div>
           </div>
         </div>
       ),
@@ -45,7 +55,14 @@ export function LaunchPresentation() {
       title: 'Our Vision',
       theme: 'light',
       content: (
-        <div className="space-y-12">
+        <div className="space-y-8 relative">
+          <div className="absolute top-0 right-0 w-2/5 h-full opacity-10">
+            <img 
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=800&fit=crop" 
+              alt="Architectural blueprint" 
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="bg-laps-navy text-white p-12">
             <div className="flex items-start gap-6">
               <Target className="w-16 h-16 text-laps-gold flex-shrink-0 mt-2" />
@@ -59,18 +76,18 @@ export function LaunchPresentation() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-6 relative z-10">
             <div className="bg-[#2D5016] text-white p-8 text-center">
-              <div className="text-5xl font-bold mb-2">50+</div>
-              <div className="text-lg">Projects Ready</div>
+              <div className="text-5xl font-bold mb-2">10-20</div>
+              <div className="text-lg">Projects Year 1</div>
             </div>
             <div className="bg-[#2D5016] text-white p-8 text-center">
-              <div className="text-5xl font-bold mb-2">25</div>
-              <div className="text-lg">Expert Team</div>
+              <div className="text-5xl font-bold mb-2">5-8</div>
+              <div className="text-lg">Core Team</div>
             </div>
             <div className="bg-[#2D5016] text-white p-8 text-center">
-              <div className="text-5xl font-bold mb-2">12</div>
-              <div className="text-lg">Cities Coverage</div>
+              <div className="text-5xl font-bold mb-2">10</div>
+              <div className="text-lg">Target Cities</div>
             </div>
           </div>
         </div>
@@ -245,10 +262,10 @@ export function LaunchPresentation() {
         <div className="space-y-8">
           <div className="grid grid-cols-4 gap-6">
             {[
-              { channel: 'Website & SEO', effort: '30%', target: '5K visits/mo', icon: Globe },
-              { channel: 'Social Media', effort: '35%', target: '10K followers', icon: Users },
-              { channel: 'Email Marketing', effort: '15%', target: '2K subscribers', icon: Mail },
-              { channel: 'Paid Ads', effort: '20%', target: '₹3.5L/mo', icon: Megaphone },
+              { channel: 'Website & SEO', effort: '30%', target: '1K visits/mo', icon: Globe },
+              { channel: 'Social Media', effort: '35%', target: '1K followers', icon: Users },
+              { channel: 'Email Marketing', effort: '15%', target: '500 subscribers', icon: Mail },
+              { channel: 'Paid Ads', effort: '20%', target: '₹50K/mo', icon: Megaphone },
             ].map((channel, idx) => {
               const IconComponent = channel.icon;
               return (
@@ -288,13 +305,20 @@ export function LaunchPresentation() {
       title: 'Financial Projections - Year 1',
       theme: 'light',
       content: (
-        <div className="space-y-8">
-          <div className="grid grid-cols-4 gap-6">
+        <div className="space-y-8 relative">
+          <div className="absolute inset-0 opacity-10">
+            <img 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop" 
+              alt="Financial growth" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative z-10 grid grid-cols-4 gap-6">
             {[
-              { quarter: 'Q1', projects: '8-12', revenue: '₹1.2-1.8 Cr', color: 'from-[#2D5016] to-[#3d6b1f]' },
-              { quarter: 'Q2', projects: '15-20', revenue: '₹2.7-3.6 Cr', color: 'from-laps-blue to-[#0052a3]' },
-              { quarter: 'Q3', projects: '20-25', revenue: '₹4-5 Cr', color: 'from-laps-gold to-[#b8911f]' },
-              { quarter: 'Q4', projects: '25-30', revenue: '₹5.5-6.6 Cr', color: 'from-laps-navy to-[#0a1628]' },
+              { quarter: 'Q1', projects: '3-5', revenue: '₹2-10 L', color: 'from-[#2D5016] to-[#3d6b1f]' },
+              { quarter: 'Q2', projects: '5-7', revenue: '₹5-12 L', color: 'from-laps-blue to-[#0052a3]' },
+              { quarter: 'Q3', projects: '6-9', revenue: '₹7-15 L', color: 'from-laps-gold to-[#b8911f]' },
+              { quarter: 'Q4', projects: '8-12', revenue: '₹10-20 L', color: 'from-laps-navy to-[#0a1628]' },
             ].map((quarter, idx) => (
               <motion.div
                 key={idx}
@@ -318,16 +342,16 @@ export function LaunchPresentation() {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="relative z-10 grid grid-cols-2 gap-6">
             <div className="bg-laps-navy text-white p-8">
               <DollarSign className="w-12 h-12 text-laps-gold mb-4" />
               <div className="text-xl mb-2">Year 1 Total Revenue</div>
-              <div className="text-5xl font-bold">₹13-17 Cr</div>
+              <div className="text-5xl font-bold">₹2-20 L</div>
             </div>
             <div className="bg-[#2D5016] text-white p-8">
               <TrendingUp className="w-12 h-12 text-laps-gold mb-4" />
               <div className="text-xl mb-2">Profit Margin (by Q4)</div>
-              <div className="text-5xl font-bold">15-20%</div>
+              <div className="text-5xl font-bold">15-25%</div>
             </div>
           </div>
         </div>
@@ -340,7 +364,14 @@ export function LaunchPresentation() {
       title: 'Grand Launch Event',
       theme: 'accent',
       content: (
-        <div className="space-y-8">
+        <div className="space-y-8 relative">
+          <div className="absolute inset-0 opacity-10">
+            <img 
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop" 
+              alt="Professional event" 
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="bg-white/10 backdrop-blur-sm p-10  border border-white/20">
             <div className="grid grid-cols-3 gap-8 mb-8">
               <div className="text-center">
@@ -352,7 +383,7 @@ export function LaunchPresentation() {
               <div className="text-center">
                 <Users className="w-16 h-16 text-laps-gold mx-auto mb-4" />
                 <div className="text-white/70 mb-2">Attendees</div>
-                <div className="text-2xl font-bold text-white">150-200</div>
+                <div className="text-2xl font-bold text-white">50-100</div>
                 <div className="text-white/70">VIP Guests</div>
               </div>
               <div className="text-center">
@@ -394,16 +425,23 @@ export function LaunchPresentation() {
       title: 'Success Metrics & KPIs',
       theme: 'light',
       content: (
-        <div className="grid grid-cols-2 gap-8">
-          <div>
+        <div className="grid grid-cols-2 gap-8 relative">
+          <div className="absolute inset-0 opacity-5">
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop" 
+              alt="Business analytics" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative z-10">
             <h3 className="text-2xl font-bold text-laps-navy mb-6">Launch Phase (Months 1-3)</h3>
             <div className="space-y-4">
               {[
-                { metric: 'Website Traffic', target: '5K visits/month', icon: Globe },
-                { metric: 'Social Followers', target: '5K Instagram, 3K LinkedIn', icon: Users },
-                { metric: 'Media Coverage', target: '10+ articles', icon: Award },
-                { metric: 'Projects Won', target: '8-15 projects', icon: Target },
-                { metric: 'Contract Value', target: '₹1.2-2.5 Cr', icon: DollarSign },
+                { metric: 'Website Traffic', target: '1K visits/month', icon: Globe },
+                { metric: 'Social Followers', target: '1K Instagram, 500 LinkedIn', icon: Users },
+                { metric: 'Media Coverage', target: '3-5 articles', icon: Award },
+                { metric: 'Projects Won', target: '3-5 projects', icon: Target },
+                { metric: 'Signed Contracts', target: '₹2-10 L', icon: DollarSign },
               ].map((kpi, idx) => {
                 const IconComponent = kpi.icon;
                 return (
@@ -425,15 +463,15 @@ export function LaunchPresentation() {
             </div>
           </div>
 
-          <div>
+          <div className="relative z-10">
             <h3 className="text-2xl font-bold text-laps-navy mb-6">Growth Phase (Months 4-12)</h3>
             <div className="space-y-4">
               {[
-                { metric: 'Monthly Inquiries', target: '100+', icon: Mail },
-                { metric: 'Project Pipeline', target: '₹10 Cr+', icon: BarChart3 },
+                { metric: 'Monthly Inquiries', target: '15-25', icon: Mail },
+                { metric: 'Active Proposals', target: '₹50-80 L', icon: BarChart3 },
                 { metric: 'Client Retention', target: '70%+', icon: UserCheck },
-                { metric: 'Team Size', target: '25-30', icon: Users },
-                { metric: 'Profit Margin', target: '15-20%', icon: TrendingUp },
+                { metric: 'Team Size', target: '8-12', icon: Users },
+                { metric: 'Profit Margin', target: '15-25%', icon: TrendingUp },
               ].map((kpi, idx) => {
                 const IconComponent = kpi.icon;
                 return (
@@ -464,12 +502,19 @@ export function LaunchPresentation() {
       title: 'Launch Investment',
       theme: 'dark',
       content: (
-        <div className="space-y-8">
-          <div className="grid grid-cols-3 gap-6">
+        <div className="space-y-8 relative">
+          <div className="absolute inset-0 opacity-10">
+            <img 
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=800&fit=crop" 
+              alt="Business investment" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative z-10 grid grid-cols-3 gap-6">
             {[
-              { category: 'Pre-Launch', amount: '₹26L', items: ['Brand development', 'Portfolio creation', 'Software & tech'] },
-              { category: 'Launch Event', amount: '₹15L', items: ['Venue & catering', 'AV & production', 'Materials'] },
-              { category: 'Marketing (M1-3)', amount: '₹25.5L', items: ['Digital ads', 'Content', 'PR & media'] },
+              { category: 'Pre-Launch', amount: '₹12L', items: ['Brand development', 'Website & digital', 'Software & tools'] },
+              { category: 'Launch Event', amount: '₹3L', items: ['Venue & catering', 'AV & production', 'Materials'] },
+              { category: 'Marketing (M1-3)', amount: '₹5L', items: ['Digital ads', 'Content creation', 'PR & media'] },
             ].map((investment, idx) => (
               <motion.div
                 key={idx}
@@ -492,19 +537,19 @@ export function LaunchPresentation() {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-laps-gold to-[#b8911f] text-laps-navy p-12">
+          <div className="relative z-10 bg-gradient-to-r from-laps-gold to-[#b8911f] text-laps-navy p-12">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-2xl font-semibold mb-2">Total Launch Investment</div>
-                <div className="text-6xl font-bold">₹66.5 Lakhs</div>
+                <div className="text-6xl font-bold">₹20 Lakhs</div>
               </div>
               <div className="text-right">
                 <div className="text-2xl font-semibold mb-2">Expected Year 1 Revenue</div>
-                <div className="text-6xl font-bold">₹13-17 Cr</div>
+                <div className="text-6xl font-bold">₹1-1.5 Cr</div>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t-2 border-laps-navy/20 text-center">
-              <div className="text-xl font-semibold">ROI: 20-25x within 12 months</div>
+              <div className="text-xl font-semibold">ROI: 4-6x within 12 months</div>
             </div>
           </div>
         </div>
@@ -517,22 +562,29 @@ export function LaunchPresentation() {
       title: 'Next Steps',
       theme: 'accent',
       content: (
-        <div className="space-y-8">
-          <div className="bg-white/10 backdrop-blur-sm p-10  border border-white/20">
+        <div className="space-y-8 relative">
+          <div className="absolute inset-0 opacity-10">
+            <img 
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&h=800&fit=crop" 
+              alt="Team collaboration" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative z-10 bg-white/10 backdrop-blur-sm p-10  border border-white/20">
             <Rocket className="w-20 h-20 text-laps-gold mx-auto mb-6" />
             <h2 className="text-4xl font-bold text-white text-center mb-8">
               Ready to Launch!
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="relative z-10 grid grid-cols-2 gap-6">
             {[
               { step: '1', action: 'Approve launch plan and budget', status: 'Pending Review' },
               { step: '2', action: 'Finalize launch event date & venue', status: 'In Progress' },
               { step: '3', action: 'Begin pre-launch activities', status: 'Ready to Start' },
               { step: '4', action: 'Kickoff marketing campaigns', status: 'Ready to Start' },
               { step: '5', action: 'Schedule stakeholder meetings', status: 'This Week' },
-              { step: '6', action: 'Launch countdown begins', status: 'T-8 Weeks' },
+              { step: '6', action: 'Launch countdown begins', status: 'T-4 Weeks' },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -561,19 +613,29 @@ export function LaunchPresentation() {
       title: 'Thank You',
       theme: 'dark',
       content: (
-        <div className="text-center space-y-12">
-          <div className="inline-block">
-            <Award className="w-32 h-32 text-laps-gold mx-auto mb-6" strokeWidth={1} />
+        <div className="text-center space-y-12 relative min-h-[500px] flex flex-col justify-center">
+          <div className="absolute inset-0">
+            <img 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop" 
+              alt="Modern office" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-laps-navy/75"></div>
           </div>
-          <h1 className="text-6xl font-bold text-white mb-4">
-            Let's Build the Future Together
-          </h1>
-          <p className="text-3xl text-white/80 mb-12">
-            LAPS - Architecture & Planning Studios
-          </p>
-          <div className="space-y-4 text-xl text-white/60">
-            <p>Questions & Discussion</p>
-            <p className="text-laps-gold">www.lapsgroup.com/architecture-planning</p>
+          <div className="relative z-10">
+            <div className="inline-block">
+              <Award className="w-32 h-32 text-laps-gold mx-auto mb-6" strokeWidth={1} />
+            </div>
+            <h1 className="text-6xl font-bold text-white mb-4">
+              Let's Build the Future Together
+            </h1>
+            <p className="text-3xl text-white/80 mb-12">
+              LAPS - Architecture & Planning Studios
+            </p>
+            <div className="space-y-4 text-xl text-white/60">
+              <p>Questions & Discussion</p>
+              <p className="text-laps-gold">www.lapsgroup.com/architecture-planning</p>
+            </div>
           </div>
         </div>
       ),
@@ -620,7 +682,7 @@ export function LaunchPresentation() {
                   {currentSlideData.title}
                 </h2>
                 {currentSlideData.subtitle && (
-                  <p className={`text-xl ${currentSlideData.theme === 'light' ? 'text-laps-slate' : 'text-white/70'}`}>
+                  <p className={`text-xl ${currentSlideData.theme === 'light' ? 'text-laps-slate' : 'text-laps-gold'}`}>
                     {currentSlideData.subtitle}
                   </p>
                 )}
