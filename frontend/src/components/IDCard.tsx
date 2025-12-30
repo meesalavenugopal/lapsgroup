@@ -36,7 +36,7 @@ export function IDCard({
         <div className="h-2 bg-gradient-to-r from-[#2D5016] via-[#C9A227] to-[#0A1628]"></div>
         
         {/* Header with Logo */}
-        <div className="px-6 pt-5 pb-3 border-b border-gray-100">
+        <div className="px-6 pt-6 pb-5 border-b border-gray-100">
           <div className="flex items-center gap-3">
             <img 
               src="/logo-laps-architecture.png" 
