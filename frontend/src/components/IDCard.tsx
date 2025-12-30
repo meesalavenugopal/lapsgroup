@@ -26,7 +26,7 @@ export function IDCard({
   return (
     <div className="flex gap-8 p-8">
       {/* Front Side */}
-      <div className="w-[350px] h-[550px] bg-white shadow-2xl overflow-hidden relative">
+      <div className="w-[350px] h-[550px] bg-white shadow-2xl overflow-hidden relative border border-gray-100">
         {/* Header with Logo and Pattern */}
         <div className="bg-gradient-to-br from-[#2D5016] to-[#1a3009] h-[140px] relative overflow-hidden">
           {/* Decorative Pattern */}
@@ -97,8 +97,8 @@ export function IDCard({
         </div>
 
         {/* Footer */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#F8FAFC] border-t border-gray-200 px-6 py-3">
-          <div className="flex justify-between items-center text-xs text-gray-500">
+        <div className="absolute bottom-0 left-0 right-0 bg-[#F8FAFC] border-t border-gray-200 px-6 py-4 h-[52px] flex items-center">
+          <div className="flex justify-between items-center text-xs text-gray-500 w-full">
             <span className="font-medium">Joined: {joiningDate}</span>
             <span className="bg-red-100 text-red-700 px-2 py-1 font-semibold rounded text-[11px]">
               Blood: {bloodGroup}
@@ -108,15 +108,15 @@ export function IDCard({
       </div>
 
       {/* Back Side */}
-      <div className="w-[350px] h-[550px] bg-white shadow-2xl overflow-hidden relative">
+      <div className="w-[350px] h-[550px] bg-white shadow-2xl overflow-hidden relative border border-gray-100">
         {/* Header Pattern */}
-        <div className="bg-gradient-to-br from-[#0A1628] to-[#1a2d4a] h-[100px] relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#0A1628] to-[#1a2d4a] h-[140px] relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute -top-10 -right-10 w-40 h-40 border-[25px] border-white/30 rounded-full"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 border-[20px] border-white/30 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 border-[15px] border-white/20 rounded-full translate-y-1/2 -translate-x-1/2"></div>
           </div>
           <div className="relative z-10 px-6 py-5 flex flex-col justify-center h-full">
-            <h2 className="text-white font-bold text-lg leading-tight">LAPS - Architecture &</h2>
-            <h2 className="text-white font-bold text-lg leading-tight">Planning Studios</h2>
+            <h2 className="text-white font-bold text-lg leading-tight">Architecture & Planning Studios</h2>
             <p className="text-[#C9A227] text-sm mt-1.5">Designing Tomorrow's Spaces</p>
           </div>
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A227] via-[#E5B82A] to-[#C9A227]"></div>
@@ -172,15 +172,15 @@ export function IDCard({
         </div>
 
         {/* Terms */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#F8FAFC] border-t border-gray-200 px-6 py-3">
-          <p className="text-[10px] text-gray-400 text-center leading-relaxed">
+        <div className="absolute bottom-0 left-0 right-0 bg-[#F8FAFC] border-t border-gray-200 px-6 py-4 h-[52px] flex items-center">
+          <p className="text-[10px] text-gray-400 text-center leading-relaxed w-full">
             This card is the property of LAPS Group. If found, please return to the address above.
             Unauthorized use is prohibited.
           </p>
         </div>
 
         {/* Decorative Bottom Pattern */}
-        <div className="absolute bottom-12 left-0 right-0 flex justify-center gap-2 opacity-20">
+        <div className="absolute bottom-[65px] left-0 right-0 flex justify-center gap-2 opacity-20">
           <div className="w-2 h-2 bg-[#2D5016] rounded-full"></div>
           <div className="w-2 h-2 bg-[#C9A227] rounded-full"></div>
           <div className="w-2 h-2 bg-[#0A1628] rounded-full"></div>
@@ -208,7 +208,7 @@ export function IDCardPreview() {
             designation="Principal Architect"
             employeeId="LAPS-ARCH-001"
             department="Architecture & Planning"
-            email="venugopal@lapsgroup.com"
+            email="venugopal.meesala@lapsgroup.com"
             phone="+91 98765 43210"
             joiningDate="January 2026"
             bloodGroup="O+"
