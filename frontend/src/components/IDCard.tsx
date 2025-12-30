@@ -32,43 +32,42 @@ export function IDCard({
         
         {/* Content */}
         <div className="relative z-10">
-        {/* Decorative Top Bar */}
-        <div className="h-2 bg-gradient-to-r from-[#2D5016] via-[#C9A227] to-[#0A1628]"></div>
-        
-        {/* Header with Logo */}
-        <div className="px-6 pt-6 pb-5 border-b border-gray-100">
-          <div className="flex items-center gap-3">
+        {/* Header with Gradient Background */}
+        <div className="bg-gradient-to-br from-[#0A1628] via-[#1a2d45] to-[#2D5016] px-6 py-6 text-center relative overflow-hidden">
+          {/* Decorative accent line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A227] via-white to-[#C9A227]"></div>
+          
+          <div className="flex items-center justify-center gap-4">
             <img 
               src="/logo-laps-architecture.png" 
               alt="LAPS Logo" 
-              className="w-12 h-12 object-contain"
+              className="w-14 h-14 object-contain drop-shadow-xl"
             />
-            <div>
-              <h1 className="text-[#0A1628] font-bold text-sm tracking-wide uppercase">LAPS GROUP</h1>
-              <p className="text-gray-600 text-xs">Architecture & Planning</p>
+            <div className="text-left">
+              <h1 className="text-white font-bold text-lg tracking-wider uppercase leading-tight">LAPS GROUP</h1>
+              <p className="text-[#C9A227] text-xs font-medium tracking-wide">Architecture & Planning</p>
             </div>
           </div>
         </div>
 
         {/* Photo and Name Section */}
-        <div className="px-6 pt-6 pb-4 text-center">
-          <div className="inline-block relative mb-4">
-            <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 ring-4 ring-white shadow-lg">
+        <div className="px-6 pt-5 pb-4 text-center">
+          <div className="inline-block relative mb-3">
+            <div className="w-32 h-32 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 ring-2 ring-white shadow-lg">
               <img src={photoUrl} alt={name} className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#2D5016] rounded-lg flex items-center justify-center shadow-md">
-              <span className="text-white text-[10px] font-bold">{bloodGroup}</span>
+            <div className="absolute -bottom-1.5 -right-1.5 w-9 h-9 bg-[#2D5016] rounded-lg flex items-center justify-center shadow-md">
+              <span className="text-white text-xs font-bold">{bloodGroup}</span>
             </div>
           </div>
           
-          <h2 className="text-xl font-bold text-[#0A1628] mb-1">{name}</h2>
-          <p className="text-[#2D5016] font-semibold text-sm mb-2">{designation}</p>
-          <p className="text-gray-500 text-xs uppercase tracking-wider">{department}</p>
+          <h2 className="text-xl font-bold text-[#0A1628] mb-1.5">{name}</h2>
+          <p className="text-[#2D5016] font-semibold text-sm">{designation}</p>
         </div>
 
         {/* Employee ID */}
         <div className="mx-6 mb-4">
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-3 border-2 border-dashed border-gray-300">
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-2.5 border-2 border-dashed border-gray-300">
             <div className="flex items-center justify-center gap-2">
               <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">ID</span>
               <span className="font-mono text-sm font-bold text-[#0A1628] tracking-wide">{employeeId}</span>
@@ -77,18 +76,18 @@ export function IDCard({
         </div>
 
         {/* Contact Info */}
-        <div className="px-6 space-y-3 mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
+        <div className="px-6 space-y-2.5 mb-20">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-lg bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <Mail className="w-4 h-4 text-[#2D5016]" />
             </div>
             <span className="text-xs text-gray-600 truncate">{email}</span>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-lg bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <Phone className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <span className="text-xs text-gray-600">{phone}</span>
+            <span className="text-[11px] text-gray-600">{phone}</span>
           </div>
         </div>
         </div>
@@ -96,7 +95,7 @@ export function IDCard({
         {/* Footer */}
         <div className="absolute bottom-0 left-0 right-0 z-20">
           <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-          <div className="px-6 py-4 bg-gradient-to-t from-gray-50/80 to-transparent">
+          <div className="px-6 py-4 bg-gradient-to-t from-gray-50/90 to-transparent backdrop-blur-sm">
             <div className="flex justify-between items-center">
               <div>
                 <p className="text-[9px] text-gray-400 uppercase tracking-wider">Joined</p>
@@ -118,64 +117,74 @@ export function IDCard({
         
         {/* Content */}
         <div className="relative z-10">
-        {/* Decorative Top Bar */}
-        <div className="h-2 bg-gradient-to-r from-[#0A1628] via-[#C9A227] to-[#2D5016]"></div>
-        
-        {/* Header */}
-        <div className="px-6 pt-6 pb-5 border-b border-gray-100">
-          <h2 className="text-lg font-bold text-[#0A1628] leading-tight mb-2">Architecture & Planning Studios</h2>
-          <p className="text-[#C9A227] text-sm font-medium">Designing Tomorrow's Spaces</p>
+        {/* Header with Gradient Background */}
+        <div className="bg-gradient-to-br from-[#2D5016] via-[#3d6b1f] to-[#0A1628] px-6 py-5 text-center relative overflow-hidden">
+          {/* Decorative accent line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-white via-[#C9A227] to-white"></div>
+          
+          <div className="flex flex-col items-center gap-2">
+            <img 
+              src="/logo-laps-architecture.png" 
+              alt="LAPS Logo" 
+              className="w-16 h-16 object-contain drop-shadow-xl mb-1.5"
+            />
+            <h2 className="text-white font-bold text-base leading-tight tracking-wide">Architecture & Planning Studios</h2>
+            <div className="h-px w-32 bg-[#C9A227] mx-auto"></div>
+            <p className="text-[#C9A227] text-xs font-medium tracking-widest uppercase">Designing Tomorrow's Spaces</p>
+          </div>
         </div>
 
         {/* QR Code */}
-        <div className="flex flex-col items-center py-6">
-          <div className="w-40 h-40 bg-white border-2 border-dashed border-gray-300 rounded-2xl p-3 shadow-sm">
+        <div className="flex flex-col items-center py-5">
+          <div className="w-32 h-32 bg-white border-2 border-dashed border-gray-300 rounded-xl p-2 shadow-sm">
             <div className="w-full h-full bg-gradient-to-br from-white to-gray-50 rounded-lg flex items-center justify-center">
-              <div className="grid grid-cols-6 gap-1">
+              <div className="grid grid-cols-6 gap-0.5">
                 {Array.from({ length: 36 }).map((_, i) => {
                   const colors = ['bg-[#C9A227]', 'bg-[#2D5016]', 'bg-[#0A1628]', 'bg-[#8B7355]', 'bg-[#6B8E23]', 'bg-[#4A5D23]'];
                   const row = Math.floor(i / 6);
                   const col = i % 6;
-                  // Create a more organic pattern
-                  const pattern = [0,1,0,1,1,0,1,0,1,0,1,1,0,1,1,0,0,1,1,0,1,0,1,0,0,1,0,1,1,0,1,1,0,1,0,1];
-                  const colorIndex = pattern[i] ? Math.floor(Math.random() * colors.length) : Math.floor(Math.random() * 3);
+                  // Create diagonal stripe pattern
+                  const diagonal = (row + col) % 3;
+                  // Corner markers (like real QR codes)
+                  const isCorner = (row < 2 && col < 2) || (row < 2 && col > 3) || (row > 3 && col < 2);
+                  const colorIndex = isCorner ? 2 : diagonal; // Navy corners, diagonal colors for rest
                   return (
                     <div
                       key={i}
-                      className={`w-5 h-5 ${colors[colorIndex]} rounded`}
+                      className={`w-4 h-4 ${colors[colorIndex]} rounded-sm ${isCorner ? 'ring-1 ring-white' : ''}`}
                     />
                   );
                 })}
               </div>
             </div>
           </div>
-          <p className="text-xs text-gray-400 mt-3 uppercase tracking-wider">Scan for Verification</p>
+          <p className="text-[10px] text-gray-400 mt-2 uppercase tracking-wider">Scan for Verification</p>
         </div>
 
         {/* Company Info */}
-        <div className="px-6 space-y-4 mt-2 mb-4">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
-              <MapPin className="w-4 h-4 text-[#2D5016]" />
+        <div className="px-6 space-y-2.5 pb-16">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-3.5 h-3.5 text-[#2D5016]" />
             </div>
-            <div className="text-xs flex-1">
-              <p className="font-bold text-[#0A1628] mb-1">The LAPS Group Headquarters</p>
+            <div className="text-[10px] flex-1">
+              <p className="font-bold text-[#0A1628] mb-0.5">The LAPS Group Headquarters</p>
               <p className="text-gray-500">Hyderabad, Telangana, India</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
-              <Globe className="w-4 h-4 text-[#2D5016]" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
+              <Globe className="w-3.5 h-3.5 text-[#2D5016]" />
             </div>
-            <div className="text-xs flex-1">
-              <p className="text-gray-500">www.lapsgroup.com/architecture-planning</p>
+            <div className="text-[10px] flex-1">
+              <p className="text-gray-500 break-all leading-tight">www.lapsgroup.com/architecture-planning</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
-              <Phone className="w-4 h-4 text-[#2D5016]" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
+              <Phone className="w-3.5 h-3.5 text-[#2D5016]" />
             </div>
-            <div className="text-xs flex-1">
+            <div className="text-[10px] flex-1">
               <p className="text-gray-500">+91 40 1234 5678</p>
             </div>
           </div>
@@ -185,8 +194,8 @@ export function IDCard({
         {/* Footer */}
         <div className="absolute bottom-0 left-0 right-0 z-20">
           <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-          <div className="px-6 py-4 bg-gradient-to-t from-gray-50/80 to-transparent">
-            <p className="text-[9px] text-gray-400 text-center leading-relaxed">
+          <div className="px-6 py-3 bg-gradient-to-t from-gray-50/90 to-transparent backdrop-blur-sm">
+            <p className="text-[8px] text-gray-400 text-center leading-relaxed">
               This card is property of LAPS Group. If found, please return to the above address.
             </p>
           </div>
