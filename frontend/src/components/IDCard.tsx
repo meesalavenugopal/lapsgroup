@@ -26,164 +26,158 @@ export function IDCard({
   return (
     <div className="flex gap-8 p-8">
       {/* Front Side */}
-      <div className="w-[350px] h-[550px] bg-white shadow-2xl overflow-hidden relative border border-gray-100">
-        {/* Header with Logo and Pattern */}
-        <div className="bg-gradient-to-br from-[#2D5016] to-[#1a3009] h-[140px] relative overflow-hidden">
-          {/* Decorative Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-32 h-32 border-[20px] border-white/30 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 border-[15px] border-white/20 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-          </div>
-          
-          {/* Logo and Company Name */}
-          <div className="relative z-10 px-6 py-5 flex items-center gap-3">
+      <div className="w-[350px] h-[550px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden relative rounded-2xl">
+        {/* Decorative Top Bar */}
+        <div className="h-2 bg-gradient-to-r from-[#2D5016] via-[#C9A227] to-[#0A1628]"></div>
+        
+        {/* Header with Logo */}
+        <div className="px-6 pt-5 pb-3 border-b border-gray-100">
+          <div className="flex items-center gap-3">
             <img 
               src="/logo-laps-architecture.png" 
               alt="LAPS Logo" 
-              className="w-14 h-14 object-contain bg-white/10 p-1.5 backdrop-blur-sm rounded"
+              className="w-12 h-12 object-contain"
             />
-            <div className="flex flex-col justify-center">
-              <h1 className="text-white font-bold text-lg tracking-wide leading-tight">LAPS GROUP</h1>
-              <p className="text-white/80 text-sm leading-tight">Architecture & Planning Studios</p>
+            <div>
+              <h1 className="text-[#0A1628] font-bold text-sm tracking-wide uppercase">LAPS GROUP</h1>
+              <p className="text-gray-600 text-xs">Architecture & Planning</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Photo and Name Section */}
+        <div className="px-6 pt-6 pb-4 text-center">
+          <div className="inline-block relative mb-4">
+            <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 ring-4 ring-white shadow-lg">
+              {photoUrl ? (
+                <img src={photoUrl} alt={name} className="w-full h-full object-cover" />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                  <span className="text-3xl font-bold text-white">
+                    {name.split(' ').map(n => n[0]).join('')}
+                  </span>
+                </div>
+              )}
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#2D5016] rounded-lg flex items-center justify-center shadow-md">
+              <span className="text-white text-[10px] font-bold">{bloodGroup}</span>
             </div>
           </div>
           
-          {/* Gold accent line */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A227] via-[#E5B82A] to-[#C9A227]"></div>
+          <h2 className="text-xl font-bold text-[#0A1628] mb-1">{name}</h2>
+          <p className="text-[#2D5016] font-semibold text-sm mb-0.5">{designation}</p>
+          <p className="text-gray-500 text-xs uppercase tracking-wider">{department}</p>
         </div>
 
-        {/* Photo Section */}
-        <div className="relative -mt-12 flex justify-center z-20">
-          <div className="w-28 h-28 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200">
-            {photoUrl ? (
-              <img src={photoUrl} alt={name} className="w-full h-full object-cover" />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                <span className="text-4xl font-bold text-gray-500">
-                  {name.split(' ').map(n => n[0]).join('')}
-                </span>
-              </div>
-            )}
+        {/* Employee ID */}
+        <div className="mx-6 mb-4">
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-3 border border-gray-200">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">ID</span>
+              <span className="font-mono text-sm font-bold text-[#0A1628] tracking-wide">{employeeId}</span>
+            </div>
           </div>
-        </div>
-
-        {/* Employee Details */}
-        <div className="px-6 pt-4 text-center">
-          <h2 className="text-2xl font-bold text-[#0A1628] tracking-wide">{name}</h2>
-          <p className="text-[#2D5016] font-semibold text-lg mt-1">{designation}</p>
-          <p className="text-gray-500 text-sm mt-1">{department}</p>
-        </div>
-
-        {/* ID Badge */}
-        <div className="mx-6 mt-4 mb-1 bg-[#F8FAFC] border-2 border-dashed border-gray-300 py-2 px-4 text-center">
-          <span className="text-xs text-gray-500">Employee ID</span>
-          <p className="font-mono font-bold tracking-wider text-[#0A1628]">{employeeId}</p>
         </div>
 
         {/* Contact Info */}
-        <div className="px-6 mt-5 space-y-2.5">
-          <div className="flex items-center gap-3 text-gray-600">
-            <div className="w-5 flex items-center justify-center flex-shrink-0">
+        <div className="px-6 space-y-3 mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <Mail className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <span className="text-sm truncate">{email}</span>
+            <span className="text-xs text-gray-600 truncate">{email}</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-600">
-            <div className="w-5 flex items-center justify-center flex-shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <Phone className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <span className="text-sm">{phone}</span>
+            <span className="text-xs text-gray-600">{phone}</span>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#F8FAFC] border-t border-gray-200 px-6 py-4 h-[52px] flex items-center">
-          <div className="flex justify-between items-center text-xs text-gray-500 w-full">
-            <span className="font-medium">Joined: {joiningDate}</span>
-            <span className="bg-red-100 text-red-700 px-2 py-1 font-semibold rounded text-[11px]">
-              Blood: {bloodGroup}
-            </span>
+        <div className="absolute bottom-0 left-0 right-0">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+          <div className="px-6 py-4 bg-gradient-to-t from-gray-50/80 to-transparent">
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="text-[9px] text-gray-400 uppercase tracking-wider">Joined</p>
+                <p className="text-xs text-gray-700 font-semibold">{joiningDate}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-[9px] text-gray-400 uppercase tracking-wider">Valid Until</p>
+                <p className="text-xs text-gray-700 font-semibold">Dec 2026</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Back Side */}
-      <div className="w-[350px] h-[550px] bg-white shadow-2xl overflow-hidden relative border border-gray-100">
-        {/* Header Pattern */}
-        <div className="bg-gradient-to-br from-[#0A1628] to-[#1a2d4a] h-[140px] relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-32 h-32 border-[20px] border-white/30 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 border-[15px] border-white/20 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-          </div>
-          <div className="relative z-10 px-6 py-5 flex flex-col justify-center h-full">
-            <h2 className="text-white font-bold text-lg leading-tight">Architecture & Planning Studios</h2>
-            <p className="text-[#C9A227] text-sm mt-1.5">Designing Tomorrow's Spaces</p>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A227] via-[#E5B82A] to-[#C9A227]"></div>
+      <div className="w-[350px] h-[550px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden relative rounded-2xl">
+        {/* Decorative Top Bar */}
+        <div className="h-2 bg-gradient-to-r from-[#0A1628] via-[#C9A227] to-[#2D5016]"></div>
+        
+        {/* Header */}
+        <div className="px-6 pt-6 pb-5 border-b border-gray-100">
+          <h2 className="text-lg font-bold text-[#0A1628] leading-tight mb-2">Architecture & Planning Studios</h2>
+          <p className="text-[#C9A227] text-sm font-medium">Designing Tomorrow's Spaces</p>
         </div>
 
-        {/* QR Code Section */}
-        <div className="flex justify-center mt-6">
-          <div className="w-32 h-32 bg-white border-2 border-gray-200 p-2 shadow-inner">
-            {/* QR Code Placeholder */}
-            <div className="w-full h-full bg-[#0A1628] flex items-center justify-center">
+        {/* QR Code */}
+        <div className="flex flex-col items-center py-6">
+          <div className="w-40 h-40 bg-white border-2 border-gray-200 rounded-2xl p-3 shadow-sm">
+            <div className="w-full h-full bg-[#0A1628] rounded-lg flex items-center justify-center">
               <div className="grid grid-cols-5 gap-1">
                 {Array.from({ length: 25 }).map((_, i) => (
                   <div
                     key={i}
-                    className={`w-4 h-4 ${
-                      Math.random() > 0.4 ? 'bg-white' : 'bg-[#0A1628]'
-                    }`}
+                    className={`w-5 h-5 ${Math.random() > 0.4 ? 'bg-white' : 'bg-[#0A1628]'}`}
                   />
                 ))}
               </div>
             </div>
           </div>
+          <p className="text-xs text-gray-400 mt-3 uppercase tracking-wider">Scan for Verification</p>
         </div>
-        <p className="text-center text-xs text-gray-500 mt-2">Scan for verification</p>
 
         {/* Company Info */}
-        <div className="px-6 mt-5 space-y-2.5">
-          <div className="flex items-start gap-2.5 text-gray-600">
-            <div className="w-4 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <div className="px-6 space-y-4 mt-2">
+          <div className="flex gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <MapPin className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-sm leading-snug">
-              <p className="font-semibold text-[#0A1628] mb-0.5">The LAPS Group Headquarters</p>
-              <p>Hyderabad, Telangana, India</p>
+            <div className="text-xs">
+              <p className="font-bold text-[#0A1628] mb-1">The LAPS Group Headquarters</p>
+              <p className="text-gray-500">Hyderabad, Telangana, India</p>
             </div>
           </div>
-          <div className="flex items-start gap-2.5 text-gray-600">
-            <div className="w-4 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <div className="flex gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <Globe className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-sm leading-snug">
-              <p>www.lapsgroup.com/architecture-planning</p>
+            <div className="text-xs">
+              <p className="text-gray-500">www.lapsgroup.com/architecture-planning</p>
             </div>
           </div>
-          <div className="flex items-start gap-2.5 text-gray-600">
-            <div className="w-4 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <div className="flex gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#2D5016]/5 flex items-center justify-center flex-shrink-0">
               <Phone className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-sm leading-snug">
-              <p>+91 40 1234 5678</p>
+            <div className="text-xs">
+              <p className="text-gray-500">+91 40 1234 5678</p>
             </div>
           </div>
         </div>
 
-        {/* Terms */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#F8FAFC] border-t border-gray-200 px-6 py-4 h-[52px] flex items-center">
-          <p className="text-[10px] text-gray-400 text-center leading-relaxed w-full">
-            This card is the property of LAPS Group. If found, please return to the address above.
-            Unauthorized use is prohibited.
-          </p>
-        </div>
-
-        {/* Decorative Bottom Pattern */}
-        <div className="absolute bottom-[65px] left-0 right-0 flex justify-center gap-2 opacity-20">
-          <div className="w-2 h-2 bg-[#2D5016] rounded-full"></div>
-          <div className="w-2 h-2 bg-[#C9A227] rounded-full"></div>
-          <div className="w-2 h-2 bg-[#0A1628] rounded-full"></div>
+        {/* Footer */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+          <div className="px-6 py-4 bg-gradient-to-t from-gray-50/80 to-transparent">
+            <p className="text-[9px] text-gray-400 text-center leading-relaxed">
+              This card is property of LAPS Group. If found, please return to the above address.
+            </p>
+          </div>
         </div>
       </div>
     </div>
