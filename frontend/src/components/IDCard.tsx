@@ -143,32 +143,29 @@ export function IDCard({
         <p className="text-center text-xs text-gray-500 mt-2">Scan for verification</p>
 
         {/* Company Info */}
-        <div className="px-6 mt-5 space-y-3">
-          <div className="flex items-start gap-3 text-gray-600">
-            <div className="w-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <div className="px-6 mt-5 space-y-2.5">
+          <div className="flex items-start gap-2.5 text-gray-600">
+            <div className="w-4 flex items-center justify-center flex-shrink-0 mt-0.5">
               <MapPin className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-sm leading-relaxed">
-              <p className="font-semibold text-[#0A1628]">Head Office</p>
-              <p>LAPS Group Headquarters</p>
+            <div className="text-sm leading-snug">
+              <p className="font-semibold text-[#0A1628] mb-0.5">The LAPS Group Headquarters</p>
               <p>Hyderabad, Telangana, India</p>
             </div>
           </div>
-          <div className="flex items-start gap-3 text-gray-600">
-            <div className="w-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <div className="flex items-start gap-2.5 text-gray-600">
+            <div className="w-4 flex items-center justify-center flex-shrink-0 mt-0.5">
               <Globe className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-sm leading-relaxed">
-              <p className="font-semibold text-[#0A1628]">Website</p>
-              <p>www.architecture.lapsgroup.com</p>
+            <div className="text-sm leading-snug">
+              <p>www.lapsgroup.com/architecture-planning</p>
             </div>
           </div>
-          <div className="flex items-start gap-3 text-gray-600">
-            <div className="w-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <div className="flex items-start gap-2.5 text-gray-600">
+            <div className="w-4 flex items-center justify-center flex-shrink-0 mt-0.5">
               <Phone className="w-4 h-4 text-[#2D5016]" />
             </div>
-            <div className="text-sm leading-relaxed">
-              <p className="font-semibold text-[#0A1628]">Contact</p>
+            <div className="text-sm leading-snug">
               <p>+91 40 1234 5678</p>
             </div>
           </div>
