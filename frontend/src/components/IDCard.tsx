@@ -37,7 +37,14 @@ export function IDCard({
           {/* Decorative accent line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A227] via-white to-[#C9A227]"></div>
           
-          <div className="flex items-center justify-center gap-4">
+          {/* Geometric Pattern Overlay */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 right-0 w-32 h-32 border-r-[40px] border-t-[40px] border-[#C9A227] transform rotate-45"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 border-l-[30px] border-b-[30px] border-[#2D5016] transform -rotate-12"></div>
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 border-4 border-white rounded-full"></div>
+          </div>
+          
+          <div className="flex items-center justify-center gap-4 relative z-10">
             <img 
               src="/logo-laps-architecture.png" 
               alt="LAPS Logo" 
@@ -121,8 +128,13 @@ export function IDCard({
         <div className="bg-gradient-to-br from-[#2D5016] via-[#3d6b1f] to-[#0A1628] px-6 py-5 text-center relative overflow-hidden">
           {/* Decorative accent line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-white via-[#C9A227] to-white"></div>
-          
-          <div className="flex flex-col items-center gap-1.5">
+                    {/* Geometric Pattern Overlay */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-28 h-28 border-l-[35px] border-t-[35px] border-[#C9A227] transform -rotate-45"></div>
+            <div className="absolute bottom-0 right-0 w-20 h-20 border-r-[25px] border-b-[25px] border-white transform rotate-12"></div>
+            <div className="absolute top-1/3 right-1/4 w-14 h-14 border-4 border-[#C9A227] rounded-full"></div>
+          </div>
+                    <div className="flex flex-col items-center gap-1.5 relative z-10">
             <img 
               src="/logo-laps-architecture.png" 
               alt="LAPS Logo" 
