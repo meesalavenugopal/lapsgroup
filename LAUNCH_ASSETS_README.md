@@ -1,6 +1,6 @@
-# LAPS Architecture & Planning Launch Assets
+# LAPS - Architecture & Planning Studios Launch Assets
 
-This folder contains all materials for the Architecture & Planning Division launch.
+This folder contains all materials for the Architecture & Planning Studios Division launch.
 
 ## 📋 Contents
 

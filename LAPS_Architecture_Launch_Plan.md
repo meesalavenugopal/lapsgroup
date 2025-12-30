@@ -1,4 +1,4 @@
-# LAPS Architecture & Planning Division Launch Plan
+# LAPS - Architecture & Planning Studios Division Launch Plan
 ## Landscape + Architecture + Planning Studios
 
 ---
@@ -6,12 +6,12 @@
 ## Executive Summary
 
 **Launch Date:** Q1 2026  
-**Division:** Architecture & Planning  
+**Division:** Architecture & Planning Studios  
 **Tagline:** "Designing Tomorrow's Spaces"  
 **Target Market:** Premium residential, commercial, and urban development projects across India
 
 ### Mission
-To establish LAPS Architecture & Planning as the premier architectural and planning studio in India, recognized for innovative sustainable design, exceptional client service, and transformative urban solutions.
+To establish LAPS - Architecture & Planning Studios as the premier architectural and planning studio in India, recognized for innovative sustainable design, exceptional client service, and transformative urban solutions.
 
 ---
 
@@ -215,7 +215,7 @@ To establish LAPS Architecture & Planning as the premier architectural and plann
 
 ### 4.1 Brand Positioning
 **Unique Value Proposition**
-"LAPS Architecture & Planning combines international design excellence with deep understanding of Indian contexts, delivering sustainable, innovative spaces that transform how people live, work, and connect."
+"LAPS - Architecture & Planning Studios combines international design excellence with deep understanding of Indian contexts, delivering sustainable, innovative spaces that transform how people live, work, and connect."
 
 **Key Differentiators**
 1. **Sustainability First:** LEED-certified focus
@@ -607,7 +607,7 @@ To establish LAPS Architecture & Planning as the premier architectural and plann
 
 ## Conclusion
 
-The launch of LAPS Architecture & Planning represents a significant milestone in the LAPS Group expansion. With careful planning, strategic marketing, and exceptional service delivery, we project:
+The launch of LAPS - Architecture & Planning Studios represents a significant milestone in the LAPS Group expansion. With careful planning, strategic marketing, and exceptional service delivery, we project:
 
 - **Year 1 Revenue:** ₹13-17 Crores
 - **Market Position:** Top 10 architecture firms in target cities

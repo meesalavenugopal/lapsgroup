@@ -18,7 +18,7 @@ export function LaunchPresentation() {
     // Slide 1: Title
     {
       id: 1,
-      title: 'LAPS Architecture & Planning',
+      title: 'LAPS - Architecture & Planning Studios',
       subtitle: 'Division Launch Presentation',
       theme: 'dark',
       content: (
@@ -52,7 +52,7 @@ export function LaunchPresentation() {
               <div>
                 <h3 className="text-3xl font-bold mb-4">Vision</h3>
                 <p className="text-2xl leading-relaxed text-white/90">
-                  To establish LAPS Architecture & Planning as India's premier architectural studio,
+                  To establish LAPS - Architecture & Planning Studios as India's premier architectural studio,
                   recognized for innovative sustainable design and transformative urban solutions.
                 </p>
               </div>
@@ -569,7 +569,7 @@ export function LaunchPresentation() {
             Let's Build the Future Together
           </h1>
           <p className="text-3xl text-white/80 mb-12">
-            LAPS Architecture & Planning
+            LAPS - Architecture & Planning Studios
           </p>
           <div className="space-y-4 text-xl text-white/60">
             <p>Questions & Discussion</p>

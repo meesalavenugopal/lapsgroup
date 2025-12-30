@@ -1,14 +1,14 @@
-# LAPS Architecture & Planning - Launch Executive Summary
+# LAPS - Architecture & Planning Studios - Launch Executive Summary
 
 ## 🎯 Mission Statement
-Establish LAPS Architecture & Planning as India's premier architectural studio, recognized for innovative sustainable design and transformative urban solutions.
+Establish LAPS - Architecture & Planning Studios as India's premier architectural studio, recognized for innovative sustainable design and transformative urban solutions.
 
 ---
 
 ## 💼 Division Overview
 
-**Name:** Architecture & Planning  
-**Full Name:** Landscape + Architecture + Planning Studios  
+**Name:** Architecture & Planning Studios  
+**Full Name:** LAPS - Architecture & Planning Studios  
 **Tagline:** "Designing Tomorrow's Spaces"  
 **Launch:** Q1 2026  
 **Brand Color:** Forest Green (#2D5016)
@@ -298,7 +298,7 @@ Month 7-12:  Growth & profitability
 
 ## 🎯 Vision for Year 1
 
-**By End of Year 1, LAPS Architecture & Planning will be:**
+**By End of Year 1, LAPS - Architecture & Planning Studios will be:**
 - Recognized as a top-tier architecture firm in 12+ cities
 - Known for sustainable, innovative design solutions
 - Managing 60-100+ active and completed projects
