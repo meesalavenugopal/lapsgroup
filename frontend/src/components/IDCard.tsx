@@ -27,6 +27,11 @@ export function IDCard({
     <div className="flex gap-8 p-8">
       {/* Front Side */}
       <div className="w-[350px] h-[550px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden relative rounded-2xl">
+        {/* Background Image with Opacity */}
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'url(/id-background.png)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}></div>
+        
+        {/* Content */}
+        <div className="relative z-10">
         {/* Decorative Top Bar */}
         <div className="h-2 bg-gradient-to-r from-[#2D5016] via-[#C9A227] to-[#0A1628]"></div>
         
@@ -86,9 +91,10 @@ export function IDCard({
             <span className="text-xs text-gray-600">{phone}</span>
           </div>
         </div>
+        </div>
 
         {/* Footer */}
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-0 left-0 right-0 z-20">
           <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
           <div className="px-6 py-4 bg-gradient-to-t from-gray-50/80 to-transparent">
             <div className="text-center">
@@ -101,6 +107,11 @@ export function IDCard({
 
       {/* Back Side */}
       <div className="w-[350px] h-[550px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden relative rounded-2xl">
+        {/* Background Image with Opacity */}
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'url(/id-background.png)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}></div>
+        
+        {/* Content */}
+        <div className="relative z-10">
         {/* Decorative Top Bar */}
         <div className="h-2 bg-gradient-to-r from-[#0A1628] via-[#C9A227] to-[#2D5016]"></div>
         
@@ -155,9 +166,10 @@ export function IDCard({
             </div>
           </div>
         </div>
+        </div>
 
         {/* Footer */}
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-0 left-0 right-0 z-20">
           <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
           <div className="px-6 py-4 bg-gradient-to-t from-gray-50/80 to-transparent">
             <p className="text-[9px] text-gray-400 text-center leading-relaxed">
