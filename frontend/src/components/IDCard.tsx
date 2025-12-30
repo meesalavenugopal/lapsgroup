@@ -75,13 +75,13 @@ export function IDCard({
         </div>
 
         {/* ID Badge */}
-        <div className="mx-6 mt-4 bg-gradient-to-r from-[#0A1628] to-[#1a2d4a] text-white py-2 px-4 text-center">
-          <span className="text-xs text-white/70">Employee ID</span>
-          <p className="font-mono font-bold tracking-wider">{employeeId}</p>
+        <div className="mx-6 mt-4 mb-1 bg-[#F8FAFC] border-2 border-dashed border-gray-300 py-2 px-4 text-center">
+          <span className="text-xs text-gray-500">Employee ID</span>
+          <p className="font-mono font-bold tracking-wider text-[#0A1628]">{employeeId}</p>
         </div>
 
         {/* Contact Info */}
-        <div className="px-6 mt-4 space-y-2.5">
+        <div className="px-6 mt-5 space-y-2.5">
           <div className="flex items-center gap-3 text-gray-600">
             <div className="w-5 flex items-center justify-center flex-shrink-0">
               <Mail className="w-4 h-4 text-[#2D5016]" />
