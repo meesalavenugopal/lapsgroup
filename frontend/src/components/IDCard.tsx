@@ -122,15 +122,17 @@ export function IDCard({
           {/* Decorative accent line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-white via-[#C9A227] to-white"></div>
           
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-1.5">
             <img 
               src="/logo-laps-architecture.png" 
               alt="LAPS Logo" 
-              className="w-16 h-16 object-contain drop-shadow-xl mb-1.5"
+              className="w-16 h-16 object-contain drop-shadow-xl mb-1"
             />
-            <h2 className="text-white font-bold text-base leading-tight tracking-wide">Architecture & Planning Studios</h2>
-            <div className="h-px w-32 bg-[#C9A227] mx-auto"></div>
-            <p className="text-[#C9A227] text-xs font-medium tracking-widest uppercase">Designing Tomorrow's Spaces</p>
+            <div className="space-y-1.5">
+              <h2 className="text-white font-bold text-base leading-tight tracking-wide text-center">Designing Tomorrow's Spaces</h2>
+              <div className="h-px w-28 bg-[#C9A227] mx-auto"></div>
+              <p className="text-[#C9A227] text-xs font-medium tracking-wide text-center">Landscape • Architecture • Planning Studios</p>
+            </div>
           </div>
         </div>
 
