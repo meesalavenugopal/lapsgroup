@@ -199,14 +199,63 @@ export function IDCard({
 // Preview component with sample data
 export function IDCardPreview() {
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-[#0A1628] text-center mb-2">
-          Employee ID Card
-        </h1>
-        <p className="text-gray-500 text-center mb-8">
-          LAPS - Architecture & Planning Studios
-        </p>
+    <>
+      <style>{`
+        @media print {
+          @page {
+            size: landscape;
+            margin: 5mm;
+          }
+          
+          html, body {
+            background: white !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+          }
+          
+          * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+          }
+          
+          .no-print {
+            display: none !important;
+          }
+          
+          body > div,
+          #root,
+          .min-h-screen {
+            min-height: auto !important;
+            background: white !important;
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+          
+          .bg-gray-100,
+          [class*="bg-gray"] {
+            background: white !important;
+          }
+          
+          #id-cards-container {
+            padding: 0 !important;
+            background: white !important;
+          }
+          
+          .shadow-\\[0_8px_30px_rgb\\(0\\2c 0\\2c 0\\2c 0\\.12\\)\\] {
+            box-shadow: none !important;
+          }
+        }
+      `}</style>
+      <div className="min-h-screen bg-gray-100 py-12">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl font-bold text-[#0A1628] text-center mb-2 no-print">
+            Employee ID Card
+          </h1>
+          <p className="text-gray-500 text-center mb-8 no-print">
+            LAPS - Architecture & Planning Studios
+          </p>
         
         <div className="flex justify-center">
           <IDCard
@@ -223,7 +272,7 @@ export function IDCardPreview() {
         </div>
 
         {/* Print Button */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 no-print">
           <button 
             onClick={() => window.print()}
             className="bg-[#2D5016] text-white px-8 py-3 font-semibold hover:bg-[#3d6b1f] transition-colors"
@@ -233,5 +282,6 @@ export function IDCardPreview() {
         </div>
       </div>
     </div>
+    </>
   );
 }
