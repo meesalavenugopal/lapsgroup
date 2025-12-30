@@ -68,7 +68,7 @@ export function IDCard({
 
         {/* Employee ID */}
         <div className="mx-6 mb-4">
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-3 border border-gray-200">
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-3 border-2 border-dashed border-gray-300">
             <div className="flex items-center justify-center gap-2">
               <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">ID</span>
               <span className="font-mono text-sm font-bold text-[#0A1628] tracking-wide">{employeeId}</span>
@@ -124,14 +124,18 @@ export function IDCard({
         {/* QR Code */}
         <div className="flex flex-col items-center py-6">
           <div className="w-40 h-40 bg-white border-2 border-dashed border-gray-300 rounded-2xl p-3 shadow-sm">
-            <div className="w-full h-full bg-[#0A1628] rounded-lg flex items-center justify-center">
+            <div className="w-full h-full bg-gradient-to-br from-white to-gray-50 rounded-lg flex items-center justify-center">
               <div className="grid grid-cols-5 gap-1">
-                {Array.from({ length: 25 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-5 h-5 ${Math.random() > 0.4 ? 'bg-white' : 'bg-[#0A1628]'}`}
-                  />
-                ))}
+                {Array.from({ length: 25 }).map((_, i) => {
+                  const colors = ['bg-[#C9A227]', 'bg-[#2D5016]', 'bg-[#0A1628]', 'bg-[#8B7355]', 'bg-[#6B8E23]', 'bg-[#4A5D23]'];
+                  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                  return (
+                    <div
+                      key={i}
+                      className={`w-5 h-5 ${randomColor} rounded-sm`}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
