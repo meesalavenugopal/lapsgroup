@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Building2, Target, Rocket, TrendingUp, Users, DollarSign, Calendar, Award, MapPin, Check, Leaf, Link2, Cpu, UserCheck, Star, Globe, Mail, Megaphone, BarChart3, Briefcase, Home, Landmark } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Building2, Target, Rocket, TrendingUp, Users, DollarSign, Calendar, Award, MapPin, Check, Leaf, Link2, Cpu, UserCheck, Star, Globe, Mail, Megaphone, BarChart3, Briefcase, Home, Landmark, Maximize, Minimize } from 'lucide-react';
 
 interface Slide {
   id: number;
@@ -13,6 +13,8 @@ interface Slide {
 
 export function LaunchPresentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const slides: Slide[] = [
     // Slide 1: Title
@@ -673,12 +675,46 @@ export function LaunchPresentation() {
       } else if (e.key === 'End') {
         e.preventDefault();
         setCurrentSlide(slides.length - 1);
+      } else if (e.key === 'f' || e.key === 'F11') {
+        e.preventDefault();
+        toggleFullScreen();
+      } else if (e.key === 'Escape' && isFullScreen) {
+        e.preventDefault();
+        exitFullScreen();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentSlide, slides.length]);
+  }, [currentSlide, slides.length, isFullScreen]);
+
+  // Full screen handlers
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      containerRef.current?.requestFullscreen();
+      setIsFullScreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullScreen(false);
+    }
+  };
+
+  const exitFullScreen = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+      setIsFullScreen(false);
+    }
+  };
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullScreenChange = () => {
+      setIsFullScreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullScreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullScreenChange);
+  }, []);
 
   const currentSlideData = slides[currentSlide];
   const themeClasses = {
@@ -688,7 +724,7 @@ export function LaunchPresentation() {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div ref={containerRef} className="min-h-screen bg-black">
       {/* Presentation Container */}
       <div className="relative h-screen flex items-center justify-center p-8">
         {/* Main Slide */}
@@ -767,9 +803,18 @@ export function LaunchPresentation() {
         </div>
       </div>
 
+      {/* Full Screen Button */}
+      <button
+        onClick={toggleFullScreen}
+        className="fixed top-4 left-4 p-3 bg-black/50 backdrop-blur-sm text-white/70 hover:text-white hover:bg-black/70 transition-all z-50"
+        title={isFullScreen ? 'Exit Full Screen (F or Esc)' : 'Full Screen (F or F11)'}
+      >
+        {isFullScreen ? <Minimize className="w-6 h-6" /> : <Maximize className="w-6 h-6" />}
+      </button>
+
       {/* Keyboard Navigation Hint */}
       <div className="fixed top-4 right-4 bg-black/50 backdrop-blur-sm text-white/70 px-4 py-2 text-sm">
-        Use ← → arrows or click thumbnails to navigate
+        Use ← → arrows or click thumbnails to navigate | Press F for fullscreen
       </div>
     </div>
   );
