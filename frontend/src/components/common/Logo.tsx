@@ -39,11 +39,11 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
             viewBox="0 0 32 32"
             fill="none"
           >
-            {/* Four squares representing L-A-P-S */}
-            <rect x="2" y="2" width="12" height="12" rx="1" className={isDark ? 'fill-laps-navy' : 'fill-white'} />
-            <rect x="18" y="2" width="12" height="12" rx="1" className={isDark ? 'fill-laps-green' : 'fill-white'} opacity="0.85" />
-            <rect x="2" y="18" width="12" height="12" rx="1" className={isDark ? 'fill-laps-navy' : 'fill-white'} opacity="0.6" />
-            <rect x="18" y="18" width="12" height="12" rx="1" className={isDark ? 'fill-laps-gold' : 'fill-white'} />
+            {/* Four squares with gold color at varying opacity */}
+            <rect x="2" y="2" width="12" height="12" rx="1" fill="rgb(201 162 39)" />
+            <rect x="18" y="2" width="12" height="12" rx="1" fill="rgb(201 162 39)" opacity="0.75" />
+            <rect x="2" y="18" width="12" height="12" rx="1" fill="rgb(201 162 39)" opacity="0.5" />
+            <rect x="18" y="18" width="12" height="12" rx="1" fill="rgb(201 162 39)" opacity="0.25" />
           </svg>
         </div>
         
