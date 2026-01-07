@@ -807,7 +807,7 @@ export function ContactPage() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="h-[400px] bg-laps-navy relative overflow-hidden">
+      <section className="h-[500px] bg-laps-navy relative overflow-hidden">
         <div 
           className="absolute inset-0 opacity-20"
           style={{
@@ -815,11 +815,43 @@ export function ContactPage() {
             backgroundSize: '20px 20px'
           }}
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="w-16 h-16 text-laps-gold mx-auto mb-4" />
-            <p className="text-white text-xl font-semibold mb-2">Interactive Map</p>
-            <p className="text-white/50">Coming Soon</p>
+        
+        {/* Map Container */}
+        <div className="absolute inset-0">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.25176871577!2d78.24323088671874!3d17.412608636454466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1735819200000!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0, filter: 'grayscale(1) invert(1) contrast(0.9)' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="LAPS Group Location"
+          />
+        </div>
+        
+        {/* Location Info Overlay */}
+        <div className="absolute bottom-8 left-8 bg-laps-navy/95 backdrop-blur-sm border border-laps-gold/20 p-6 max-w-sm">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 bg-laps-gold/10 flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-6 h-6 text-laps-gold" />
+            </div>
+            <div>
+              <h3 className="text-white font-bold text-lg mb-2">Visit Our Office</h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Hyderabad, Telangana<br />
+                India
+              </p>
+              <a
+                href="https://maps.google.com/?q=Hyderabad,Telangana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-laps-gold hover:text-laps-gold/80 text-sm mt-3 transition-colors"
+              >
+                Open in Google Maps
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
