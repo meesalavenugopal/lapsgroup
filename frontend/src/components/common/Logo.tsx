@@ -9,22 +9,19 @@ interface LogoProps {
 export function Logo({ variant = 'dark', size = 'md', showTagline = false }: LogoProps) {
   const sizeClasses = {
     sm: { 
-      container: 'h-8',
-      mark: 'w-8 h-8',
-      text: 'text-lg',
-      spacing: 'gap-2'
+      logo: 'text-xl',
+      dot: 'w-1 h-1',
+      spacing: 'gap-1.5'
     },
     md: { 
-      container: 'h-10',
-      mark: 'w-10 h-10',
-      text: 'text-xl',
-      spacing: 'gap-2.5'
+      logo: 'text-2xl',
+      dot: 'w-1.5 h-1.5',
+      spacing: 'gap-2'
     },
     lg: { 
-      container: 'h-12',
-      mark: 'w-12 h-12',
-      text: 'text-2xl',
-      spacing: 'gap-3'
+      logo: 'text-3xl',
+      dot: 'w-2 h-2',
+      spacing: 'gap-2.5'
     },
   };
 
@@ -34,57 +31,49 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
   return (
     <div className="flex flex-col">
       <div className={clsx('flex items-center', currentSize.spacing)}>
-        {/* Distinctive Geometric Mark - Interlocking L+G */}
-        <div
-          className={clsx(
-            'relative flex items-center justify-center',
-            currentSize.mark
-          )}
-        >
-          {/* Outer frame */}
-          <div
-            className={clsx(
-              'absolute inset-0 border-2 rotate-45 rounded-sm',
-              isDark ? 'border-laps-navy' : 'border-white'
-            )}
-          />
-          {/* Inner content */}
-          <div className={clsx(
-            'relative z-10 font-bold font-serif',
-            currentSize.text,
-            isDark ? 'text-laps-navy' : 'text-white'
-          )}>
-            <span className="relative">L</span>
-            <span className="absolute -top-0.5 -right-1.5 text-xs opacity-70">G</span>
-          </div>
+        {/* Minimalist Symbol - Four Elements */}
+        <div className="relative flex items-center justify-center">
+          <svg
+            width={size === 'sm' ? '28' : size === 'md' ? '32' : '40'}
+            height={size === 'sm' ? '28' : size === 'md' ? '32' : '40'}
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            {/* Four squares representing L-A-P-S */}
+            <rect x="2" y="2" width="12" height="12" rx="1" className={isDark ? 'fill-laps-navy' : 'fill-white'} />
+            <rect x="18" y="2" width="12" height="12" rx="1" className={isDark ? 'fill-laps-green' : 'fill-white'} opacity="0.85" />
+            <rect x="2" y="18" width="12" height="12" rx="1" className={isDark ? 'fill-laps-navy' : 'fill-white'} opacity="0.6" />
+            <rect x="18" y="18" width="12" height="12" rx="1" className={isDark ? 'fill-laps-gold' : 'fill-white'} />
+          </svg>
         </div>
         
-        {/* Wordmark with professional kerning */}
-        <div className="flex flex-col leading-none">
-          <div
+        {/* Enterprise Wordmark */}
+        <div className="flex flex-col">
+          <span
             className={clsx(
-              'font-bold tracking-wide uppercase',
-              currentSize.text,
+              'font-bold tracking-tight leading-none',
+              currentSize.logo,
               isDark ? 'text-laps-navy' : 'text-white'
             )}
           >
             LAPS
-          </div>
-          <div
+          </span>
+          <span
             className={clsx(
-              'text-[0.6em] font-medium tracking-[0.2em] uppercase mt-0.5',
-              isDark ? 'text-laps-navy/60' : 'text-white/60'
+              'font-medium tracking-[0.3em] leading-none mt-0.5',
+              size === 'sm' ? 'text-[7px]' : size === 'md' ? 'text-[8px]' : 'text-[9px]',
+              isDark ? 'text-laps-navy/40' : 'text-white/40'
             )}
           >
             GROUP
-          </div>
+          </span>
         </div>
       </div>
       
       {showTagline && (
         <span
           className={clsx(
-            'text-[10px] tracking-[0.15em] uppercase mt-2 font-medium',
+            'text-[10px] tracking-[0.2em] uppercase mt-2 font-medium',
             isDark ? 'text-laps-slate' : 'text-white/70'
           )}
         >
