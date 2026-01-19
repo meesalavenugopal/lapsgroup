@@ -15,7 +15,7 @@
 **[Visual: Modern architecture background with LAPS logo]**
 
 **Narrator:**
-"Welcome to the launch presentation of LAPS - Architecture & Planning Studios. Today, we're unveiling an exciting new division dedicated to 'Designing Tomorrow's Spaces.' As the architecture and planning arm of The LAPS Group—Landscape, Architecture, and Planning Studios—we're positioned to transform how India builds, lives, and thrives. This presentation will outline our vision, strategy, and roadmap for launching in Q1 2026."
+"Welcome to the launch presentation of LAPS - Architecture & Planning Studios. Today, we're unveiling an exciting new division dedicated to 'Designing Tomorrow's Spaces.' As the architecture and planning arm of The LAPS Global—Landscape, Architecture, and Planning Studios—we're positioned to transform how India builds, lives, and thrives. This presentation will outline our vision, strategy, and roadmap for launching in Q1 2026."
 
 ---
 
@@ -72,7 +72,7 @@ This positioning is built on five key differentiators:
 1. **Sustainability First** - Every design decision prioritizes environmental responsibility
 2. **Integrated Approach** - Seamless collaboration across architecture, landscape, and planning
 3. **Tech-Driven Design** - We leverage cutting-edge technology for precision and innovation
-4. **Multi-Division Synergy** - Unique advantage from being part of The LAPS Group
+4. **Multi-Division Synergy** - Unique advantage from being part of The LAPS Global
 5. **Client-Centric** - Your vision and values drive every project we undertake
 
 These aren't just buzzwords—they're commitments embedded in our process and culture."
@@ -318,7 +318,7 @@ Let's build the future together."
 
 ### Key Themes Throughout:
 1. **Sustainability** - Emphasized in every service and value proposition
-2. **Integration** - Leveraging the LAPS Group's multi-disciplinary advantage
+2. **Integration** - Leveraging the LAPS Global's multi-disciplinary advantage
 3. **Innovation** - Technology-driven, forward-thinking approach
 4. **Professionalism** - Clear metrics, realistic projections, professional execution
 5. **Vision** - Beyond buildings to transforming how India develops

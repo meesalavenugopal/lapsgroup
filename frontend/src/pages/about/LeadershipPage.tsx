@@ -11,7 +11,7 @@ export function LeadershipPage() {
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
       linkedin: founderInfo.linkedin,
       quote: founderInfo.quote,
-      bio: 'Visionary leader with expertise in architecture, technology, and business strategy. Founded LAPS Group to create excellence across multiple domains.',
+      bio: 'Visionary leader with expertise in architecture, technology, and business strategy. Founded LAPS Global to create excellence across multiple domains.',
     },
     {
       name: 'Rahul Sharma',
@@ -27,7 +27,7 @@ export function LeadershipPage() {
       initials: 'PP',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
       linkedin: '#',
-      bio: 'Award-winning creative director bringing innovative design thinking to all LAPS Group divisions.',
+      bio: 'Award-winning creative director bringing innovative design thinking to all LAPS Global divisions.',
     },
     {
       name: 'Amit Kumar',
@@ -68,13 +68,13 @@ export function LeadershipPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-                About LAPS Group
+                About LAPS Global
               </p>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Visionary <span className="text-laps-gold">Leadership</span>
               </h1>
               <p className="text-xl text-white/80 leading-relaxed">
-                Meet the visionary leaders driving innovation and excellence across the LAPS Group.
+                Meet the visionary leaders driving innovation and excellence across the LAPS Global.
               </p>
             </motion.div>
 
@@ -141,7 +141,7 @@ export function LeadershipPage() {
                 {leaders[0].bio}
               </p>
               <p className="text-laps-slate">
-                Under his leadership, LAPS Group has grown from a single venture into a diversified 
+                Under his leadership, LAPS Global has grown from a single venture into a diversified 
                 conglomerate spanning five distinct divisions, each leading in their respective industries.
               </p>
             </motion.div>

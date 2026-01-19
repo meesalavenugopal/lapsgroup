@@ -62,7 +62,7 @@ export function HeritagePage() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-                About LAPS Group
+                About LAPS Global
               </p>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Our <span className="text-laps-gold">Heritage</span>
@@ -103,7 +103,7 @@ export function HeritagePage() {
                 Where It All Began
               </h2>
               <p className="text-laps-slate mb-4">
-                LAPS Group was born from a simple yet powerful vision: to create a company that would 
+                LAPS Global was born from a simple yet powerful vision: to create a company that would 
                 excel in multiple domains while maintaining the highest standards of quality and integrity.
               </p>
               <p className="text-laps-slate mb-4">

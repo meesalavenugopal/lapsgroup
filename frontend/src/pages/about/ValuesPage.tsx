@@ -84,7 +84,7 @@ export function ValuesPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-                About LAPS Group
+                About LAPS Global
               </p>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Our <span className="text-laps-gold">Values</span> & Purpose
@@ -125,7 +125,7 @@ export function ValuesPage() {
                 Our Purpose
               </h2>
               <p className="text-xl text-laps-slate leading-relaxed mb-8">
-                At LAPS Group, our purpose is to <span className="text-laps-gold font-semibold">empower businesses and individuals</span> through 
+                At LAPS Global, our purpose is to <span className="text-laps-gold font-semibold">empower businesses and individuals</span> through 
                 innovative solutions that transform ideas into reality. We exist to create lasting value 
                 for our clients, communities, and stakeholders.
               </p>

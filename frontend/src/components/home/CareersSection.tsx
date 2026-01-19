@@ -60,7 +60,7 @@ export function CareersSection() {
                   Build Your Future
                 </span>
                 <h3 className="text-2xl font-bold text-white mb-3">
-                  Life at LAPS Group
+                  Life at LAPS Global
                 </h3>
                 <div className="flex items-start gap-2 max-w-sm">
                   <div className="w-1 h-full min-h-[40px] bg-white/40"></div>

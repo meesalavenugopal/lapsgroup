@@ -46,13 +46,13 @@ export function MilestonesPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-                About LAPS Group
+                About LAPS Global
               </p>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Our <span className="text-laps-gold">Milestones</span>
               </h1>
               <p className="text-xl text-white/80 leading-relaxed">
-                A journey of growth, innovation, and achievements that have shaped LAPS Group into what it is today.
+                A journey of growth, innovation, and achievements that have shaped LAPS Global into what it is today.
               </p>
             </motion.div>
 

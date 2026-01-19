@@ -306,7 +306,7 @@ npm run dev
 
 ### Slide 1: Title
 - Welcome everyone
-- Introduce LAPS Group briefly
+- Introduce LAPS Global briefly
 - Set context: New division launch
 
 ### Slide 2: Vision

@@ -91,7 +91,7 @@ export function SustainabilityPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-                About LAPS Group
+                About LAPS Global
               </p>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 <span className="text-laps-gold">Sustainable</span> Future
@@ -139,7 +139,7 @@ export function SustainabilityPage() {
                 Our Commitment
               </h2>
               <p className="text-xl text-laps-slate leading-relaxed mb-8">
-                At LAPS Group, sustainability isn't just a buzzword—it's a core principle that 
+                At LAPS Global, sustainability isn't just a buzzword—it's a core principle that 
                 guides our decisions. We believe that business success and environmental responsibility 
                 go hand in hand, and we're committed to <span className="text-green-600 font-semibold">reducing our ecological footprint</span> while 
                 delivering exceptional value to our clients.

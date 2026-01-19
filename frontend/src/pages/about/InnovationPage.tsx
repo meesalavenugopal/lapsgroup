@@ -86,7 +86,7 @@ export function InnovationPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-                About LAPS Group
+                About LAPS Global
               </p>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Driving <span className="text-laps-gold">Innovation</span>
@@ -137,7 +137,7 @@ export function InnovationPage() {
                 Innovation is in Our DNA
               </h2>
               <p className="text-laps-slate mb-4">
-                At LAPS Group, innovation isn't just about adopting new technologies—it's about 
+                At LAPS Global, innovation isn't just about adopting new technologies—it's about 
                 rethinking how things are done. We challenge conventional approaches and explore 
                 new possibilities in every project we undertake.
               </p>

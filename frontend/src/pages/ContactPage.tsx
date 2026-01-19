@@ -99,7 +99,7 @@ export function ContactPage() {
       tag: 'Partnership',
       subtitle: 'Work With Us',
       title: 'Collaborate on Projects',
-      description: 'Looking to partner with LAPS Group? We are always open to meaningful collaborations.',
+      description: 'Looking to partner with LAPS Global? We are always open to meaningful collaborations.',
       ctaText: 'Explore Partnerships',
       ctaLink: '#partnerships',
     },
@@ -826,7 +826,7 @@ export function ContactPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="LAPS Group Location"
+            title="LAPS Global Location"
           />
         </div>
         
@@ -870,7 +870,7 @@ export function ContactPage() {
               <div>
                 <HelpCircle className="w-12 h-12 text-laps-gold mb-6" />
                 <h2 className="text-3xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-                <p className="text-white/60">Quick answers to common questions about working with LAPS Group.</p>
+                <p className="text-white/60">Quick answers to common questions about working with LAPS Global.</p>
               </div>
               <a href="#contact-form" className="inline-flex items-center gap-2 text-laps-gold hover:gap-3 transition-all">
                 Still have questions? Contact us <ArrowRight className="w-4 h-4" />

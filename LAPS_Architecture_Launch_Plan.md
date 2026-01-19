@@ -642,7 +642,7 @@ To establish LAPS - Architecture & Planning Studios as the premier architectural
 
 ## Conclusion
 
-The launch of LAPS - Architecture & Planning Studios represents a significant milestone in the LAPS Group expansion. With careful planning, strategic marketing, and exceptional service delivery, we project:
+The launch of LAPS - Architecture & Planning Studios represents a significant milestone in the LAPS Global expansion. With careful planning, strategic marketing, and exceptional service delivery, we project:
 
 - **Year 1 Revenue:** ₹13-17 Crores
 - **Market Position:** Top 10 architecture firms in target cities
@@ -668,5 +668,5 @@ The launch of LAPS - Architecture & Planning Studios represents a significant mi
 
 **Document Version:** 1.0  
 **Last Updated:** December 30, 2025  
-**Owner:** LAPS Group Leadership Team  
+**Owner:** LAPS Global Leadership Team  
 **Review Date:** Weekly during launch phase

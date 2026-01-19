@@ -54,7 +54,7 @@ export const PrivacyPolicyPage = () => {
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Information We Collect</h2>
               </div>
               <p className="text-gray-700 leading-relaxed mb-4">
-                At LAPS Group, we collect information that you provide directly to us, including:
+                At LAPS Global, we collect information that you provide directly to us, including:
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
@@ -264,7 +264,7 @@ export const PrivacyPolicyPage = () => {
                 >
                   <MapPin className="w-8 h-8 mb-3 text-laps-blue" />
                   <p className="text-sm text-gray-600 mb-1">Visit Us</p>
-                  <p className="text-lg font-semibold text-laps-navy">LAPS Group Headquarters, Hyderabad, Telangana 500001, India</p>
+                  <p className="text-lg font-semibold text-laps-navy">LAPS Global Headquarters, Hyderabad, Telangana 500001, India</p>
                 </motion.div>
               </div>
             </section>

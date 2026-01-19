@@ -54,7 +54,7 @@ export const TermsOfServicePage = () => {
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Acceptance of Terms</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                By accessing and using the LAPS Group website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                By accessing and using the LAPS Global website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
               </p>
             </section>
 
@@ -66,7 +66,7 @@ export const TermsOfServicePage = () => {
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Services Description</h2>
               </div>
               <p className="text-gray-700 leading-relaxed mb-4">
-                LAPS Group provides integrated solutions across multiple divisions:
+                LAPS Global provides integrated solutions across multiple divisions:
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
@@ -134,7 +134,7 @@ export const TermsOfServicePage = () => {
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Intellectual Property</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                All content on this website, including text, graphics, logos, images, and software, is the property of LAPS Group or its licensors and is protected by copyright, trademark, and other intellectual property laws.
+                All content on this website, including text, graphics, logos, images, and software, is the property of LAPS Global or its licensors and is protected by copyright, trademark, and other intellectual property laws.
               </p>
             </section>
 
@@ -158,7 +158,7 @@ export const TermsOfServicePage = () => {
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Limitation of Liability</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                LAPS Group shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
+                LAPS Global shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
               </p>
             </section>
 
@@ -170,7 +170,7 @@ export const TermsOfServicePage = () => {
                 <h2 className="text-2xl font-bold text-laps-navy m-0">Indemnification</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                You agree to indemnify and hold LAPS Group harmless from any claims, losses, damages, liabilities, and expenses arising out of your use of our services or violation of these Terms.
+                You agree to indemnify and hold LAPS Global harmless from any claims, losses, damages, liabilities, and expenses arising out of your use of our services or violation of these Terms.
               </p>
             </section>
 
@@ -252,7 +252,7 @@ export const TermsOfServicePage = () => {
                 >
                   <MapPin className="w-8 h-8 mb-3 text-laps-blue" />
                   <p className="text-sm text-gray-600 mb-1">Visit Us</p>
-                  <p className="text-lg font-semibold text-laps-navy">LAPS Group Headquarters, Hyderabad, Telangana 500001, India</p>
+                  <p className="text-lg font-semibold text-laps-navy">LAPS Global Headquarters, Hyderabad, Telangana 500001, India</p>
                 </motion.div>
               </div>
             </section>

@@ -66,7 +66,7 @@ export const CookiesPolicyPage = () => {
                 <h2 className="text-2xl font-bold text-laps-navy m-0">How We Use Cookies</h2>
               </div>
               <p className="text-gray-700 leading-relaxed mb-4">
-                LAPS Group uses cookies for the following purposes:
+                LAPS Global uses cookies for the following purposes:
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
@@ -249,7 +249,7 @@ export const CookiesPolicyPage = () => {
                 >
                   <MapPin className="w-8 h-8 mb-3 text-laps-blue" />
                   <p className="text-sm text-gray-600 mb-1">Visit Us</p>
-                  <p className="text-lg font-semibold text-laps-navy">LAPS Group Headquarters, Hyderabad, Telangana 500001, India</p>
+                  <p className="text-lg font-semibold text-laps-navy">LAPS Global Headquarters, Hyderabad, Telangana 500001, India</p>
                 </motion.div>
               </div>
             </section>

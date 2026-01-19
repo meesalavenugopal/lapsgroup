@@ -16,7 +16,7 @@ export function AboutPage() {
     { 
       name: 'Leadership', 
       href: '/about/leadership', 
-      description: 'Meet our visionary leaders driving LAPS Group forward',
+      description: 'Meet our visionary leaders driving LAPS Global forward',
       longDescription: 'Our leadership team brings decades of combined experience across architecture, technology, marketing, and creative industries. Their vision shapes our path to excellence.',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80'
     },
@@ -24,21 +24,21 @@ export function AboutPage() {
       name: 'Values & Purpose', 
       href: '/about/values', 
       description: 'The principles and purpose that guide everything we do',
-      longDescription: 'At LAPS Group, we believe in integrity, innovation, and impact. Our core values drive every decision, every project, and every relationship we build. We are committed to creating lasting value for our clients, employees, and communities.',
+      longDescription: 'At LAPS Global, we believe in integrity, innovation, and impact. Our core values drive every decision, every project, and every relationship we build. We are committed to creating lasting value for our clients, employees, and communities.',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80'
     },
     { 
       name: 'Milestones', 
       href: '/about/milestones', 
       description: 'Key moments in our journey of growth and achievement',
-      longDescription: 'From our founding in 2020 to becoming a multi-division enterprise, every milestone marks a step forward in our mission. Explore the pivotal moments that have defined LAPS Group and shaped our vision for the future.',
+      longDescription: 'From our founding in 2020 to becoming a multi-division enterprise, every milestone marks a step forward in our mission. Explore the pivotal moments that have defined LAPS Global and shaped our vision for the future.',
       image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80'
     },
     { 
       name: 'Heritage', 
       href: '/about/heritage', 
       description: 'Where it all began and the legacy we continue to build',
-      longDescription: 'Every great enterprise has a story. Discover the origins of LAPS Group, the challenges we overcame, and the legacy we are building for future generations.',
+      longDescription: 'Every great enterprise has a story. Discover the origins of LAPS Global, the challenges we overcame, and the legacy we are building for future generations.',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80'
     },
     { 
@@ -65,7 +65,7 @@ export function AboutPage() {
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" 
-            alt="LAPS Group Office" 
+            alt="LAPS Global Office" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-laps-navy/90 via-laps-navy/70 to-transparent" />
@@ -87,7 +87,7 @@ export function AboutPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-laps-gold text-sm font-medium tracking-wider uppercase mb-4">
-                The LAPS Group
+                The LAPS Global
               </p>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Building Tomorrow,<br />
@@ -159,7 +159,7 @@ export function AboutPage() {
                 Our Story
               </h2>
               <p className="text-laps-slate mb-4">
-                LAPS Group was founded with a vision to create excellence across multiple domains. 
+                LAPS Global was founded with a vision to create excellence across multiple domains. 
                 What started as a single venture has grown into a diversified group of companies, 
                 each contributing uniquely to their respective industries.
               </p>
@@ -169,7 +169,7 @@ export function AboutPage() {
                 quality, and customer-centricity.
               </p>
               <p className="text-laps-slate mb-8">
-                Today, LAPS Group stands as a testament to the power of diversified excellence, 
+                Today, LAPS Global stands as a testament to the power of diversified excellence, 
                 serving clients across India and beyond.
               </p>
               <Link
@@ -230,13 +230,13 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Explore LAPS Group - Bento Grid Layout */}
+      {/* Explore LAPS Global - Bento Grid Layout */}
       <section className="py-20 bg-laps-light">
         <div className="container-wide">
           {/* Section Header */}
           <div className="mb-10">
             <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">
-              Explore LAPS Group
+              Explore LAPS Global
             </h2>
           </div>
 

@@ -5,7 +5,7 @@ import { ArrowRight, RefreshCw, Facebook, Instagram } from 'lucide-react';
 import { newsItems } from '@/data/content';
 
 const facts = [
-  "LAPS Group's first project was completed in 2020, marking the beginning of our journey.",
+  "LAPS Global's first project was completed in 2020, marking the beginning of our journey.",
   "Our Apps division has served over 100,000 users across 15+ countries.",
   "LAPS Architecture has won 8 design awards for sustainable building practices.",
   "Our Photo division has captured over 500 weddings and corporate events.",
@@ -105,7 +105,7 @@ export function NewsSection() {
             </span>
             <Link to={newsItems[0]?.link || '/newsroom'}>
               <h3 className="text-xl font-semibold text-laps-navy mb-4 leading-tight hover:text-laps-blue transition-colors">
-                {newsItems[0]?.title || 'Latest News from LAPS Group'}
+                {newsItems[0]?.title || 'Latest News from LAPS Global'}
               </h3>
             </Link>
             <div className="flex items-start gap-2 mt-auto">
@@ -193,7 +193,7 @@ export function NewsSection() {
             </div>
             <div className="absolute bottom-6 left-6 text-white">
               <p className="text-lg font-serif italic">The Journey of</p>
-              <p className="text-xl font-bold">LAPS GROUP</p>
+              <p className="text-xl font-bold">LAPS GLOBAL</p>
               <p className="text-sm mt-2 text-white/80">Watch the full story</p>
             </div>
             <div className="absolute bottom-6 right-6">

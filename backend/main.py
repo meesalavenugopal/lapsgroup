@@ -1,5 +1,5 @@
 """
-LAPS Group Backend - Main Application Entry Point
+LAPS Global Backend - Main Application Entry Point
 """
 from contextlib import asynccontextmanager
 
@@ -15,15 +15,15 @@ from app.core.config import settings
 async def lifespan(app: FastAPI):
     """Application lifespan events"""
     # Startup
-    print(f"Starting LAPS Group API in {settings.ENVIRONMENT} mode")
+    print(f"Starting LAPS Global API in {settings.ENVIRONMENT} mode")
     yield
     # Shutdown
-    print("Shutting down LAPS Group API")
+    print("Shutting down LAPS Global API")
 
 
 app = FastAPI(
-    title="LAPS Group API",
-    description="Backend API for LAPS Group multi-division corporate website",
+    title="LAPS Global API",
+    description="Backend API for LAPS Global multi-division corporate website",
     version="1.0.0",
     docs_url="/api/docs",
     redoc_url="/api/redoc",

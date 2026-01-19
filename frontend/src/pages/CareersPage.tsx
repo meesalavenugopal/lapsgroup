@@ -19,7 +19,7 @@ export function CareersPage() {
       id: 1,
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80',
       tag: 'We Are Hiring',
-      subtitle: 'Join LAPS Group',
+      subtitle: 'Join LAPS Global',
       title: 'Build Your Future With Us',
       description: 'Be part of a dynamic team driving excellence across architecture, technology, marketing, events, and photography.',
       ctaText: 'View Open Positions',
@@ -106,7 +106,7 @@ export function CareersPage() {
 
   const testimonials = [
     {
-      quote: "LAPS Group gave me the opportunity to work on projects that truly challenge and inspire me. The cross-division collaboration is unlike anything I've experienced.",
+      quote: "LAPS Global gave me the opportunity to work on projects that truly challenge and inspire me. The cross-division collaboration is unlike anything I've experienced.",
       author: 'Priya Sharma',
       role: 'Senior Architect',
       division: 'Architecture',
@@ -134,7 +134,7 @@ export function CareersPage() {
     { step: '01', title: 'Apply', description: 'Submit your application through our portal with your resume and portfolio.' },
     { step: '02', title: 'Review', description: 'Our team reviews your application and assesses your fit for the role.' },
     { step: '03', title: 'Interview', description: 'Meet with our team through video calls and technical assessments.' },
-    { step: '04', title: 'Offer', description: 'Receive your offer and begin your journey with LAPS Group.' },
+    { step: '04', title: 'Offer', description: 'Receive your offer and begin your journey with LAPS Global.' },
   ];
 
   const filteredJobs = selectedDivision 
@@ -375,7 +375,7 @@ export function CareersPage() {
       <section id="benefits" className="py-24 bg-white">
         <div className="container-wide">
           <div className="mb-10">
-            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">Why Join LAPS Group?</h2>
+            <h2 className="text-2xl font-semibold text-laps-navy inline-block border-b-2 border-laps-navy pb-2">Why Join LAPS Global?</h2>
           </div>
 
           <div className="grid grid-cols-12 gap-4">

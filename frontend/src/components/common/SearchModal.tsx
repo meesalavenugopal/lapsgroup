@@ -36,8 +36,8 @@ const pageImages: Record<string, string> = {
 };
 
 const staticPages = [
-  { title: 'About Us', description: 'Learn about LAPS Group and our mission', link: '/about' },
-  { title: 'Newsroom', description: 'Latest news and updates from LAPS Group', link: '/newsroom' },
+  { title: 'About Us', description: 'Learn about LAPS Global and our mission', link: '/about' },
+  { title: 'Newsroom', description: 'Latest news and updates from LAPS Global', link: '/newsroom' },
   { title: 'Careers', description: 'Join our team and grow with us', link: '/careers' },
   { title: 'Contact', description: 'Get in touch with our team', link: '/contact' },
 ];

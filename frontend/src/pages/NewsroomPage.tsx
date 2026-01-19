@@ -27,9 +27,9 @@ export function NewsroomPage() {
       id: 1,
       image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&q=80',
       tag: 'Latest News',
-      subtitle: 'LAPS Group Newsroom',
+      subtitle: 'LAPS Global Newsroom',
       title: 'Stories That Shape Our Journey',
-      description: 'Stay updated with the latest news, announcements, and insights from across all LAPS Group divisions.',
+      description: 'Stay updated with the latest news, announcements, and insights from across all LAPS Global divisions.',
       ctaText: 'Read Featured Story',
       ctaLink: '#featured',
     },
@@ -74,10 +74,10 @@ export function NewsroomPage() {
   }, [isPlaying, nextSlide]);
 
   const pressReleases = [
-    { date: 'December 20, 2024', title: 'LAPS Group Announces Expansion into Southeast Asian Markets', division: 'Corporate' },
+    { date: 'December 20, 2024', title: 'LAPS Global Announces Expansion into Southeast Asian Markets', division: 'Corporate' },
     { date: 'December 15, 2024', title: 'LAPS Architecture Wins National Design Award for Sustainable Project', division: 'Architecture' },
     { date: 'December 10, 2024', title: 'LAPS Apps Launches Revolutionary AI-Powered Platform', division: 'Apps' },
-    { date: 'December 5, 2024', title: 'LAPS Group Partners with Leading Tech Universities', division: 'Corporate' },
+    { date: 'December 5, 2024', title: 'LAPS Global Partners with Leading Tech Universities', division: 'Corporate' },
   ];
 
   const insights = [
@@ -484,7 +484,7 @@ export function NewsroomPage() {
               <div>
                 <FileText className="w-12 h-12 text-laps-gold mb-6" />
                 <h2 className="text-3xl font-bold text-white mb-4">Press Releases</h2>
-                <p className="text-white/60">Official announcements and media statements from LAPS Group.</p>
+                <p className="text-white/60">Official announcements and media statements from LAPS Global.</p>
               </div>
               <Link to="#" className="inline-flex items-center gap-2 text-laps-gold hover:gap-3 transition-all">
                 View All Releases <ArrowRight className="w-4 h-4" />
@@ -607,7 +607,7 @@ export function NewsroomPage() {
               className="col-span-12 lg:col-span-5 flex flex-col justify-center"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stay in the Loop</h2>
-              <p className="text-white/60 text-lg">Subscribe to our newsletter to receive the latest updates and insights from across all LAPS Group divisions.</p>
+              <p className="text-white/60 text-lg">Subscribe to our newsletter to receive the latest updates and insights from across all LAPS Global divisions.</p>
             </motion.div>
 
             <motion.div
@@ -630,7 +630,7 @@ export function NewsroomPage() {
                   Subscribe <ArrowRight className="w-5 h-5" />
                 </button>
               </form>
-              <p className="text-white/40 text-sm mt-4">By subscribing, you agree to receive emails from LAPS Group. Unsubscribe anytime.</p>
+              <p className="text-white/40 text-sm mt-4">By subscribing, you agree to receive emails from LAPS Global. Unsubscribe anytime.</p>
             </motion.div>
           </div>
         </div>

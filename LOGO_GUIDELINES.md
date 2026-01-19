@@ -249,7 +249,7 @@ Each bar group consists of a thick primary bar paired with a thin accent line:
 
 ## Brand Alignment
 
-The logo embodies LAPS Group's core values:
+The logo embodies LAPS Global's core values:
 
 - **Unity**: Five divisions working as one cohesive group
 - **Excellence**: Premium gold color reflects quality standards
@@ -268,4 +268,4 @@ The logo embodies LAPS Group's core values:
 
 **Last Updated**: January 7, 2026  
 **Version**: 1.0  
-**Designed By**: LAPS Group Design Team
+**Designed By**: LAPS Global Design Team

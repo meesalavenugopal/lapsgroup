@@ -222,12 +222,12 @@ export function TimelineSection() {
                   Did you know
                 </span>
                 <h3 className="text-lg font-bold text-white mt-2 mb-3">
-                  LAPS Group Impact
+                  LAPS Global Impact
                 </h3>
                 <div className="flex items-start gap-3">
                   <div className="w-1 min-h-[50px] bg-laps-gold flex-shrink-0"></div>
                   <p className="text-white/80 text-sm leading-relaxed">
-                    With 5 thriving divisions and 100+ team members, LAPS Group has expanded to 15+ cities in just 4 years.
+                    With 5 thriving divisions and 100+ team members, LAPS Global has expanded to 15+ cities in just 4 years.
                   </p>
                 </div>
               </div>
@@ -257,7 +257,7 @@ export function TimelineSection() {
                 <div className="flex items-start gap-2">
                   <div className="w-1 h-full min-h-[50px] bg-laps-gold"></div>
                   <p className="text-white/80 text-sm leading-relaxed">
-                    Founded over 4 years ago, LAPS Group embodies the story of entrepreneurship and innovation.
+                    Founded over 4 years ago, LAPS Global embodies the story of entrepreneurship and innovation.
                   </p>
                 </div>
                 <div className="absolute bottom-0 right-0">

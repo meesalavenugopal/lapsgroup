@@ -154,7 +154,7 @@ export function Footer() {
         <div className="container-wide py-6">
           <div className="flex items-center justify-center">
             <p className="text-sm text-laps-slate">
-              © {currentYear} LAPS Group. All Rights Reserved.
+              © {currentYear} LAPS Global. All Rights Reserved.
             </p>
           </div>
         </div>

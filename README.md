@@ -1,10 +1,10 @@
-# LAPS Group - Multi-Division Corporate Website
+# LAPS Global - Multi-Division Corporate Website
 
-A modern, enterprise-grade website for LAPS Group - a multi-division startup brand with one master identity and multiple verticals.
+A modern, enterprise-grade website for LAPS Global - a multi-division startup brand with one master identity and multiple verticals.
 
-## 🏢 Brand Structure
+## Brand Structure
 
-**Master Brand:** LAPS Group  
+**Master Brand:** LAPS Global
 **Founder:** Venugopal Meesala  
 **Tagline:** Excellence Across Horizons
 
@@ -175,7 +175,7 @@ docker-compose down
 ```
 lapsgroup.com/
 ├── /                         # Homepage
-├── /about                    # About LAPS Group
+├── /about                    # About LAPS Global
 ├── /architecture-planning    # Architecture division
 ├── /apps-platforms           # Software division
 ├── /ads-services             # Marketing division
@@ -217,8 +217,8 @@ lapsgroup.com/
 
 ## 📄 License
 
-Proprietary - LAPS Group
+Proprietary - LAPS Global
 
 ---
 
-**Built with ❤️ by LAPS Group**
+**Built with ❤️ by LAPS Global**

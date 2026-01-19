@@ -245,7 +245,7 @@ export function Header() {
                       onClick={() => setIsDivisionsOpen(false)}
                       className="inline-flex items-center gap-2 text-laps-blue text-sm font-medium hover:gap-3 transition-all"
                     >
-                      Learn About LAPS Group
+                      Learn About LAPS Global
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -350,13 +350,13 @@ export function Header() {
                   {/* Left: Main Title */}
                   <div className="col-span-4">
                     <h3 className="text-3xl font-bold text-laps-navy mb-6">
-                      The LAPS Group
+                      The LAPS Global
                     </h3>
                     
                     {/* About the Group Section */}
                     <div className="mb-8">
                       <h4 className="text-sm font-semibold text-laps-slate mb-4 pb-2 border-b border-gray-200">
-                        About the LAPS Group
+                        About the LAPS Global
                       </h4>
                       <div className="grid grid-cols-2 gap-x-8 gap-y-3">
                         {aboutLinks.company.map((link) => (

@@ -51,7 +51,7 @@ export function IDCard({
               className="w-14 h-14 object-contain drop-shadow-xl"
             />
             <div className="text-left">
-              <h1 className="text-white font-bold text-lg tracking-wider uppercase leading-tight">LAPS GROUP</h1>
+              <h1 className="text-white font-bold text-lg tracking-wider uppercase leading-tight">LAPS GLOBAL</h1>
               <p className="text-[#C9A227] text-xs font-medium tracking-wide">Architecture & Planning</p>
             </div>
           </div>
@@ -182,7 +182,7 @@ export function IDCard({
               <MapPin className="w-3.5 h-3.5 text-[#2D5016]" />
             </div>
             <div className="text-[10px] flex-1">
-              <p className="font-bold text-[#0A1628] mb-0.5">The LAPS Group Headquarters</p>
+              <p className="font-bold text-[#0A1628] mb-0.5">The LAPS Global Headquarters</p>
               <p className="text-gray-500">Hyderabad, Telangana, India</p>
             </div>
           </div>
@@ -210,7 +210,7 @@ export function IDCard({
           <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
           <div className="px-6 py-3 bg-gradient-to-t from-gray-50/90 to-transparent backdrop-blur-sm">
             <p className="text-[8px] text-gray-400 text-center leading-relaxed">
-              This card is property of LAPS Group. If found, please return to the above address.
+              This card is property of LAPS Global. If found, please return to the above address.
             </p>
           </div>
         </div>

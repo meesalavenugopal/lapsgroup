@@ -1,4 +1,4 @@
-# LAPS Group — Brand Strategy & Information Architecture
+# LAPS Global — Brand Strategy & Information Architecture
 
 ## Executive Summary
 
@@ -11,7 +11,7 @@
 ### Master Brand Identity
 
 ```
-LAPS GROUP
+LAPS GLOBAL
 ├── LAPS Architecture & Planning
 ├── LAPS Apps & Platforms
 ├── LAPS Ads & Services
@@ -243,9 +243,9 @@ font-family: 'Playfair Display', serif;
 
 | Page | Title Tag | Meta Description |
 |------|-----------|------------------|
-| Home | LAPS Group - Excellence Across Architecture, Technology & Beyond | LAPS Group is a multi-division company delivering excellence in architecture, software, marketing, events, and photography. |
-| Architecture | Architecture & Planning - LAPS Group | Award-winning architectural design and urban planning services by LAPS Group. |
-| Apps | Apps & Platforms - LAPS Group | Custom software development, SaaS products, and digital platforms by LAPS Group. |
+| Home | LAPS Global - Excellence Across Architecture, Technology & Beyond | LAPS Global is a multi-division company delivering excellence in architecture, software, marketing, events, and photography. |
+| Architecture | Architecture & Planning - LAPS Global | Award-winning architectural design and urban planning services by LAPS Global. |
+| Apps | Apps & Platforms - LAPS Global | Custom software development, SaaS products, and digital platforms by LAPS Global. |
 
 ### Technical SEO
 - Schema markup: Organization, LocalBusiness for each division

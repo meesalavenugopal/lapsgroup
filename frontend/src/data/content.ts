@@ -129,7 +129,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: '1',
     title: 'When Excellence Meets Vision',
-    subtitle: 'LAPS Group',
+    subtitle: 'LAPS Global',
     description: 'A multi-division company driving innovation across architecture, technology, marketing, events, and photography.',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
     ctaText: 'Explore Our Divisions',
@@ -193,7 +193,7 @@ export const newsItems: NewsItem[] = [
   {
     id: '3',
     title: 'Did You Know?',
-    excerpt: 'LAPS Group now operates across 5 divisions, serving clients in 15+ cities across India.',
+    excerpt: 'LAPS Global now operates across 5 divisions, serving clients in 15+ cities across India.',
     category: 'FACTS',
     date: '2024-12-15',
     image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80',
