@@ -12,21 +12,21 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
       logo: 'text-xl',
       barWidth: 'w-1',
       thinBarWidth: 'w-[2px]',
-      barHeight: 'h-8',
+      barHeight: 'h-7',
       spacing: 'gap-2.5'
     },
     md: { 
       logo: 'text-2xl',
       barWidth: 'w-1.5',
       thinBarWidth: 'w-[3px]',
-      barHeight: 'h-10',
+      barHeight: 'h-9',
       spacing: 'gap-3'
     },
     lg: { 
       logo: 'text-3xl',
       barWidth: 'w-2',
       thinBarWidth: 'w-[4px]',
-      barHeight: 'h-12',
+      barHeight: 'h-11',
       spacing: 'gap-4'
     },
   };
