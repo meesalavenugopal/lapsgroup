@@ -10,18 +10,24 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
   const sizeClasses = {
     sm: { 
       logo: 'text-xl',
-      dot: 'w-1 h-1',
-      spacing: 'gap-1.5'
+      barWidth: 'w-1',
+      thinBarWidth: 'w-[2px]',
+      barHeight: 'h-8',
+      spacing: 'gap-2.5'
     },
     md: { 
       logo: 'text-2xl',
-      dot: 'w-1.5 h-1.5',
-      spacing: 'gap-2'
+      barWidth: 'w-1.5',
+      thinBarWidth: 'w-[3px]',
+      barHeight: 'h-10',
+      spacing: 'gap-3'
     },
     lg: { 
       logo: 'text-3xl',
-      dot: 'w-2 h-2',
-      spacing: 'gap-2.5'
+      barWidth: 'w-2',
+      thinBarWidth: 'w-[4px]',
+      barHeight: 'h-12',
+      spacing: 'gap-4'
     },
   };
 
@@ -31,41 +37,71 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
   return (
     <div className="flex flex-col">
       <div className={clsx('flex items-center', currentSize.spacing)}>
-        {/* Minimalist Symbol - Four Elements */}
-        <div className="relative flex items-center justify-center">
-          <svg
-            width={size === 'sm' ? '28' : size === 'md' ? '32' : '40'}
-            height={size === 'sm' ? '28' : size === 'md' ? '32' : '40'}
-            viewBox="0 0 32 32"
-            fill="none"
-          >
-            {/* Four squares with gold color at varying opacity */}
-            <rect x="2" y="2" width="12" height="12" rx="1" fill="rgb(201 162 39)" />
-            <rect x="18" y="2" width="12" height="12" rx="1" fill="rgb(201 162 39)" opacity="0.75" />
-            <rect x="2" y="18" width="12" height="12" rx="1" fill="rgb(201 162 39)" opacity="0.5" />
-            <rect x="18" y="18" width="12" height="12" rx="1" fill="rgb(201 162 39)" opacity="0.25" />
-          </svg>
+        {/* Bars with Netflix-style thin accent lines */}
+        <div className="flex items-center gap-1.5">
+          {/* First bar group - White/Navy */}
+          <div className="flex items-center gap-0.5">
+            <div 
+              className={clsx(
+                currentSize.barHeight,
+                currentSize.barWidth,
+                isDark ? 'bg-laps-navy' : 'bg-white'
+              )}
+            />
+            <div 
+              className={clsx(
+                currentSize.barHeight,
+                currentSize.thinBarWidth,
+                isDark ? 'bg-laps-navy/30' : 'bg-white/30'
+              )}
+            />
+          </div>
+          
+          {/* Second bar group - Gold */}
+          <div className="flex items-center gap-0.5">
+            <div 
+              className={clsx(
+                currentSize.barHeight,
+                currentSize.barWidth,
+                'bg-laps-gold'
+              )}
+            />
+            <div 
+              className={clsx(
+                currentSize.barHeight,
+                currentSize.thinBarWidth,
+                'bg-laps-gold/30'
+              )}
+            />
+          </div>
         </div>
         
-        {/* Enterprise Wordmark */}
+        {/* Wordmark */}
         <div className="flex flex-col">
+          <div className="flex items-baseline">
+            <span
+              className={clsx(
+                'font-bold tracking-wider leading-none',
+                currentSize.logo,
+                isDark ? 'text-laps-navy' : 'text-white'
+              )}
+            >
+              LAPS
+            </span>
+            <span 
+              className={clsx('text-laps-gold font-bold leading-none', currentSize.logo)}
+            >
+              .
+            </span>
+          </div>
           <span
             className={clsx(
-              'font-bold tracking-tight leading-none',
-              currentSize.logo,
-              isDark ? 'text-laps-navy' : 'text-white'
+              'font-medium tracking-[0.3em] leading-none mt-1',
+              size === 'sm' ? 'text-[8px]' : size === 'md' ? 'text-[9px]' : 'text-[10px]',
+              isDark ? 'text-laps-slate/60' : 'text-white/50'
             )}
           >
-            LAPS
-          </span>
-          <span
-            className={clsx(
-              'font-medium tracking-[0.3em] leading-none mt-0.5',
-              size === 'sm' ? 'text-[7px]' : size === 'md' ? 'text-[8px]' : 'text-[9px]',
-              isDark ? 'text-laps-navy/40' : 'text-white/40'
-            )}
-          >
-            GROUP
+            GLOBAL
           </span>
         </div>
       </div>
