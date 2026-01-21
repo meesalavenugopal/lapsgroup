@@ -50,6 +50,14 @@ export function Header() {
     setIsAboutOpen(false);
   }, [location]);
 
+  // Reset accordions when mobile menu closes
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setIsDivisionsOpen(false);
+      setIsAboutOpen(false);
+    }
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: 'Divisions', href: '#', hasDropdown: 'divisions' },
     { name: 'About Us', href: '#', hasDropdown: 'about' },
@@ -494,13 +502,68 @@ export function Header() {
                   </AnimatePresence>
                 </div>
 
+                {/* About Us Accordion */}
+                <div>
+                  <button
+                    onClick={() => setIsAboutOpen(!isAboutOpen)}
+                    className="flex items-center justify-between w-full py-4 text-lg font-semibold text-laps-navy border-t border-gray-100"
+                  >
+                    About Us
+                    <ChevronDown
+                      className={clsx(
+                        'w-5 h-5 transition-transform',
+                        isAboutOpen && 'rotate-180'
+                      )}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {isAboutOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-4 space-y-1">
+                          <div className="text-xs font-semibold text-laps-slate mb-2 px-3">
+                            About the Group
+                          </div>
+                          {aboutLinks.company.map((link) => (
+                            <Link
+                              key={link.name}
+                              to={link.href}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block px-3 py-2 text-sm text-laps-navy hover:bg-laps-light rounded"
+                            >
+                              {link.name}
+                            </Link>
+                          ))}
+                          <div className="text-xs font-semibold text-laps-slate mt-3 mb-2 px-3">
+                            More
+                          </div>
+                          {aboutLinks.more.map((link) => (
+                            <Link
+                              key={link.name}
+                              to={link.href}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block px-3 py-2 text-sm text-laps-navy hover:bg-laps-light rounded"
+                            >
+                              {link.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 {/* Other Links */}
                 {navLinks.filter(l => !l.hasDropdown).map((link) => (
                   <Link
                     key={link.name}
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="py-4 text-lg font-semibold text-laps-navy border-b border-gray-100"
+                    className="py-4 text-lg font-semibold text-laps-navy border-t border-gray-100"
                   >
                     {link.name}
                   </Link>
