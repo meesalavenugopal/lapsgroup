@@ -9,24 +9,24 @@ interface LogoProps {
 export function Logo({ variant = 'dark', size = 'md', showTagline = false }: LogoProps) {
   const sizeClasses = {
     sm: { 
-      logo: 'text-xl',
+      logo: 'text-2xl',
       barWidth: 'w-1',
       thinBarWidth: 'w-[2px]',
-      barHeight: 'h-7',
+      barHeight: 'h-5',
       spacing: 'gap-2.5'
     },
     md: { 
-      logo: 'text-2xl',
+      logo: 'text-3xl',
       barWidth: 'w-1.5',
       thinBarWidth: 'w-[3px]',
-      barHeight: 'h-9',
+      barHeight: 'h-6',
       spacing: 'gap-3'
     },
     lg: { 
-      logo: 'text-3xl',
+      logo: 'text-4xl',
       barWidth: 'w-2',
       thinBarWidth: 'w-[4px]',
-      barHeight: 'h-11',
+      barHeight: 'h-7',
       spacing: 'gap-4'
     },
   };
@@ -77,31 +77,20 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
         </div>
         
         {/* Wordmark */}
-        <div className="flex flex-col">
-          <div className="flex items-baseline">
-            <span
-              className={clsx(
-                'font-bold tracking-wider leading-none',
-                currentSize.logo,
-                isDark ? 'text-laps-navy' : 'text-white'
-              )}
-            >
-              LAPS
-            </span>
-            <span 
-              className={clsx('text-laps-gold font-bold leading-none', currentSize.logo)}
-            >
-              .
-            </span>
-          </div>
+        <div className="flex items-baseline">
           <span
             className={clsx(
-              'font-medium tracking-[0.3em] leading-none mt-1',
-              size === 'sm' ? 'text-[8px]' : size === 'md' ? 'text-[9px]' : 'text-[10px]',
-              isDark ? 'text-laps-slate/60' : 'text-white/50'
+              'font-bold tracking-wider leading-none',
+              currentSize.logo,
+              isDark ? 'text-laps-navy' : 'text-white'
             )}
           >
-            GLOBAL
+            LAPS
+          </span>
+          <span 
+            className={clsx('text-laps-gold font-bold leading-none', currentSize.logo)}
+          >
+            .
           </span>
         </div>
       </div>
