@@ -13,21 +13,21 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
       barWidth: 'w-1',
       thinBarWidth: 'w-[2px]',
       barHeight: 'h-5',
-      spacing: 'gap-2.5'
+      spacing: 'gap-2'
     },
     md: { 
       logo: 'text-3xl',
       barWidth: 'w-1.5',
       thinBarWidth: 'w-[3px]',
       barHeight: 'h-6',
-      spacing: 'gap-3'
+      spacing: 'gap-2.5'
     },
     lg: { 
       logo: 'text-4xl',
       barWidth: 'w-2',
       thinBarWidth: 'w-[4px]',
       barHeight: 'h-7',
-      spacing: 'gap-4'
+      spacing: 'gap-3'
     },
   };
 

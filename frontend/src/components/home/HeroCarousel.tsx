@@ -69,7 +69,7 @@ export function HeroCarousel() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="inline-block px-4 py-1.5 bg-laps-blue text-sm font-medium mb-4"
+                        className="inline-block px-4 py-1.5 bg-laps-gold text-laps-navy text-sm font-medium mb-4"
                       >
                         {slide.tag}
                       </motion.div>
