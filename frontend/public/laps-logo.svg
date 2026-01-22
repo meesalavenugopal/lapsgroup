@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+  <!-- Background (optional - remove for transparent) -->
+  <!-- <rect width="400" height="100" fill="#0A1628"/> -->
+  
+  <!-- Vertical Bars - MIT Style -->
+  <g fill="currentColor">
+    <!-- Bar 1 (L) - Full height -->
+    <rect x="20" y="15" width="12" height="70"/>
+    <!-- Bar 2 (A) - Full height -->
+    <rect x="38" y="15" width="12" height="70"/>
+    <!-- Bar 3 (P) - Shorter, top aligned -->
+    <rect x="56" y="15" width="12" height="45"/>
+    <!-- Bar 4 (S) - Shorter, top aligned -->
+    <rect x="74" y="15" width="12" height="45"/>
+  </g>
+  
+  <!-- Text - Stacked like MIT -->
+  <g fill="currentColor" font-family="'Arial', 'Helvetica', sans-serif" font-weight="700">
+    <text x="110" y="35" font-size="20">Landscape +</text>
+    <text x="110" y="57" font-size="20">Architecture +</text>
+    <text x="110" y="79" font-size="20">Planning Studios</text>
+  </g>
+</svg>
