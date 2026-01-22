@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140">
+  <!-- Background - LAPS Navy -->
+  <rect width="520" height="140" fill="#0A1628"/>
+  
+  <!-- LAPS bars - 4 bars alternating colors -->
+  <g>
+    <!-- L - Full height (White) -->
+    <rect x="25" y="20" width="20" height="100" fill="#FFFFFF"/>
+    <!-- A - Full height (Gold) -->
+    <rect x="52" y="20" width="20" height="100" fill="#C9A227"/>
+    <!-- P - Shorter (White) -->
+    <rect x="79" y="20" width="20" height="68" fill="#FFFFFF"/>
+    <!-- S - Shorter (Gold) -->
+    <rect x="106" y="20" width="20" height="68" fill="#C9A227"/>
+  </g>
+  
+  <!-- LAPS brand name - White -->
+  <text x="152" y="68" font-family="'Arial Black', 'Arial', sans-serif" font-size="58" font-weight="900" fill="#FFFFFF">LAPS.</text>
+  
+  <!-- Tagline text - White with opacity -->
+  <g font-family="'Arial', 'Helvetica', sans-serif" fill="#FFFFFF" fill-opacity="0.7" font-size="18" font-weight="500">
+    <text x="152" y="95">Landscape. Architecture.</text>
+    <text x="152" y="118">Planning Studios.</text>
+  </g>
+</svg>
