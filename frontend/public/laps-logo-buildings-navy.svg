@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140">
+  <!-- Background -->
+  <rect width="520" height="140" fill="#0A1628"/>
+  
+  <!-- LAPS bars styled as buildings on navy background -->
+  <g>
+    <!-- L - Tall building (White) -->
+    <rect x="25" y="20" width="20" height="100" fill="#FFFFFF"/>
+    <!-- Windows -->
+    <rect x="28" y="25" width="2" height="90" fill="#C9A227" opacity="0.4"/>
+    <rect x="33" y="25" width="2" height="90" fill="#C9A227" opacity="0.4"/>
+    <rect x="38" y="25" width="2" height="90" fill="#C9A227" opacity="0.4"/>
+    <!-- Roofline -->
+    <rect x="25" y="20" width="20" height="3" fill="#C9A227"/>
+    
+    <!-- A - Tall building (Gold) -->
+    <rect x="52" y="20" width="20" height="100" fill="#C9A227"/>
+    <!-- Windows -->
+    <rect x="55" y="25" width="2" height="90" fill="#FFFFFF" opacity="0.3"/>
+    <rect x="60" y="25" width="2" height="90" fill="#FFFFFF" opacity="0.3"/>
+    <rect x="65" y="25" width="2" height="90" fill="#FFFFFF" opacity="0.3"/>
+    <!-- Roofline -->
+    <rect x="52" y="20" width="20" height="3" fill="#FFFFFF"/>
+    
+    <!-- P - Mid-rise building (White) -->
+    <rect x="79" y="20" width="20" height="68" fill="#FFFFFF"/>
+    <!-- Windows -->
+    <rect x="82" y="25" width="2" height="58" fill="#C9A227" opacity="0.4"/>
+    <rect x="87" y="25" width="2" height="58" fill="#C9A227" opacity="0.4"/>
+    <rect x="92" y="25" width="2" height="58" fill="#C9A227" opacity="0.4"/>
+    <!-- Roofline -->
+    <rect x="79" y="20" width="20" height="3" fill="#C9A227"/>
+    
+    <!-- S - Mid-rise building (Gold) -->
+    <rect x="106" y="20" width="20" height="68" fill="#C9A227"/>
+    <!-- Windows -->
+    <rect x="109" y="25" width="2" height="58" fill="#FFFFFF" opacity="0.3"/>
+    <rect x="114" y="25" width="2" height="58" fill="#FFFFFF" opacity="0.3"/>
+    <rect x="119" y="25" width="2" height="58" fill="#FFFFFF" opacity="0.3"/>
+    <!-- Roofline -->
+    <rect x="106" y="20" width="20" height="3" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- LAPS brand name -->
+  <text x="152" y="68" font-family="'Arial Black', 'Arial', sans-serif" font-size="58" font-weight="900" fill="#FFFFFF">LAPS.</text>
+  
+  <!-- Tagline text -->
+  <g font-family="'Arial', 'Helvetica', sans-serif" fill="#FFFFFF" fill-opacity="0.7" font-size="18" font-weight="500">
+    <text x="152" y="95">Landscape. Architecture.</text>
+    <text x="152" y="118">Planning Studios.</text>
+  </g>
+</svg>
