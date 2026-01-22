@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 140">
+  <!-- LAPS bars - 4 bars like in your design -->
+  <g fill="currentColor">
+    <!-- L - Full height -->
+    <rect x="25" y="15" width="18" height="110"/>
+    <!-- A - Full height -->
+    <rect x="50" y="15" width="18" height="110"/>
+    <!-- P - Shorter -->
+    <rect x="75" y="15" width="18" height="80"/>
+    <!-- S - Shorter -->
+    <rect x="100" y="15" width="18" height="80"/>
+  </g>
+  
+  <!-- Text - 4 lines, one for each letter -->
+  <g font-family="'Arial Black', 'Arial', sans-serif" fill="currentColor">
+    <text x="150" y="40" font-size="26" font-weight="900">Landscape.</text>
+    <text x="150" y="70" font-size="26" font-weight="900">Architecture.</text>
+    <text x="150" y="100" font-size="26" font-weight="900">Planning.</text>
+    <text x="150" y="130" font-size="26" font-weight="900">Studios.</text>
+  </g>
+</svg>
