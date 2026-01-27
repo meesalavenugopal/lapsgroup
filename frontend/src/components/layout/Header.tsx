@@ -234,7 +234,7 @@ export function Header() {
               onMouseLeave={() => setIsDivisionsOpen(false)}
               className={clsx(
                 'fixed left-0 right-0 z-50 bg-white shadow-2xl',
-                useDarkHeader ? 'top-[88px]' : 'top-[112px]'
+                useDarkHeader ? 'top-[140px]' : 'top-[160px]'
               )}
             >
               <div className="container-wide py-10">
@@ -350,7 +350,7 @@ export function Header() {
               onMouseLeave={() => setIsAboutOpen(false)}
               className={clsx(
                 'fixed left-0 right-0 z-50 bg-white shadow-2xl',
-                useDarkHeader ? 'top-[88px]' : 'top-[112px]'
+                useDarkHeader ? 'top-[140px]' : 'top-[160px]'
               )}
             >
               <div className="container-wide py-12">
