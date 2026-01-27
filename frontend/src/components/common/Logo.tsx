@@ -9,16 +9,13 @@ interface LogoProps {
 export function Logo({ variant = 'dark', size = 'md', showTagline = false }: LogoProps) {
   const sizeClasses = {
     sm: { 
-      height: 'h-24',
-      width: 'w-24'
+      width: 'w-28'
     },
     md: { 
-      height: 'h-32',
-      width: 'w-32'
+      width: 'w-36'
     },
     lg: { 
-      height: 'h-40',
-      width: 'w-40'
+      width: 'w-44'
     },
   };
 
@@ -29,7 +26,7 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
       <img 
         src="/meesala-logo-vertical-transparent.svg" 
         alt="Meesala" 
-        className={clsx(currentSize.height, currentSize.width, 'object-contain')}
+        className={clsx(currentSize.width, 'object-contain')}
       />
     </div>
   );
