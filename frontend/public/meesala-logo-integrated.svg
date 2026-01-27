@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300">
+  <!-- Meesala - M logo replacing letter M (centered) -->
+  
+  <!-- White background -->
+  <rect width="1000" height="300" fill="white"/>
+  
+  <!-- M icon as the first letter - aligned with text baseline -->
+  <g transform="translate(50, 160)">
+    <!-- Just the M icon in red - matched to text height -->
+    <g transform="scale(0.68)">
+      <polygon points="-85,100 -85,-100 -45,-130 -45,100" fill="#B91C2C"/>
+      <polygon points="-35,-120 -35,35 -5,-95 -5,-120" fill="#B91C2C"/>
+      <polygon points="35,-120 35,35 5,-95 5,-120" fill="#B91C2C"/>
+      <polygon points="85,100 85,-100 45,-130 45,100" fill="#B91C2C"/>
+    </g>
+  </g>
+  
+  <!-- EESALA wordmark (without the M) -->
+  <text x="150" y="210" 
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" 
+        font-size="180" 
+        font-weight="700" 
+        fill="#B91C2C" 
+        letter-spacing="4">EESALA</text>
+</svg>
