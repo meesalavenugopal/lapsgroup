@@ -1,8 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
-  <!-- Meesala - Marriott style with circular icon on top (centered) -->
-  
-  <!-- White background -->
-  <rect width="500" height="300" fill="white"/>
+  <!-- Meesala - Marriott style with circular icon on top (centered, transparent background) -->
   
   <!-- Circular M icon on top -->
   <g transform="translate(250, 80)">

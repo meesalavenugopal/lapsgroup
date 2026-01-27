@@ -27,7 +27,7 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
   return (
     <div className="flex items-center">
       <img 
-        src="/meesala-marriott-v3.svg" 
+        src="/meesala-logo-vertical-transparent.svg" 
         alt="Meesala" 
         className={clsx(currentSize.height, currentSize.width, 'object-contain')}
       />
