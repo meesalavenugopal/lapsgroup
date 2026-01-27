@@ -1,10 +1,21 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Two Bars Favicon -->
-  <!-- First bar (navy) + thin accent -->
-  <rect x="4" y="4" width="8" height="24" fill="#0A1628"/>
-  <rect x="13" y="4" width="3" height="24" fill="#0A1628" opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Meesala M Favicon -->
   
-  <!-- Second bar (gold) + thin accent -->
-  <rect x="18" y="4" width="8" height="24" fill="#C9A227"/>
-  <rect x="27" y="4" width="3" height="24" fill="#C9A227" opacity="0.3"/>
+  <!-- Red background -->
+  <rect width="400" height="400" fill="#B91C2C"/>
+  
+  <!-- Strong M icon -->
+  <g transform="translate(200, 200)">
+    <!-- Left angled bar -->
+    <polygon points="-85,110 -85,-90 -45,-120 -45,110" fill="white"/>
+    
+    <!-- Left inner slope -->
+    <polygon points="-35,-110 -35,45 -5,-85 -5,-110" fill="white"/>
+    
+    <!-- Right inner slope -->
+    <polygon points="35,-110 35,45 5,-85 5,-110" fill="white"/>
+    
+    <!-- Right angled bar -->
+    <polygon points="85,110 85,-90 45,-120 45,110" fill="white"/>
+  </g>
 </svg>
