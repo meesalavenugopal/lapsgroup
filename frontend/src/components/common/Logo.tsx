@@ -9,16 +9,16 @@ interface LogoProps {
 export function Logo({ variant = 'dark', size = 'md', showTagline = false }: LogoProps) {
   const sizeClasses = {
     sm: { 
-      height: 'h-10',
-      width: 'w-10'
+      height: 'h-24',
+      width: 'w-24'
     },
     md: { 
-      height: 'h-12',
-      width: 'w-12'
+      height: 'h-32',
+      width: 'w-32'
     },
     lg: { 
-      height: 'h-16',
-      width: 'w-16'
+      height: 'h-40',
+      width: 'w-40'
     },
   };
 
