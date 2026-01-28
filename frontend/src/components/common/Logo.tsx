@@ -21,10 +21,10 @@ export function Logo({ variant = 'dark', size = 'md', showTagline = false }: Log
 
   const currentSize = sizeClasses[size];
   
-  // Use dark logo on white background, light logo on dark background
-  const logoSrc = variant === 'dark' 
-    ? '/meesala-logo-vertical-dark.svg' 
-    : '/meesala-logo-vertical-transparent.svg';
+  // Use black logo on white background, white logo on dark background
+  const logoSrc = variant === 'dark'
+    ? '/meesala-logo-vertical-marriott-m-black.svg'
+    : '/meesala-logo-vertical-marriott-m-white.svg';
 
   return (
     <div className="flex items-center">

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- Meesala - Vertical logo using M from meesala-marriott-v3-r.svg -->
+  
+  <!-- White background -->
+  <rect width="500" height="300" fill="white"/>
+  
+  <!-- Strong M icon (centered at top, scaled for 500x300 canvas) -->
+  <g transform="translate(250, 75) scale(0.7,0.55)">
+    <!-- Left angled bar -->
+    <polygon points="-85,110 -85,-90 -45,-120 -45,110" fill="#B91C2C"/>
+    <!-- Left inner slope -->
+    <polygon points="-35,-110 -35,45 -5,-85 -5,-110" fill="#B91C2C"/>
+    <!-- Right inner slope -->
+    <polygon points="35,-110 35,45 5,-85 5,-110" fill="#B91C2C"/>
+    <!-- Right angled bar -->
+    <polygon points="85,110 85,-90 45,-120 45,110" fill="#B91C2C"/>
+  </g>
+  
+  <!-- MEESALA wordmark below -->
+  <text x="250" y="220" 
+        text-anchor="middle"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" 
+        font-size="80" 
+        font-weight="700" 
+        fill="#B91C2C" 
+        letter-spacing="12">MEESALA</text>
+  
+  <!-- Registered trademark symbol -->
+  <text x="460" y="190" 
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" 
+        font-size="24" 
+        font-weight="400" 
+        fill="#B91C2C">®</text>
+</svg>
